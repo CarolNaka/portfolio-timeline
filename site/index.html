@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carolina Nakasuka — Portfólio Técnico</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="identity">
+      <div class="avatar" aria-hidden="true">
+        <!-- Quando tiver uma foto, substitua a linha abaixo por:
+             <img src="assets/foto.jpg" alt="Carolina Nakasuka" class="avatar-img"> -->
+        <span class="avatar-initials">CN</span>
+      </div>
+      <div class="identity-text">
+        <span class="brand-name">Carolina Nakasuka</span>
+        <span class="brand-role" data-i18n="brand.role">Técnica em Banco de Dados</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#sobre" data-i18n="nav.sobre">Sobre</a>
+      <a href="#experiencias" data-i18n="nav.experiencias">Experiências</a>
+      <a href="#trajetoria" data-i18n="nav.trajetoria">Trajetória</a>
+      <a href="#skills" data-i18n="nav.competencias">Skills</a>
+    </nav>
+    <div class="social-top">
+      <a href="https://www.linkedin.com/in/carolnakasuka" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/CarolNaka" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="lang-toggle">
+      <button id="btn-pt" class="lang-btn active" data-lang="pt">PT</button>
+      <button id="btn-en" class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-flex">
+    <div class="hero-avatar" aria-hidden="true">
+      <!-- Quando tiver uma foto, substitua a linha abaixo por:
+           <img src="assets/foto.jpg" alt="Carolina Nakasuka" class="avatar-img"> -->
+      <span class="avatar-initials">CN</span>
+    </div>
+    <div class="hero-text">
+      <p class="eyebrow" data-i18n="hero.eyebrow">Portfólio Técnico</p>
+      <h1>Carolina Nakasuka</h1>
+      <p class="subtitle" data-i18n="hero.title">Banco de dados, automação e integração de pipelines</p>
+      <p class="tech-list" data-i18n="hero.subtitle">SQL Server · Azure Data Factory · Automação · Migração de Dados</p>
+      <p class="notice" data-i18n="hero.personal">Gosto de pegar um processo manual, cheio de gargalos, e transformá-lo em algo simples, seguro e replicável por qualquer pessoa do time.</p>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+
+  <section id="sobre" class="section">
+    <h2 data-i18n="sobre.titulo">Sobre mim</h2>
+    <p data-i18n="sobre.p1">Atuação como consultora técnica em projetos de migração de dados entre sistemas de gestão jurídica concorrentes (Astrea, Projuris, CPJ, CP-PRO) e o Legal One, além de consultoria recorrente em banco de dados e desenvolvimento de ferramentas próprias de automação.</p>
+    <p data-i18n="sobre.p2">Destaque para a criação, por iniciativa própria, de uma ferramenta de saneamento de contatos duplicados (Python + Selenium), distribuída como executável para consultores em campo — eliminando a dependência de outro time para esse tipo de ajuste.</p>
+    <p data-i18n="sobre.p3">Mais de 30 clientes atendidos ao longo da carreira, com contribuição ativa e sustentada (92 commits em ~5 meses) em um repositório de migração mantido por um time de 18 pessoas.</p>
+  </section>
+
+  <section id="experiencias" class="section">
+    <h2 data-i18n="experiencias.titulo">Experiências</h2>
+    <p class="muted" data-i18n="experiencias.intro">Cada experiência profissional relevante tem sua própria página, com projetos, métricas e evidências detalhadas.</p>
+    <div class="experience-grid">
+      <a class="card experience-card" href="experiencias/legal-one.html">
+        <h3 data-i18n="experiencias.legalOne.titulo">Experiência com Legal One</h3>
+        <p data-i18n="experiencias.legalOne.desc">Migração de plataformas concorrentes, consultoria recorrente, saneamento de dados e automações construídas ao longo da atuação com o Legal One.</p>
+        <span class="btn" data-i18n="experiencias.ver">Ver projetos e métricas →</span>
+      </a>
+      <div class="card experience-card experience-card--future">
+        <h3 data-i18n="experiencias.futura.titulo">Próxima experiência</h3>
+        <p data-i18n="experiencias.futura.desc">Novas páginas de experiência serão adicionadas aqui conforme novos projetos forem documentados.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="trajetoria" class="section">
+    <h2 data-i18n="trajetoria.titulo">Trajetória</h2>
+    <p class="muted" data-i18n="trajetoria.intro">Principais marcos de formação e carreira. Arraste para o lado para ver mais →</p>
+    <div class="timeline-wrap">
+      <div class="timeline" id="timeline-list"></div>
+      <div class="timeline-fade timeline-fade--right"></div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2 data-i18n="competencias.titulo">Skills</h2>
+    <p class="muted" data-i18n="competencias.intro">Avaliação baseada em evidências de arquivo, não em autoavaliação genérica — cada estrela reflete evidência real de projeto, não uma autoavaliação genérica. Detalhamento completo no repositório (matriz_de_competencias.md).</p>
+
+    <h3 class="subsection-title" data-i18n="competencias.tabTecnicas">Competências Técnicas</h3>
+    <div class="skills-grid" id="skills-grid-tecnicas"></div>
+
+    <h3 class="subsection-title" data-i18n="competencias.tabSoft">Soft Skills</h3>
+    <div class="skills-grid" id="skills-grid-soft"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/carolnakasuka" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/CarolNaka" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

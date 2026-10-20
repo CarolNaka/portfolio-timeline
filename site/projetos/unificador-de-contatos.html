@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unificador de Contatos — Carolina Nakasuka</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="identity">
+      <div class="avatar" aria-hidden="true"><span class="avatar-initials">CN</span></div>
+      <div class="identity-text">
+        <span class="brand-name">Carolina Nakasuka</span>
+        <span class="brand-role" data-i18n="brand.role">Técnica em Banco de Dados</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="../index.html#sobre" data-i18n="nav.sobre">Sobre</a>
+      <a href="../index.html#experiencias" data-i18n="nav.experiencias">Experiências</a>
+      <a href="../index.html#trajetoria" data-i18n="nav.trajetoria">Trajetória</a>
+      <a href="../index.html#skills" data-i18n="nav.competencias">Skills</a>
+    </nav>
+    <div class="social-top">
+      <a href="https://www.linkedin.com/in/carolnakasuka" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/CarolNaka" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="lang-toggle">
+      <button id="btn-pt" class="lang-btn active" data-lang="pt">PT</button>
+      <button id="btn-en" class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero hero--compact">
+  <div class="container">
+    <a class="breadcrumb" href="../experiencias/legal-one.html" data-i18n="proj.voltar">Voltar para Legal One</a>
+    <p class="eyebrow" data-i18n="proj.eyebrow.saneamento">Projeto · Saneamento de Dados</p>
+    <div data-lang-block="pt">
+      <h1>Unificador de Contatos</h1>
+      <p class="subtitle">Ferramenta autoral de saneamento de duplicidade — ideia e implementação próprias</p>
+    </div>
+    <div data-lang-block="en">
+      <h1>Contact Deduplication Tool</h1>
+      <p class="subtitle">Original idea and solution — authored and built independently</p>
+    </div>
+    <div class="meta-row">
+      <span class="meta-chip">Python</span>
+      <span class="meta-chip">Selenium</span>
+      <span class="meta-chip">Tkinter</span>
+      <span class="meta-chip">PyInstaller</span>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+  <article class="section prose">
+
+    <div data-lang-block="pt">
+      <h2>Visão geral</h2>
+      <p>Ferramenta própria em Python, com automação via Selenium e interface em Tkinter, distribuída como executável para consultores em campo. Identifica e unifica contatos duplicados direto na base do Legal One, usando a função nativa de unificação — com muito mais autonomia do que o processo tradicional. <strong>Ideia e autoria própria.</strong></p>
+
+      <h2>Problema resolvido</h2>
+      <p>Bases de clientes migradas acumulam contatos duplicados. Corrigir isso pelo processo tradicional exigia: extrair a base de produção, levá-la para homologação, tratar os dados fora do ambiente do cliente, aguardar SLA de liberação, e só então aplicar a correção de volta em produção — um ciclo longo, dependente do time de migração.</p>
+
+      <h2>Contexto</h2>
+      <p>A ferramenta nasceu para resolver exatamente esse gargalo: permitir que o próprio consultor, sem depender do time de migração, identifique e unifique contatos duplicados agindo diretamente sobre a base do cliente, usando os recursos nativos do Legal One.</p>
+
+      <h2>Minha atuação</h2>
+      <ul>
+        <li>Identifiquei o problema e concebi a solução (ideia autoral).</li>
+        <li>Prototipei com <code>pyautogui</code> (coordenadas de tela) — validou a ideia, mas era frágil.</li>
+        <li>Evoluí para <strong>Selenium</strong>, localizando elementos reais da interface, resiliente a mudanças de layout.</li>
+        <li>Construí interface gráfica própria (Tkinter) e empacotei em executável único (PyInstaller).</li>
+        <li>Gerei log colorido por status e produzi material de treinamento para outros consultores.</li>
+      </ul>
+
+      <h2>Tecnologias utilizadas</h2>
+      <div class="chip-list">
+        <span class="chip">Python</span>
+        <span class="chip">Selenium WebDriver</span>
+        <span class="chip">Tkinter</span>
+        <span class="chip">openpyxl / pandas</span>
+        <span class="chip">PyInstaller</span>
+        <span class="chip">pyautogui (protótipo anterior)</span>
+      </div>
+
+      <h2>Solução implementada</h2>
+      <ol>
+        <li><strong>Login manual e carregamento da base</strong> — login manual no navegador controlado pela aplicação (nenhuma credencial armazenada no código).</li>
+        <li><strong>Identificação de duplicidade</strong> — agrupamento de contatos por CPF/CNPJ.</li>
+        <li><strong>Unificação automatizada</strong> — aciona a função nativa "Unificar Contatos" do Legal One via Selenium, para cada grupo de duplicados. Gera relatório Excel colorido ao final.</li>
+      </ol>
+
+      <h2>Processo técnico</h2>
+      <pre class="flow">Planilha de contatos do cliente
+  └─&gt; Login manual no navegador controlado pela ferramenta
+       └─&gt; Agrupamento de contatos duplicados por CPF/CNPJ
+            └─&gt; Para cada grupo: aciona função nativa "Unificar Contatos" via Selenium
+                 └─&gt; Log de execução em Excel (colorido por status)</pre>
+
+      <h2>Desafios e decisões</h2>
+      <ul>
+        <li><strong>Fragilidade da primeira versão:</strong> a automação por coordenadas quebrava com mudança de resolução — reescrita com Selenium resolveu de raiz.</li>
+        <li><strong>Segurança de credenciais:</strong> login manual do consultor, em vez de senha armazenada no código.</li>
+        <li><strong>Usabilidade para público não técnico:</strong> interface simples e executável único, sem suporte técnico constante.</li>
+        <li><strong>Honestidade técnica:</strong> não é a solução mais sofisticada em arquitetura (automação de interface, não API), mas foi a correta para o problema real.</li>
+      </ul>
+
+      <h2>Impacto e métricas</h2>
+      <table class="impact-table">
+        <tr><th>Métrica</th><th>Valor</th><th>Classificação</th></tr>
+        <tr><td>Redução de etapas do processo tradicional</td><td>Elimina extração → homologação → tratamento → SLA → liberação</td><td>Comprovada pela arquitetura</td></tr>
+        <tr><td>Dependência do time de migração</td><td>Eliminada para duplicidade de contatos</td><td>Comprovada pela arquitetura</td></tr>
+        <tr><td>Autonomia do consultor</td><td>Ação direta, sem abrir chamado</td><td>Comprovada pela arquitetura</td></tr>
+        <tr><td>Evidência de uso real em base de cliente</td><td>Logs e planilhas de contatos duplicados encontrados</td><td>Comprovada</td></tr>
+        <tr><td>Material de treinamento formal</td><td>Vídeo de ~36 MB</td><td>Comprovada</td></tr>
+      </table>
+
+      <h2>Competências demonstradas</h2>
+      <ul>
+        <li>Identificação autônoma de problemas operacionais e proposição de solução técnica.</li>
+        <li>Programação Python aplicada a automação de processos reais.</li>
+        <li>Automação de interface web com Selenium, incluindo seleção robusta de elementos.</li>
+        <li>Construção de interface gráfica para usuários não técnicos.</li>
+        <li>Empacotamento e distribuição de aplicações Python.</li>
+        <li>Iteração de produto: de protótipo frágil a versão robusta e distribuível.</li>
+      </ul>
+
+      <h2>Soft skills demonstradas</h2>
+      <ul>
+        <li><strong>Iniciativa e pensamento de produto:</strong> identificar o gargalo e construir a solução ponta a ponta.</li>
+        <li><strong>Foco no usuário final:</strong> priorizar usabilidade além da solução técnica.</li>
+        <li><strong>Pragmatismo:</strong> resolver o problema real dentro das restrições existentes.</li>
+        <li><strong>Disseminação de conhecimento:</strong> treinamento para outros consultores.</li>
+        <li><strong>Consciência de segurança:</strong> decisão de não embutir credenciais no código.</li>
+      </ul>
+
+      <h2>Pontos de melhoria e aprendizados</h2>
+      <ul>
+        <li>Automação depende da estrutura visual do Legal One — mudanças de interface podem exigir ajustes.</li>
+        <li>Sem registro sistemático de quantas vezes a ferramenta foi usada.</li>
+        <li>Resolve duplicidade por CPF/CNPJ; poderia evoluir para similaridade de nome.</li>
+        <li>Evolução futura poderia buscar integração via API, se disponível.</li>
+      </ul>
+
+      <h2>Confidencialidade e anonimização</h2>
+      <p>Nenhum nome de cliente é citado. O código-fonte completo não é publicado neste portfólio. Nenhuma credencial foi encontrada no código.</p>
+
+      <h2>Evidências disponíveis</h2>
+      <p>Código-fonte da última versão, analisado internamente; versão de protótipo anterior; vídeo de treinamento; logs de execução real e planilhas de resultado (metadados, sem dados reais).</p>
+
+      <h2>Status de publicação</h2>
+      <span class="status-badge">Publicável após anonimização</span>
+    </div>
+
+    <div data-lang-block="en">
+      <h2>Overview</h2>
+      <p>A tool I built in Python, with Selenium browser automation and a Tkinter interface, distributed as an executable to field consultants. It identifies and merges duplicate contacts directly in the Legal One database, using the system's native merge function — with far more autonomy than the traditional process. <strong>Original idea and solution.</strong></p>
+
+      <h2>Problem solved</h2>
+      <p>Migrated client databases accumulate duplicate contacts. Fixing this through the traditional process required extracting the production database, moving it to staging, treating the data outside the client's live environment, waiting for SLA release, and only then applying the fix back to production.</p>
+
+      <h2>Context</h2>
+      <p>The tool was built specifically to solve this bottleneck: letting the consultant act directly on the client's database, without depending on the migration team, using Legal One's native features.</p>
+
+      <h2>My role</h2>
+      <ul>
+        <li>Identified the problem and conceived the solution (original idea).</li>
+        <li>Prototyped with <code>pyautogui</code> (screen coordinates) — validated the idea, but it was fragile.</li>
+        <li>Evolved to <strong>Selenium</strong>, locating real interface elements, resilient to layout changes.</li>
+        <li>Built a dedicated graphical interface (Tkinter) and packaged it into a single executable (PyInstaller).</li>
+        <li>Generated a color-coded log and produced training material for other consultants.</li>
+      </ul>
+
+      <h2>Technologies used</h2>
+      <div class="chip-list">
+        <span class="chip">Python</span>
+        <span class="chip">Selenium WebDriver</span>
+        <span class="chip">Tkinter</span>
+        <span class="chip">openpyxl / pandas</span>
+        <span class="chip">PyInstaller</span>
+        <span class="chip">pyautogui (earlier prototype)</span>
+      </div>
+
+      <h2>Solution implemented</h2>
+      <ol>
+        <li><strong>Manual login and data load</strong> — manual login in the browser controlled by the application (no credentials stored in code).</li>
+        <li><strong>Duplicate identification</strong> — grouping contacts by tax ID (CPF/CNPJ).</li>
+        <li><strong>Automated merging</strong> — triggers Legal One's native "Merge Contacts" function via Selenium for each duplicate group. Generates a color-coded Excel report at the end.</li>
+      </ol>
+
+      <h2>Technical process</h2>
+      <pre class="flow">Client contacts spreadsheet
+  └─&gt; Manual login in the browser controlled by the tool
+       └─&gt; Grouping duplicate contacts by tax ID (CPF/CNPJ)
+            └─&gt; For each group: trigger native "Merge Contacts" function via Selenium
+                 └─&gt; Excel execution log (color-coded by status)</pre>
+
+      <h2>Challenges and decisions</h2>
+      <ul>
+        <li><strong>Fragility of the first version:</strong> coordinate-based automation broke with resolution changes — rewriting with Selenium fixed this at the root.</li>
+        <li><strong>Credential security:</strong> manual consultant login, instead of a stored password in code.</li>
+        <li><strong>Usability for a non-technical audience:</strong> simple interface and single executable, without constant technical support.</li>
+        <li><strong>Technical honesty:</strong> not the most sophisticated architecture (interface automation, not API), but the right solution for the real problem.</li>
+      </ul>
+
+      <h2>Impact and metrics</h2>
+      <table class="impact-table">
+        <tr><th>Metric</th><th>Value</th><th>Classification</th></tr>
+        <tr><td>Reduction in traditional process steps</td><td>Eliminates extraction → staging → treatment → SLA → release</td><td>Confirmed by architecture</td></tr>
+        <tr><td>Migration-team dependency</td><td>Eliminated for duplicate contacts</td><td>Confirmed by architecture</td></tr>
+        <tr><td>Consultant autonomy</td><td>Direct action, no ticket needed</td><td>Confirmed by architecture</td></tr>
+        <tr><td>Evidence of real use on client data</td><td>Logs and duplicate-contact spreadsheets found</td><td>Confirmed</td></tr>
+        <tr><td>Formal training material</td><td>~36 MB video</td><td>Confirmed</td></tr>
+      </table>
+
+      <h2>Skills demonstrated</h2>
+      <ul>
+        <li>Autonomous identification of operational problems and technical solution proposal.</li>
+        <li>Python programming applied to real process automation.</li>
+        <li>Web interface automation with Selenium, including robust element selection.</li>
+        <li>Building a graphical interface for non-technical users.</li>
+        <li>Packaging and distributing Python applications.</li>
+        <li>Product iteration: from fragile prototype to robust, distributable version.</li>
+      </ul>
+
+      <h2>Soft skills demonstrated</h2>
+      <ul>
+        <li><strong>Initiative and product thinking:</strong> identifying the bottleneck and building the end-to-end solution.</li>
+        <li><strong>End-user focus:</strong> prioritizing usability beyond the technical solution.</li>
+        <li><strong>Pragmatism:</strong> solving the real problem within existing constraints.</li>
+        <li><strong>Knowledge sharing:</strong> training other consultants.</li>
+        <li><strong>Security awareness:</strong> decision not to embed credentials in the code.</li>
+      </ul>
+
+      <h2>Improvement points and lessons learned</h2>
+      <ul>
+        <li>Automation depends on Legal One's visual structure — interface changes may require adjustments.</li>
+        <li>No systematic record of how many times the tool was used.</li>
+        <li>Resolves duplicates by tax ID; could evolve to name similarity.</li>
+        <li>Future evolution could pursue an API integration, if available.</li>
+      </ul>
+
+      <h2>Confidentiality and anonymization</h2>
+      <p>No client names are disclosed. The full source code is not published in this portfolio. No credentials were found in the code.</p>
+
+      <h2>Available evidence</h2>
+      <p>Source code of the latest version, analyzed internally; a previous prototype version; the training video; real execution logs and result spreadsheets (metadata only, no real data).</p>
+
+      <h2>Publication status</h2>
+      <span class="status-badge">Publishable after anonymization</span>
+    </div>
+
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/carolnakasuka" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/CarolNaka" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

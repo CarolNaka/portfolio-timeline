@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automações Python — Carolina Nakasuka</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="identity">
+      <div class="avatar" aria-hidden="true"><span class="avatar-initials">CN</span></div>
+      <div class="identity-text">
+        <span class="brand-name">Carolina Nakasuka</span>
+        <span class="brand-role" data-i18n="brand.role">Técnica em Banco de Dados</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="../index.html#sobre" data-i18n="nav.sobre">Sobre</a>
+      <a href="../index.html#experiencias" data-i18n="nav.experiencias">Experiências</a>
+      <a href="../index.html#trajetoria" data-i18n="nav.trajetoria">Trajetória</a>
+      <a href="../index.html#skills" data-i18n="nav.competencias">Skills</a>
+    </nav>
+    <div class="social-top">
+      <a href="https://www.linkedin.com/in/carolnakasuka" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/CarolNaka" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="lang-toggle">
+      <button id="btn-pt" class="lang-btn active" data-lang="pt">PT</button>
+      <button id="btn-en" class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero hero--compact">
+  <div class="container">
+    <a class="breadcrumb" href="../experiencias/legal-one.html" data-i18n="proj.voltar">Voltar para Legal One</a>
+    <p class="eyebrow" data-i18n="proj.eyebrow.automacao">Projeto · Automação</p>
+    <div data-lang-block="pt">
+      <h1>Automações Python de Produtividade</h1>
+      <p class="subtitle">Scripts próprios para integração de dados e apoio operacional</p>
+    </div>
+    <div data-lang-block="en">
+      <h1>Python Productivity Automations</h1>
+      <p class="subtitle">Proprietary scripts for data integration and operational support</p>
+    </div>
+    <div class="meta-row">
+      <span class="meta-chip">Python</span>
+      <span class="meta-chip">SQL Server</span>
+      <span class="meta-chip">MySQL</span>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+  <article class="section prose">
+
+    <div data-lang-block="pt">
+      <h2>Visão geral</h2>
+      <p>Scripts Python para ganho de produtividade em migração e manutenção de dados: importação de CSV/Excel para banco, comparação de volumetria, extração de dados do MySQL e gestão de acesso de usuários.</p>
+
+      <h2>Problema resolvido</h2>
+      <p>Diversas etapas do processo de migração e suporte (conferir se duas bases têm a mesma quantidade de registros, subir uma planilha inteira para o banco, extrair dados de uma base MySQL, resetar o acesso de um usuário) eram candidatas a automação simples que elimina passos manuais repetitivos.</p>
+
+      <h2>Contexto</h2>
+      <p>Os scripts foram desenvolvidos como ferramentas de apoio paralelas ao trabalho principal de migração e consultoria, cada um resolvendo uma necessidade pontual identificada na rotina.</p>
+
+      <h2>Minha atuação</h2>
+      <ul>
+        <li>Importador genérico e parametrizável de Excel para banco (<code>importa_excel.py</code>).</li>
+        <li>Scripts de extração a partir de bases <strong>MySQL</strong> de origem (andamentos e compromissos/tarefas).</li>
+        <li>Scripts de comparação de volumetria entre bases, com relatório Excel.</li>
+        <li>Script de reset de acesso de usuários do Legal One via atualização direta em banco.</li>
+        <li>Script de extração de erros e avisos, conectando via <code>pyodbc</code>, consolidando em Excel formatado.</li>
+      </ul>
+
+      <h2>Tecnologias utilizadas</h2>
+      <div class="chip-list">
+        <span class="chip">Python</span>
+        <span class="chip">pandas</span>
+        <span class="chip">openpyxl</span>
+        <span class="chip">pyodbc</span>
+        <span class="chip">sqlalchemy</span>
+        <span class="chip">pymysql</span>
+      </div>
+
+      <h2>Solução implementada</h2>
+      <ul>
+        <li><strong>Importador genérico:</strong> lê planilha Excel inteira (todas as abas ou uma específica), sanitiza nomes de coluna e insere via <code>sqlalchemy</code>.</li>
+        <li><strong>Extração MySQL:</strong> conecta à base de origem e extrai andamentos e compromissos/tarefas.</li>
+        <li><strong>Comparação de volumetria:</strong> compara contagem de registros entre bases, apoiando validação pós-tratamento.</li>
+        <li><strong>Extração de erros e avisos:</strong> executa scripts SQL de verificação e organiza o resultado em Excel (Totais, Erros, Avisos).</li>
+        <li><strong>Reset de acessos:</strong> automatiza reset de acesso diretamente no banco.</li>
+      </ul>
+
+      <h2>Processo técnico</h2>
+      <pre class="flow">Fonte de dados (Excel, MySQL, SQL Server)
+  └─&gt; Script Python específico (importação, extração, comparação ou verificação)
+       └─&gt; Banco de destino atualizado OU relatório Excel consolidado</pre>
+
+      <h2>Desafios e decisões</h2>
+      <ul>
+        <li><strong>Scripts pontuais vs. ferramenta única:</strong> priorizou agilidade de entrega para necessidades específicas.</li>
+        <li><strong>Evolução de abordagem:</strong> protótipo <code>Duplicidade_auto.py</code> (baseado em <code>pyautogui</code>) evoluiu para a abordagem Selenium do projeto Unificador de Contatos.</li>
+      </ul>
+
+      <h2>Impacto e métricas</h2>
+      <table class="impact-table">
+        <tr><th>Métrica</th><th>Valor</th><th>Classificação</th></tr>
+        <tr><td>Scripts Python de produtividade identificados</td><td>8 scripts distintos</td><td>Comprovada</td></tr>
+        <tr><td>Bancos de origem suportados</td><td>SQL Server e MySQL</td><td>Comprovada</td></tr>
+        <tr><td>Redução de dependência técnica para subir planilha</td><td>Alta (importador genérico)</td><td>Estimativa qualitativa</td></tr>
+      </table>
+
+      <h2>Competências demonstradas</h2>
+      <ul>
+        <li>Programação Python aplicada a integração de dados (Excel, SQL Server, MySQL).</li>
+        <li>Uso de bibliotecas de acesso a banco e manipulação de planilhas.</li>
+        <li>Identificação de tarefas manuais repetitivas e generalização em scripts reutilizáveis.</li>
+      </ul>
+
+      <h2>Soft skills demonstradas</h2>
+      <ul>
+        <li><strong>Produtividade e melhoria contínua:</strong> ferramentas de apoio para acelerar tarefas recorrentes.</li>
+        <li><strong>Visão de reuso:</strong> construção de importador genérico em vez de script fixo por planilha.</li>
+      </ul>
+
+      <h2>Pontos de melhoria e aprendizados</h2>
+      <ul>
+        <li><strong>Atenção:</strong> pelo menos 3 scripts continham credenciais de banco em texto puro no código — oportunidade clara de migrar para variáveis de ambiente.</li>
+        <li>Sem tratamento de erro padronizado nem testes automatizados.</li>
+        <li>Sem documentação formal de uso para cada script.</li>
+      </ul>
+
+      <h2>Confidencialidade e anonimização</h2>
+      <p>Nenhuma credencial de banco de dados é citada ou reproduzida neste documento, em nenhuma hipótese. Nenhum nome de cliente é citado.</p>
+
+      <h2>Evidências disponíveis</h2>
+      <p>Código-fonte dos scripts, analisado internamente (não publicado integralmente).</p>
+
+      <h2>Status de publicação</h2>
+      <span class="status-badge">Publicável após anonimização e remoção de credenciais</span>
+    </div>
+
+    <div data-lang-block="en">
+      <h2>Overview</h2>
+      <p>Python scripts for productivity gains in data migration and maintenance: CSV/Excel-to-database import, volume comparison, MySQL data extraction, and user-access management.</p>
+
+      <h2>Problem solved</h2>
+      <p>Several steps in the migration and support process (checking record counts, uploading a spreadsheet, extracting data from a MySQL database, resetting user access) were good candidates for simple automation removing repetitive manual steps.</p>
+
+      <h2>Context</h2>
+      <p>The scripts were developed as support tools running alongside the main migration and consulting work, each solving a specific need identified in day-to-day routine.</p>
+
+      <h2>My role</h2>
+      <ul>
+        <li>Generic, parameterized Excel-to-database importer (<code>importa_excel.py</code>).</li>
+        <li>Extraction scripts from source <strong>MySQL</strong> databases (activity logs and appointments/tasks).</li>
+        <li>Database volume-comparison scripts, with Excel reporting.</li>
+        <li>Legal One user-access reset script via direct database update.</li>
+        <li>Error/warning extraction script, connecting via <code>pyodbc</code>, consolidated into formatted Excel.</li>
+      </ul>
+
+      <h2>Technologies used</h2>
+      <div class="chip-list">
+        <span class="chip">Python</span>
+        <span class="chip">pandas</span>
+        <span class="chip">openpyxl</span>
+        <span class="chip">pyodbc</span>
+        <span class="chip">sqlalchemy</span>
+        <span class="chip">pymysql</span>
+      </div>
+
+      <h2>Solution implemented</h2>
+      <ul>
+        <li><strong>Generic importer:</strong> reads an entire Excel spreadsheet (every sheet or one specified), sanitizes column names, and inserts via <code>sqlalchemy</code>.</li>
+        <li><strong>MySQL extraction:</strong> connects to the source database and extracts activity logs and appointments/tasks.</li>
+        <li><strong>Volume comparison:</strong> compares record counts between databases, supporting post-treatment validation.</li>
+        <li><strong>Error/warning extraction:</strong> runs verification SQL scripts and organizes the result into Excel (Totals, Errors, Warnings).</li>
+        <li><strong>Access reset:</strong> automates resetting access directly in the database.</li>
+      </ul>
+
+      <h2>Technical process</h2>
+      <pre class="flow">Data source (Excel, MySQL, SQL Server)
+  └─&gt; Dedicated Python script (import, extraction, comparison, or verification)
+       └─&gt; Updated target database OR consolidated Excel report</pre>
+
+      <h2>Challenges and decisions</h2>
+      <ul>
+        <li><strong>Point scripts vs. a single tool:</strong> prioritized delivery speed for specific needs.</li>
+        <li><strong>Approach evolution:</strong> the <code>Duplicidade_auto.py</code> prototype (based on <code>pyautogui</code>) later evolved into the Selenium approach used in the Contact Deduplication Tool.</li>
+      </ul>
+
+      <h2>Impact and metrics</h2>
+      <table class="impact-table">
+        <tr><th>Metric</th><th>Value</th><th>Classification</th></tr>
+        <tr><td>Python productivity scripts identified</td><td>8 distinct scripts</td><td>Confirmed</td></tr>
+        <tr><td>Source databases supported</td><td>SQL Server and MySQL</td><td>Confirmed</td></tr>
+        <tr><td>Reduction in technical dependency to upload a spreadsheet</td><td>High (generic importer)</td><td>Qualitative estimate</td></tr>
+      </table>
+
+      <h2>Skills demonstrated</h2>
+      <ul>
+        <li>Python programming applied to data integration (Excel, SQL Server, MySQL).</li>
+        <li>Use of database access and spreadsheet manipulation libraries.</li>
+        <li>Identifying repetitive manual tasks and generalizing them into reusable scripts.</li>
+      </ul>
+
+      <h2>Soft skills demonstrated</h2>
+      <ul>
+        <li><strong>Productivity and continuous improvement:</strong> support tools to speed up recurring tasks.</li>
+        <li><strong>Reuse mindset:</strong> building a generic importer instead of a fixed script per spreadsheet.</li>
+      </ul>
+
+      <h2>Improvement points and lessons learned</h2>
+      <ul>
+        <li><strong>Caution:</strong> at least 3 scripts contained plain-text database credentials — a clear opportunity to migrate to environment variables.</li>
+        <li>No standardized error handling or automated tests.</li>
+        <li>No formal usage documentation for each script.</li>
+      </ul>
+
+      <h2>Confidentiality and anonymization</h2>
+      <p>No database credentials are disclosed or reproduced in this document, under any circumstance. No client names are disclosed.</p>
+
+      <h2>Available evidence</h2>
+      <p>Source code of the scripts, analyzed internally (not published in full).</p>
+
+      <h2>Publication status</h2>
+      <span class="status-badge">Publishable after anonymization and credential removal</span>
+    </div>
+
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/carolnakasuka" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/CarolNaka" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

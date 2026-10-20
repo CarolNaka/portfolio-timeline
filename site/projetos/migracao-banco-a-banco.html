@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Migração de Banco a Banco — Carolina Nakasuka</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="identity">
+      <div class="avatar" aria-hidden="true"><span class="avatar-initials">CN</span></div>
+      <div class="identity-text">
+        <span class="brand-name">Carolina Nakasuka</span>
+        <span class="brand-role" data-i18n="brand.role">Técnica em Banco de Dados</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="../index.html#sobre" data-i18n="nav.sobre">Sobre</a>
+      <a href="../index.html#experiencias" data-i18n="nav.experiencias">Experiências</a>
+      <a href="../index.html#trajetoria" data-i18n="nav.trajetoria">Trajetória</a>
+      <a href="../index.html#skills" data-i18n="nav.competencias">Skills</a>
+    </nav>
+    <div class="social-top">
+      <a href="https://www.linkedin.com/in/carolnakasuka" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/CarolNaka" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="lang-toggle">
+      <button id="btn-pt" class="lang-btn active" data-lang="pt">PT</button>
+      <button id="btn-en" class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero hero--compact">
+  <div class="container">
+    <a class="breadcrumb" href="../experiencias/legal-one.html" data-i18n="proj.voltar">Voltar para Legal One</a>
+    <p class="eyebrow" data-i18n="proj.eyebrow.migracao">Projeto · Migração</p>
+    <div data-lang-block="pt">
+      <h1>Migração de Banco a Banco entre Plataformas Jurídicas Concorrentes</h1>
+      <p class="subtitle">Astrea · Projuris · CPJ · CP-PRO → Legal One</p>
+    </div>
+    <div data-lang-block="en">
+      <h1>Database-to-Database Migration Between Competing Legal Platforms</h1>
+      <p class="subtitle">Astrea · Projuris · CPJ · CP-PRO → Legal One</p>
+    </div>
+    <div class="meta-row">
+      <span class="meta-chip" data-lang-block="pt">Migração</span>
+      <span class="meta-chip" data-lang-block="en">Migration</span>
+      <span class="meta-chip">SQL Server</span>
+      <span class="meta-chip">Git/GitHub</span>
+      <span class="meta-chip">PowerShell</span>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+  <article class="section prose">
+
+    <div data-lang-block="pt">
+      <h2>Visão geral</h2>
+      <p>Consultoria técnica em migração de dados entre plataformas jurídicas concorrentes e o Legal One — da extração direta em banco até a carga final, com pipeline documentado e versionado em repositório Git compartilhado com o time.</p>
+
+      <h2>Problema resolvido</h2>
+      <p>Trocar de sistema de gestão exige levar todo o histórico — contatos, processos, serviços, andamentos, posições financeiras — sem perder dados nem quebrar relações entre entidades. Acima de poucas centenas de registros, isso só funciona com um processo padronizado; sem ele, cada migração reinventa a lógica do zero.</p>
+
+      <h2>Contexto</h2>
+      <p>As migrações partiam de diferentes plataformas concorrentes (identificadas internamente como Astrea, Projuris, CPJ e CP-PRO, entre outras) com modelos de dados distintos entre si e diferentes do Legal One. O trabalho era executado via scripts SQL diretamente contra o banco de origem (abordagem "banco a banco"), complementado por um modelo de planilha padronizado (X-One) para os casos em que a extração direta não era possível.</p>
+
+      <h2>Minha atuação</h2>
+      <ul>
+        <li>Desenvolvimento e manutenção de scripts SQL de extração, organizados por módulo de dados (Contatos, Processos, Serviços).</li>
+        <li>Construção de rotinas de pré-tratamento no banco de origem e de pré-tratamento no banco de destino antes da carga (CPF duplicado, endereço, e-mail duplicado, cadastro de posições).</li>
+        <li>Execução de verificações de integridade e correções pós-carga.</li>
+        <li>Colaboração contínua em repositório Git compartilhado pelo time de migração, versionando scripts SQL e planilhas de tratamento "De/Para" por cliente.</li>
+        <li>Aplicação prática desse processo em projetos reais a partir de múltiplas plataformas concorrentes.</li>
+      </ul>
+
+      <h2>Tecnologias utilizadas</h2>
+      <div class="chip-list">
+        <span class="chip">SQL Server (T-SQL)</span>
+        <span class="chip">Git / GitHub</span>
+        <span class="chip">Excel (planilhas De/Para)</span>
+        <span class="chip">PowerShell</span>
+      </div>
+
+      <h2>Solução implementada</h2>
+      <p>O processo é estruturado como um <strong>pipeline de 4 fases</strong>, versionado em repositório Git compartilhado com o restante do time:</p>
+      <ul>
+        <li><strong>Pré-extração (banco de origem)</strong> — funções e tabelas temporárias auxiliares: máscara de número de processo (padrão CNJ), flags de cliente/parte, temporárias para etiquetas e envolvidos em audiências/eventos/prazos/tarefas.</li>
+        <li><strong>Extração por módulo</strong> — consultas organizadas em três módulos centrais: <strong>Contatos</strong> (dados cadastrais, endereços, telefones, grupos, subcontatos, usuários, andamentos, compromissos/tarefas), <strong>Processos</strong> (dados principais, apensos, classificações financeiras, contas judiciais, etiquetas, garantias, objetos, pedidos, posições, timesheet) e <strong>Serviços</strong> (dados principais, andamentos, classificações financeiras, compromissos/tarefas, vínculos).</li>
+        <li><strong>Pré-migração (banco de destino)</strong> — CPF duplicado, endereço, correção de posições de terceiros, cadastro de posições, e-mail duplicado.</li>
+        <li><strong>Pós-migração</strong> — checagem de integridade, inserção de etiquetas, vínculo de comentários de andamento às tarefas, correção de horário perdido na carga.</li>
+      </ul>
+
+      <h2>Processo técnico</h2>
+      <pre class="flow">Banco de origem (concorrente)
+  └─&gt; Pré-extração: funções auxiliares + tabelas temporárias
+       └─&gt; Extração por módulo (Contatos / Processos / Serviços) via SQL
+            └─&gt; Planilha "De/Para" (tratamento específico por cliente)
+                 └─&gt; Pré-migração no destino: CPF, endereço, e-mail, posições
+                      └─&gt; Carga no Legal One
+                           └─&gt; Pós-migração: integridade, etiquetas, vínculos, correções</pre>
+
+      <h2>Desafios e decisões</h2>
+      <ul>
+        <li><strong>Modelos de dados incompatíveis:</strong> cada plataforma de origem organiza contatos, processos e serviços de forma diferente — mapeamento manual de campo a campo e de relacionamento a relacionamento.</li>
+        <li><strong>Integridade referencial:</strong> campos derivados (ex.: se um contato é cliente ou parte) precisaram ser calculados via consultas específicas antes da extração.</li>
+        <li><strong>Volume de dados:</strong> em pelo menos um projeto, o script de carga ultrapassou 170 MB e precisou ser fracionado via PowerShell.</li>
+        <li><strong>Padronização vs. caso a caso:</strong> o pipeline é genérico e reutilizável, mas cada cliente exige ajustes pontuais, registrados sem comprometer o processo padrão.</li>
+      </ul>
+
+      <h2>Impacto e métricas</h2>
+      <table class="impact-table">
+        <tr><th>Métrica</th><th>Valor</th><th>Classificação</th></tr>
+        <tr><td>Módulos de dados cobertos pelo pipeline</td><td>3 módulos centrais, 40+ scripts SQL de extração</td><td>Comprovada</td></tr>
+        <tr><td>Scripts de pré/pós-tratamento</td><td>14 scripts dedicados</td><td>Comprovada</td></tr>
+        <tr><td>Contribuição pessoal no repositório compartilhado</td><td>92 commits, ~5 meses, 209 .sql + 34 .xlsx + 20 .json</td><td>Comprovada</td></tr>
+        <tr><td>Tamanho do time que mantém o repositório</td><td>18 colaboradores (1.291 commits no total)</td><td>Comprovada</td></tr>
+        <tr><td>Plataformas de origem atendidas</td><td>4 ou mais plataformas concorrentes distintas</td><td>Comprovada</td></tr>
+        <tr><td>Clientes atendidos em migração de banco a banco, via parceiros de revenda</td><td>25+</td><td>Comprovada</td></tr>
+        <tr><td>Maior volume tratado em um único projeto</td><td>~170 MB, fracionado em 44 arquivos</td><td>Comprovada</td></tr>
+      </table>
+
+      <h2>Competências demonstradas</h2>
+      <ul>
+        <li>Modelagem, extração e transformação de dados relacionais complexos (SQL Server).</li>
+        <li>Mapeamento de equivalência entre modelos de dados heterogêneos.</li>
+        <li>Construção de pipelines de ETL documentados, reprodutíveis e versionados.</li>
+        <li>Trabalho colaborativo em repositório Git compartilhado por um time técnico de ao menos 18 pessoas.</li>
+        <li>Tratamento de grandes volumes de dados e particionamento de execução.</li>
+      </ul>
+
+      <h2>Soft skills demonstradas</h2>
+      <ul>
+        <li><strong>Colaboração técnica em equipe:</strong> contribuição regular e sustentada em repositório compartilhado.</li>
+        <li><strong>Atenção a detalhes operacionais:</strong> documentação de regras simples e críticas para toda a equipe.</li>
+        <li><strong>Pensamento estruturado:</strong> pipeline organizado em fases claras e numeradas.</li>
+        <li><strong>Adaptação a contextos distintos:</strong> atuação sobre múltiplas plataformas de origem mantendo o mesmo padrão.</li>
+      </ul>
+
+      <h2>Pontos de melhoria e aprendizados</h2>
+      <ul>
+        <li>Faltava documentação textual explicando o pipeline para novos integrantes do time.</li>
+        <li>Métricas de volume de registros migrados por projeto não eram sistematicamente registradas.</li>
+        <li>Scripts de tratamento específico por cliente poderiam ser generalizados em parâmetros reutilizáveis.</li>
+      </ul>
+
+      <h2>Confidencialidade e anonimização</h2>
+      <p>Nomes de escritórios de advocacia (clientes) não são citados. Nomes de plataformas concorrentes e do destino (Legal One) são citados por autorização explícita da autora. Nomes de colegas de equipe não são citados. Nenhum dado real de linha de planilha, CPF, endereço ou contato foi reproduzido.</p>
+
+      <h2>Evidências disponíveis</h2>
+      <p>Histórico de commits do repositório Git compartilhado; estrutura de pastas e nomes de scripts SQL organizados por módulo; pastas de projeto por plataforma de origem, com planilhas de validação e logs de erro (metadados apenas).</p>
+
+      <h2>Status de publicação</h2>
+      <span class="status-badge">Publicável após anonimização</span>
+    </div>
+
+    <div data-lang-block="en">
+      <h2>Overview</h2>
+      <p>Technical consulting on data migration between competing legal platforms and Legal One — from direct database extraction to final load, with a documented pipeline version-controlled in a Git repository shared with the team.</p>
+
+      <h2>Problem solved</h2>
+      <p>Switching systems means bringing the entire history — contacts, cases, services, activity logs, financial positions — without losing data or breaking relationships between entities. Beyond a few hundred records, this only works with a standardized process; without one, every migration reinvents the logic from scratch.</p>
+
+      <h2>Context</h2>
+      <p>Migrations originated from several different competing platforms (internally identified as Astrea, Projuris, CPJ, and CP-PRO, among others), each with its own data model, all different from Legal One's. Work was executed via SQL scripts run directly against the source database, complemented by a standardized spreadsheet template (X-One) when direct extraction wasn't possible.</p>
+
+      <h2>My role</h2>
+      <ul>
+        <li>Development and maintenance of SQL extraction scripts, organized by data module (Contacts, Cases, Services).</li>
+        <li>Building pre-processing routines on the source database and pre-load processing on the target database (duplicate tax-ID, address, duplicate email, position registration).</li>
+        <li>Running post-load integrity checks and corrections.</li>
+        <li>Ongoing collaboration in a shared Git repository, versioning SQL scripts and client-specific mapping spreadsheets.</li>
+        <li>Practical application of this process across real migration projects from multiple competing platforms.</li>
+      </ul>
+
+      <h2>Technologies used</h2>
+      <div class="chip-list">
+        <span class="chip">SQL Server (T-SQL)</span>
+        <span class="chip">Git / GitHub</span>
+        <span class="chip">Excel (mapping spreadsheets)</span>
+        <span class="chip">PowerShell</span>
+      </div>
+
+      <h2>Solution implemented</h2>
+      <p>The process is structured as a <strong>4-phase pipeline</strong>, version-controlled in a shared Git repository:</p>
+      <ul>
+        <li><strong>Pre-extraction (source database)</strong> — helper functions and temporary tables: case-number masking (CNJ standard), client/party flags, temporaries for tags and people involved in hearings/events/deadlines/tasks.</li>
+        <li><strong>Extraction by module</strong> — queries organized into three core modules: <strong>Contacts</strong>, <strong>Cases</strong>, and <strong>Services</strong>.</li>
+        <li><strong>Pre-migration (target database)</strong> — duplicate tax-ID, address, third-party position correction, position registration, duplicate email.</li>
+        <li><strong>Post-migration</strong> — integrity checks, tag insertion, linking activity-log comments to tasks, fixing time inconsistencies.</li>
+      </ul>
+
+      <h2>Technical process</h2>
+      <pre class="flow">Source database (competitor platform)
+  └─&gt; Pre-extraction: helper functions + temporary tables
+       └─&gt; Extraction by module (Contacts / Cases / Services) via SQL
+            └─&gt; "Mapping" spreadsheet (client-specific treatment)
+                 └─&gt; Pre-migration on target: tax ID, address, email, positions
+                      └─&gt; Load into Legal One
+                           └─&gt; Post-migration: integrity, tags, links, corrections</pre>
+
+      <h2>Challenges and decisions</h2>
+      <ul>
+        <li><strong>Incompatible data models:</strong> every field and relationship had to be manually mapped for equivalence.</li>
+        <li><strong>Referential integrity:</strong> derived fields had to be computed via dedicated queries before extraction.</li>
+        <li><strong>Data volume:</strong> on one project, the load script exceeded 170 MB and had to be split via PowerShell.</li>
+        <li><strong>Standardization vs. case-by-case needs:</strong> the pipeline stays generic while allowing documented exceptions.</li>
+      </ul>
+
+      <h2>Impact and metrics</h2>
+      <table class="impact-table">
+        <tr><th>Metric</th><th>Value</th><th>Classification</th></tr>
+        <tr><td>Data modules covered</td><td>3 core modules, 40+ SQL extraction scripts</td><td>Confirmed</td></tr>
+        <tr><td>Pre/post-processing scripts</td><td>14 dedicated scripts</td><td>Confirmed</td></tr>
+        <tr><td>Personal contribution to the shared repository</td><td>92 commits, ~5 months, 209 .sql + 34 .xlsx + 20 .json</td><td>Confirmed</td></tr>
+        <tr><td>Size of the team maintaining the repository</td><td>18 contributors (1,291 total commits)</td><td>Confirmed</td></tr>
+        <tr><td>Source platforms handled</td><td>4+ distinct competing platforms</td><td>Confirmed</td></tr>
+        <tr><td>Clients served in database-to-database migration, via reseller partners</td><td>25+</td><td>Confirmed</td></tr>
+        <tr><td>Largest data volume in a single project</td><td>~170 MB, split into 44 files</td><td>Confirmed</td></tr>
+      </table>
+
+      <h2>Skills demonstrated</h2>
+      <ul>
+        <li>Modeling, extraction, and transformation of complex relational data.</li>
+        <li>Mapping equivalence between heterogeneous data models.</li>
+        <li>Building documented, reproducible, version-controlled ETL pipelines.</li>
+        <li>Collaborative work in a shared repository with 18+ people.</li>
+        <li>Handling large data volumes and partitioning execution.</li>
+      </ul>
+
+      <h2>Soft skills demonstrated</h2>
+      <ul>
+        <li><strong>Team technical collaboration:</strong> regular, sustained contribution to a shared repository.</li>
+        <li><strong>Attention to operational detail:</strong> documenting simple but critical rules for the whole team.</li>
+        <li><strong>Structured thinking:</strong> pipeline organized into clear, numbered phases.</li>
+        <li><strong>Adaptability:</strong> working across multiple source platforms with the same process standard.</li>
+      </ul>
+
+      <h2>Improvement points and lessons learned</h2>
+      <ul>
+        <li>Missing written documentation for new team members.</li>
+        <li>Records-migrated metrics weren't systematically tracked.</li>
+        <li>Client-specific scripts could be generalized into reusable parameters.</li>
+      </ul>
+
+      <h2>Confidentiality and anonymization</h2>
+      <p>Law firm names are not disclosed. Competing-platform and target-platform (Legal One) names are disclosed with the author's explicit authorization. Teammate names are not disclosed. No real spreadsheet row data, tax IDs, addresses, or contact details were reproduced.</p>
+
+      <h2>Available evidence</h2>
+      <p>Commit history of the shared Git repository; folder structure and SQL script names organized by module; project folders by source platform, with validation spreadsheets and error logs (metadata only).</p>
+
+      <h2>Publication status</h2>
+      <span class="status-badge">Publishable after anonymization</span>
+    </div>
+
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/carolnakasuka" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/CarolNaka" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

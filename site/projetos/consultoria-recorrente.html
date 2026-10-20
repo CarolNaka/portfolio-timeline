@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultoria Recorrente — Carolina Nakasuka</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="identity">
+      <div class="avatar" aria-hidden="true"><span class="avatar-initials">CN</span></div>
+      <div class="identity-text">
+        <span class="brand-name">Carolina Nakasuka</span>
+        <span class="brand-role" data-i18n="brand.role">Técnica em Banco de Dados</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="../index.html#sobre" data-i18n="nav.sobre">Sobre</a>
+      <a href="../index.html#experiencias" data-i18n="nav.experiencias">Experiências</a>
+      <a href="../index.html#trajetoria" data-i18n="nav.trajetoria">Trajetória</a>
+      <a href="../index.html#skills" data-i18n="nav.competencias">Skills</a>
+    </nav>
+    <div class="social-top">
+      <a href="https://www.linkedin.com/in/carolnakasuka" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/CarolNaka" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="lang-toggle">
+      <button id="btn-pt" class="lang-btn active" data-lang="pt">PT</button>
+      <button id="btn-en" class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero hero--compact">
+  <div class="container">
+    <a class="breadcrumb" href="../experiencias/legal-one.html" data-i18n="proj.voltar">Voltar para Legal One</a>
+    <p class="eyebrow" data-i18n="proj.eyebrow.consultoria">Projeto · Consultoria</p>
+    <div data-lang-block="pt">
+      <h1>Consultoria Recorrente em Banco de Dados</h1>
+      <p class="subtitle">Ajustes pós-migração no Legal One, com segurança operacional</p>
+    </div>
+    <div data-lang-block="en">
+      <h1>Recurring Database Consulting</h1>
+      <p class="subtitle">Post-migration adjustments in Legal One, with operational safety</p>
+    </div>
+    <div class="meta-row">
+      <span class="meta-chip" data-lang-block="pt">Consultoria</span>
+      <span class="meta-chip" data-lang-block="en">Consulting</span>
+      <span class="meta-chip">SQL Server</span>
+      <span class="meta-chip">Legal One</span>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+  <article class="section prose">
+
+    <div data-lang-block="pt">
+      <h2>Visão geral</h2>
+      <p>Suporte técnico recorrente a clientes já migrados para o Legal One: correções e ajustes diretamente em produção, sempre com plano de reversão (rollback) documentado.</p>
+
+      <h2>Problema resolvido</h2>
+      <p>Depois da migração, surgem necessidades que a interface do sistema não resolve: dados que vieram errados, regras de negócio específicas, baixa em massa de processos. Isso exige alterar o banco de produção diretamente — uma operação de risco, que precisa de rigor técnico e de um caminho de reversão.</p>
+
+      <h2>Contexto</h2>
+      <p>Essas demandas chegavam de forma recorrente, uma por cliente, sempre com aprovação formal por e-mail antes da execução. Cada caso tinha sua própria particularidade, mas o processo de execução seguia sempre o mesmo padrão de segurança.</p>
+
+      <h2>Minha atuação</h2>
+      <ul>
+        <li>Recebimento e interpretação de solicitações de ajuste vindas de clientes já migrados.</li>
+        <li>Escrita de scripts SQL personalizados (correção de dados, baixa de processos, ajuste de centro de custo, ajuste de tipo de ação, reorganização de objetos).</li>
+        <li>Criação de um script "declarativo" de diagnóstico antes de qualquer alteração.</li>
+        <li>Execução do script de atualização em produção somente após aprovação formal.</li>
+        <li>Criação de um script de rollback para cada ajuste realizado.</li>
+        <li>Comunicação técnica com áreas internas e registro formal de aprovação por e-mail.</li>
+      </ul>
+
+      <h2>Tecnologias utilizadas</h2>
+      <div class="chip-list">
+        <span class="chip">SQL Server (T-SQL)</span>
+        <span class="chip">E-mail (aprovação)</span>
+        <span class="chip">Excel (conferência)</span>
+      </div>
+
+      <h2>Solução implementada</h2>
+      <p>Cada demanda segue um <strong>padrão de 3 arquivos</strong>, repetido de forma consistente:</p>
+      <ul>
+        <li><strong>Script declarativo</strong> — levanta e lista exatamente quais registros serão afetados, sem alterar nada, servindo de base para aprovação.</li>
+        <li><strong>Script de execução</strong> — aplica a alteração em produção, já validada e aprovada.</li>
+        <li><strong>Script de rollback</strong> — reverte exatamente a alteração feita, preparado antes da execução do ajuste, não depois.</li>
+      </ul>
+      <p>Esse padrão transforma uma operação arriscada em um processo auditável e reversível.</p>
+
+      <h2>Processo técnico</h2>
+      <pre class="flow">Solicitação do cliente (e-mail)
+  └─&gt; Script declarativo (diagnóstico / escopo do impacto)
+       └─&gt; Aprovação formal por e-mail
+            └─&gt; Script de execução (update em produção)
+                 └─&gt; Script de rollback já preparado (plano de reversão)</pre>
+
+      <h2>Desafios e decisões</h2>
+      <ul>
+        <li><strong>Risco de alteração em produção:</strong> sempre preparar um script de rollback antes de executar mitiga esse risco sistematicamente.</li>
+        <li><strong>Diversidade de demandas:</strong> cada cliente trazia uma regra de negócio diferente, exigindo leitura cuidadosa antes de traduzir em SQL.</li>
+        <li><strong>Necessidade de rastreabilidade:</strong> aprovação formal por e-mail garante histórico de quem autorizou o quê.</li>
+      </ul>
+
+      <h2>Impacto e métricas</h2>
+      <table class="impact-table">
+        <tr><th>Métrica</th><th>Valor</th><th>Classificação</th></tr>
+        <tr><td>Clientes atendidos com este padrão (pasta principal)</td><td>20 escritórios distintos</td><td>Comprovada</td></tr>
+        <tr><td>Casos adicionais via parceria/canal indireto</td><td>3+</td><td>Comprovada</td></tr>
+        <tr><td>Cobertura do padrão declarativo → execução → rollback</td><td>100% dos casos revisados</td><td>Comprovada</td></tr>
+        <tr><td>Scripts de correção produzidos nos últimos 2 anos</td><td>~60 a 80 (estimativa)</td><td>Estimada</td></tr>
+      </table>
+
+      <h2>Competências demonstradas</h2>
+      <ul>
+        <li>Escrita de SQL de diagnóstico, atualização e reversão para cenários de produção.</li>
+        <li>Avaliação de risco antes de intervenções diretas em banco de dados ativo.</li>
+        <li>Interpretação de regras de negócio jurídicas e tradução para lógica de banco de dados.</li>
+        <li>Disciplina de documentação técnica mínima viável, suficiente para auditoria e reversão.</li>
+      </ul>
+
+      <h2>Soft skills demonstradas</h2>
+      <ul>
+        <li><strong>Gestão de risco em ambiente sensível:</strong> plano de reversão sistemático, mesmo sob pressão de prazo.</li>
+        <li><strong>Comunicação técnica:</strong> tradução de pedidos de negócio em escopo técnico validado por e-mail.</li>
+        <li><strong>Confiabilidade e consistência:</strong> mesmo padrão de segurança independentemente do cliente.</li>
+        <li><strong>Autonomia:</strong> condução ponta a ponta de cada demanda.</li>
+      </ul>
+
+      <h2>Pontos de melhoria e aprendizados</h2>
+      <ul>
+        <li>Processo manual — poderia evoluir para templates parametrizáveis para ajustes recorrentes.</li>
+        <li>Sem repositório centralizado único com todos os casos de consultoria recorrente.</li>
+        <li>Sem métricas sistemáticas de tempo de atendimento ou volume de registros afetados.</li>
+      </ul>
+
+      <h2>Confidencialidade e anonimização</h2>
+      <p>Nenhum nome de escritório de advocacia é citado. Conteúdo de e-mails de aprovação não é reproduzido. Nenhum dado real de produção é reproduzido.</p>
+
+      <h2>Evidências disponíveis</h2>
+      <p>Estrutura de pastas por cliente, cada uma contendo os 3 arquivos do padrão declarativo/execução/rollback; e-mails de solicitação e aprovação (metadados de existência apenas).</p>
+
+      <h2>Status de publicação</h2>
+      <span class="status-badge">Publicável após anonimização</span>
+    </div>
+
+    <div data-lang-block="en">
+      <h2>Overview</h2>
+      <p>Ongoing technical support for Legal One clients already migrated: corrections and adjustments directly in production, always with a documented rollback plan.</p>
+
+      <h2>Problem solved</h2>
+      <p>After migration, needs come up that the system's interface can't resolve: incorrectly loaded data, specific business rules, bulk case closures. These require direct changes to the production database — a risky operation that demands rigor and a rollback path.</p>
+
+      <h2>Context</h2>
+      <p>These requests arrived on a recurring basis, one per client, always with formal email approval before execution. Each case had its own specifics, but the execution process always followed the same safety standard.</p>
+
+      <h2>My role</h2>
+      <ul>
+        <li>Receiving and interpreting adjustment requests from clients already migrated.</li>
+        <li>Writing custom SQL scripts (data correction, case closure, cost-center adjustment, case-type adjustment, object reorganization).</li>
+        <li>Creating a "declarative" diagnostic script before any change.</li>
+        <li>Executing the update script in production only after formal approval.</li>
+        <li>Creating a rollback script for every adjustment made.</li>
+        <li>Technical communication with internal teams and formal email approval records.</li>
+      </ul>
+
+      <h2>Technologies used</h2>
+      <div class="chip-list">
+        <span class="chip">SQL Server (T-SQL)</span>
+        <span class="chip">Email (approval)</span>
+        <span class="chip">Excel (review)</span>
+      </div>
+
+      <h2>Solution implemented</h2>
+      <p>Each request follows a <strong>3-file pattern</strong>, applied consistently:</p>
+      <ul>
+        <li><strong>Declarative script</strong> — identifies and lists exactly which records will be affected, without changing anything, for review and approval.</li>
+        <li><strong>Execution script</strong> — applies the validated, approved change to production.</li>
+        <li><strong>Rollback script</strong> — reverts exactly the change made, prepared before executing the adjustment, not after.</li>
+      </ul>
+      <p>This pattern turns a risky operation into an auditable, reversible process.</p>
+
+      <h2>Technical process</h2>
+      <pre class="flow">Client request (email)
+  └─&gt; Declarative script (diagnosis / scope of impact)
+       └─&gt; Formal email approval
+            └─&gt; Execution script (production update)
+                 └─&gt; Rollback script already prepared (reversal plan)</pre>
+
+      <h2>Challenges and decisions</h2>
+      <ul>
+        <li><strong>Production change risk:</strong> always preparing a rollback script before executing systematically mitigates this risk.</li>
+        <li><strong>Request diversity:</strong> each client brought a different business rule, requiring careful reading before translating into SQL.</li>
+        <li><strong>Need for traceability:</strong> formal email approval ensures a record of who authorized what.</li>
+      </ul>
+
+      <h2>Impact and metrics</h2>
+      <table class="impact-table">
+        <tr><th>Metric</th><th>Value</th><th>Classification</th></tr>
+        <tr><td>Clients served under this pattern (main folder)</td><td>20 distinct law firms</td><td>Confirmed</td></tr>
+        <tr><td>Additional cases via partner channel</td><td>3+</td><td>Confirmed</td></tr>
+        <tr><td>Coverage of declarative → execution → rollback pattern</td><td>100% of reviewed cases</td><td>Confirmed</td></tr>
+        <tr><td>Correction scripts produced over the last 2 years</td><td>~60–80 (estimate)</td><td>Estimated</td></tr>
+      </table>
+
+      <h2>Skills demonstrated</h2>
+      <ul>
+        <li>Writing diagnostic, update, and rollback SQL for live production scenarios.</li>
+        <li>Risk assessment before direct interventions on an active database.</li>
+        <li>Interpreting legal-business rules and translating them into database logic.</li>
+        <li>Minimal-viable technical documentation discipline, sufficient for audit and rollback.</li>
+      </ul>
+
+      <h2>Soft skills demonstrated</h2>
+      <ul>
+        <li><strong>Risk management in sensitive environments:</strong> systematic rollback plan, even under deadline pressure.</li>
+        <li><strong>Technical communication:</strong> translating business requests into validated technical scope.</li>
+        <li><strong>Reliability and consistency:</strong> same safety standard regardless of client.</li>
+        <li><strong>Autonomy:</strong> end-to-end ownership of each request.</li>
+      </ul>
+
+      <h2>Improvement points and lessons learned</h2>
+      <ul>
+        <li>Manual process — could evolve into parameterized templates for recurring adjustments.</li>
+        <li>No single centralized repository for all recurring consulting cases.</li>
+        <li>No systematic metrics on turnaround time or affected record volume.</li>
+      </ul>
+
+      <h2>Confidentiality and anonymization</h2>
+      <p>No law firm names are disclosed. Approval email content is not reproduced. No real production data is reproduced.</p>
+
+      <h2>Available evidence</h2>
+      <p>Folder structure by client, each containing the 3 files of the declarative/execution/rollback pattern; request and approval emails (existence metadata only).</p>
+
+      <h2>Publication status</h2>
+      <span class="status-badge">Publishable after anonymization</span>
+    </div>
+
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/carolnakasuka" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/CarolNaka" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

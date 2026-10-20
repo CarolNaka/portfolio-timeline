@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automações SQL e VBA — Carolina Nakasuka</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="identity">
+      <div class="avatar" aria-hidden="true"><span class="avatar-initials">CN</span></div>
+      <div class="identity-text">
+        <span class="brand-name">Carolina Nakasuka</span>
+        <span class="brand-role" data-i18n="brand.role">Técnica em Banco de Dados</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="../index.html#sobre" data-i18n="nav.sobre">Sobre</a>
+      <a href="../index.html#experiencias" data-i18n="nav.experiencias">Experiências</a>
+      <a href="../index.html#trajetoria" data-i18n="nav.trajetoria">Trajetória</a>
+      <a href="../index.html#skills" data-i18n="nav.competencias">Skills</a>
+    </nav>
+    <div class="social-top">
+      <a href="https://www.linkedin.com/in/carolnakasuka" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/CarolNaka" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="lang-toggle">
+      <button id="btn-pt" class="lang-btn active" data-lang="pt">PT</button>
+      <button id="btn-en" class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero hero--compact">
+  <div class="container">
+    <a class="breadcrumb" href="../experiencias/legal-one.html" data-i18n="proj.voltar">Voltar para Legal One</a>
+    <p class="eyebrow" data-i18n="proj.eyebrow.automacao">Projeto · Automação</p>
+    <div data-lang-block="pt">
+      <h1>Automações SQL e VBA de Produtividade</h1>
+      <p class="subtitle">Deduplicação de dados e validação estrutural de planilhas</p>
+    </div>
+    <div data-lang-block="en">
+      <h1>SQL and VBA Productivity Automations</h1>
+      <p class="subtitle">Data deduplication and structural spreadsheet validation</p>
+    </div>
+    <div class="meta-row">
+      <span class="meta-chip">SQL Server</span>
+      <span class="meta-chip">VBA</span>
+      <span class="meta-chip">Excel</span>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+  <article class="section prose">
+
+    <div data-lang-block="pt">
+      <h2>Visão geral</h2>
+      <p>Scripts SQL e macros VBA para produtividade no dia a dia de migração e consultoria: deduplicação de dados, extração direcionada e validação estrutural de planilhas antes da carga.</p>
+
+      <h2>Problema resolvido</h2>
+      <p>Tarefas repetitivas de verificação e limpeza de dados (checar formato de planilha, remover duplicidade de CPF, extrair responsáveis de uma base) consomem tempo manual e são propensas a erro humano quando feitas "na mão".</p>
+
+      <h2>Contexto</h2>
+      <p>Esses scripts foram criados ao longo de diferentes projetos de migração e consultoria, como ferramentas de apoio pontuais — uma caixa de ferramentas reutilizável para acelerar etapas específicas do processo.</p>
+
+      <h2>Minha atuação</h2>
+      <ul>
+        <li>Escrita de scripts SQL para eliminação de duplicidade de contatos e de CPF em bases migradas.</li>
+        <li>Escrita de scripts SQL de extração direcionada (ex.: extração de responsáveis).</li>
+        <li>Desenvolvimento de macros VBA para validar, aba a aba, se uma planilha de migração segue a estrutura esperada pelo Legal One.</li>
+      </ul>
+
+      <h2>Tecnologias utilizadas</h2>
+      <div class="chip-list">
+        <span class="chip">SQL Server (T-SQL)</span>
+        <span class="chip">VBA</span>
+        <span class="chip">Excel</span>
+      </div>
+
+      <h2>Solução implementada</h2>
+      <p><strong>Scripts SQL de deduplicação e extração:</strong></p>
+      <ul>
+        <li><code>elimina_duplicidade_contatos.sql</code> e <code>tira_duplicidade_cpf.sql</code> — identificam e tratam registros duplicados por CPF antes da carga final.</li>
+        <li><code>extrai_responsaveis.sql</code> — consulta direcionada para extrair a relação de responsáveis de uma base de origem.</li>
+      </ul>
+      <p><strong>Validador de planilha em VBA:</strong> um conjunto de ~7 macros (<code>CONFERE_CONTATOS.VBA</code> e correlatos) percorre cada aba de uma planilha de migração padrão e compara a estrutura de colunas com o padrão esperado, sinalizando divergências antes do envio para carga.</p>
+
+      <h2>Processo técnico</h2>
+      <pre class="flow">Planilha de migração preenchida
+  └─&gt; Macro VBA percorre cada aba
+       └─&gt; Compara colunas encontradas x estrutura esperada
+            └─&gt; Sinaliza divergências antes do envio para carga
+
+Base de origem (concorrente) ou já migrada
+  └─&gt; Script SQL de deduplicação / extração direcionada
+       └─&gt; Base tratada, pronta para a próxima etapa</pre>
+
+      <h2>Desafios e decisões</h2>
+      <ul>
+        <li><strong>Padronização sem sistema central:</strong> scripts simples e diretos priorizaram velocidade de entrega.</li>
+        <li><strong>Validação antecipada:</strong> o validador VBA foi pensado para pegar erros de estrutura antes da carga, evitando retrabalho.</li>
+      </ul>
+
+      <h2>Impacto e métricas</h2>
+      <table class="impact-table">
+        <tr><th>Métrica</th><th>Valor</th><th>Classificação</th></tr>
+        <tr><td>Macros VBA de validação de planilha</td><td>7 macros</td><td>Comprovada</td></tr>
+        <tr><td>Scripts SQL de deduplicação/extração</td><td>3 scripts distintos</td><td>Comprovada</td></tr>
+        <tr><td>Redução de retrabalho na etapa de carga</td><td>Esperada, não medida numericamente</td><td>Estimativa</td></tr>
+      </table>
+
+      <h2>Competências demonstradas</h2>
+      <ul>
+        <li>Escrita de SQL de tratamento e deduplicação de dados.</li>
+        <li>Programação VBA para automação de validação em Excel.</li>
+        <li>Pensamento preventivo: validar estrutura antes da etapa crítica.</li>
+      </ul>
+
+      <h2>Soft skills demonstradas</h2>
+      <ul>
+        <li><strong>Foco em produtividade e melhoria contínua:</strong> ferramentas para eliminar tarefas manuais repetitivas.</li>
+        <li><strong>Proatividade:</strong> antecipação de problemas antes que afetem etapas posteriores.</li>
+      </ul>
+
+      <h2>Pontos de melhoria e aprendizados</h2>
+      <ul>
+        <li>Scripts distribuídos em pastas de projeto distintas, sem catálogo central.</li>
+        <li>Sem testes automatizados para os scripts SQL.</li>
+      </ul>
+
+      <h2>Confidencialidade e anonimização</h2>
+      <p>Nenhum nome de cliente é citado. Nenhum dado real de planilha ou de banco é reproduzido.</p>
+
+      <h2>Evidências disponíveis</h2>
+      <p>Scripts SQL e macros VBA identificados em pastas de projeto (nomes de arquivo e estrutura, sem conteúdo de dados).</p>
+
+      <h2>Status de publicação</h2>
+      <span class="status-badge">Publicável após anonimização</span>
+    </div>
+
+    <div data-lang-block="en">
+      <h2>Overview</h2>
+      <p>SQL scripts and VBA macros for day-to-day productivity in migration and consulting: data deduplication, targeted extraction, and structural spreadsheet validation before loading.</p>
+
+      <h2>Problem solved</h2>
+      <p>Repetitive data-checking and cleanup tasks (checking spreadsheet format, removing duplicate tax IDs, extracting responsible parties) consume manual time and are prone to human error when done by hand.</p>
+
+      <h2>Context</h2>
+      <p>These scripts were created across different migration and consulting projects as targeted support tools — a reusable toolbox to speed up specific process steps.</p>
+
+      <h2>My role</h2>
+      <ul>
+        <li>Writing SQL scripts to eliminate duplicate contacts and duplicate tax IDs in migrated databases.</li>
+        <li>Writing targeted SQL extraction scripts (e.g., extracting responsible parties).</li>
+        <li>Developing VBA macros to validate, sheet by sheet, whether a migration spreadsheet follows the structure expected by Legal One.</li>
+      </ul>
+
+      <h2>Technologies used</h2>
+      <div class="chip-list">
+        <span class="chip">SQL Server (T-SQL)</span>
+        <span class="chip">VBA</span>
+        <span class="chip">Excel</span>
+      </div>
+
+      <h2>Solution implemented</h2>
+      <p><strong>Deduplication and extraction SQL scripts:</strong></p>
+      <ul>
+        <li><code>elimina_duplicidade_contatos.sql</code> and <code>tira_duplicidade_cpf.sql</code> — identify and treat duplicate records by tax ID before the final load.</li>
+        <li><code>extrai_responsaveis.sql</code> — targeted query to extract the list of responsible parties from a source database.</li>
+      </ul>
+      <p><strong>VBA spreadsheet validator:</strong> a set of ~7 macros (<code>CONFERE_CONTATOS.VBA</code> and related files) walks through each sheet of a standard migration spreadsheet and compares the column structure against the expected standard, flagging discrepancies before submission for loading.</p>
+
+      <h2>Technical process</h2>
+      <pre class="flow">Completed migration spreadsheet
+  └─&gt; VBA macro walks through each sheet
+       └─&gt; Compares found columns against expected structure
+            └─&gt; Flags discrepancies before submission for loading
+
+Source database (competitor) or already-migrated database
+  └─&gt; SQL deduplication / targeted extraction script
+       └─&gt; Treated database, ready for the next process step</pre>
+
+      <h2>Challenges and decisions</h2>
+      <ul>
+        <li><strong>Standardization without a central system:</strong> simple, direct scripts prioritized delivery speed.</li>
+        <li><strong>Early validation:</strong> the VBA validator was designed to catch structural errors before loading, avoiding rework.</li>
+      </ul>
+
+      <h2>Impact and metrics</h2>
+      <table class="impact-table">
+        <tr><th>Metric</th><th>Value</th><th>Classification</th></tr>
+        <tr><td>Spreadsheet-validation VBA macros</td><td>7 macros</td><td>Confirmed</td></tr>
+        <tr><td>Deduplication/extraction SQL scripts</td><td>3 distinct scripts</td><td>Confirmed</td></tr>
+        <tr><td>Rework reduction at the loading stage</td><td>Expected, not numerically measured</td><td>Estimate</td></tr>
+      </table>
+
+      <h2>Skills demonstrated</h2>
+      <ul>
+        <li>Writing SQL for data treatment and deduplication.</li>
+        <li>VBA programming for Excel validation automation.</li>
+        <li>Preventive thinking: validating structure before the critical step.</li>
+      </ul>
+
+      <h2>Soft skills demonstrated</h2>
+      <ul>
+        <li><strong>Focus on productivity and continuous improvement:</strong> tools to eliminate repetitive manual tasks.</li>
+        <li><strong>Proactivity:</strong> anticipating problems before they affect later process steps.</li>
+      </ul>
+
+      <h2>Improvement points and lessons learned</h2>
+      <ul>
+        <li>Scripts scattered across different project folders, with no central catalog.</li>
+        <li>No automated tests for the SQL scripts.</li>
+      </ul>
+
+      <h2>Confidentiality and anonymization</h2>
+      <p>No client names are disclosed. No real spreadsheet or database data is reproduced.</p>
+
+      <h2>Available evidence</h2>
+      <p>SQL scripts and VBA macros identified in project folders (file names and structure, no data content).</p>
+
+      <h2>Publication status</h2>
+      <span class="status-badge">Publishable after anonymization</span>
+    </div>
+
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/carolnakasuka" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/CarolNaka" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
