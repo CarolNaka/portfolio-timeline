@@ -11,11 +11,7 @@
 <header class="topbar">
   <div class="container topbar-inner">
     <div class="identity">
-      <div class="avatar" aria-hidden="true">
-        <!-- Quando tiver uma foto, substitua a linha abaixo por:
-             <img src="assets/foto.jpg" alt="Carolina Nakasuka" class="avatar-img"> -->
-        <span class="avatar-initials">CN</span>
-      </div>
+      <div class="avatar"><img src="assets/perfil-avatar.jpg" alt="" class="avatar-img" width="38" height="38"></div>
       <div class="identity-text">
         <span class="brand-name">Carolina Nakasuka</span>
         <span class="brand-role" data-i18n="brand.role">Técnica em Banco de Dados</span>
@@ -39,38 +35,109 @@
 </header>
 
 <section class="hero">
+  <div class="hero-dots" aria-hidden="true"></div>
   <div class="container hero-flex">
-    <div class="hero-avatar" aria-hidden="true">
-      <!-- Quando tiver uma foto, substitua a linha abaixo por:
-           <img src="assets/foto.jpg" alt="Carolina Nakasuka" class="avatar-img"> -->
-      <span class="avatar-initials">CN</span>
-    </div>
     <div class="hero-text">
       <p class="eyebrow" data-i18n="hero.eyebrow">Portfólio Técnico</p>
-      <h1>Carolina Nakasuka</h1>
+      <h1>Carolina <span class="h1-accent">Nakasuka</span></h1>
       <p class="subtitle" data-i18n="hero.title">Banco de dados, automação e integração de pipelines</p>
       <p class="tech-list" data-i18n="hero.subtitle">SQL Server · Azure Data Factory · Automação · Migração de Dados</p>
       <p class="notice" data-i18n="hero.personal">Gosto de pegar um processo manual, cheio de gargalos, e transformá-lo em algo simples, seguro e replicável por qualquer pessoa do time.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#experiencias" data-i18n="hero.ctaExperiencias">Ver experiências</a>
+        <a class="btn btn--ghost" href="https://www.linkedin.com/in/carolnakasuka" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn--ghost" href="https://github.com/CarolNaka" target="_blank" rel="noopener">GitHub</a>
+      </div>
     </div>
+
+    <!-- Retrato: foto como elemento principal, geometria como complemento -->
+    <div class="hero-portrait">
+      <div class="portrait-glow" aria-hidden="true"></div>
+      <div class="portrait-frame" aria-hidden="true"></div>
+      <figure class="portrait">
+        <img src="assets/perfil.jpg" alt="Carolina Nakasuka" width="960" height="1200" fetchpriority="high">
+      </figure>
+      <svg class="portrait-cube" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2">
+        <polygon points="50,6 88,28 88,72 50,94 12,72 12,28"/>
+        <path d="M12 28 L50 50 L88 28 M50 50 L50 94"/>
+        <polygon points="50,6 88,28 50,50 12,28" fill="currentColor" fill-opacity="0.12"/>
+      </svg>
+      <svg class="portrait-lines" viewBox="0 0 220 120" aria-hidden="true" fill="none">
+        <path d="M0 100 C 60 30, 140 130, 220 20" stroke="#00C7D9" stroke-opacity="0.45" stroke-width="1"/>
+        <path d="M0 60 C 70 10, 120 110, 220 60" stroke="#008CFF" stroke-opacity="0.35" stroke-width="1"/>
+      </svg>
+      <div class="portrait-badge">
+        <span class="portrait-badge-dot" aria-hidden="true"></span>
+        <span data-i18n="hero.badge">Estágio em Dados · Thomson Reuters</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <ul class="hero-facts">
+      <li><strong>30+</strong><span data-i18n="hero.fact1">clientes atendidos</span></li>
+      <li><strong>25+</strong><span data-i18n="hero.fact2">migrações banco a banco</span></li>
+      <li><strong>92</strong><span data-i18n="hero.fact3">commits em ~5 meses</span></li>
+      <li><strong>8</strong><span data-i18n="hero.fact4">scripts Python próprios</span></li>
+    </ul>
   </div>
 </section>
 
 <main class="container">
 
   <section id="sobre" class="section">
-    <h2 data-i18n="sobre.titulo">Sobre mim</h2>
-    <p data-i18n="sobre.p1">Atuação como consultora técnica em projetos de migração de dados entre sistemas de gestão jurídica concorrentes (Astrea, Projuris, CPJ, CP-PRO) e o Legal One, além de consultoria recorrente em banco de dados e desenvolvimento de ferramentas próprias de automação.</p>
-    <p data-i18n="sobre.p2">Destaque para a criação, por iniciativa própria, de uma ferramenta de saneamento de contatos duplicados (Python + Selenium), distribuída como executável para consultores em campo — eliminando a dependência de outro time para esse tipo de ajuste.</p>
-    <p data-i18n="sobre.p3">Mais de 30 clientes atendidos ao longo da carreira, com contribuição ativa e sustentada (92 commits em ~5 meses) em um repositório de migração mantido por um time de 18 pessoas.</p>
+    <div class="section-head">
+      <span class="section-index" aria-hidden="true">01</span>
+      <h2 data-i18n="sobre.titulo">Sobre mim</h2>
+    </div>
+    <div class="sobre-grid">
+      <div class="sobre-text">
+        <p data-i18n="sobre.p1">Sou estagiária de dados na Thomson Reuters e atuo com migração e mapeamento de bases de dados para o Legal One, a partir de plataformas concorrentes como Astrea, Projuris, CPJ e CP-PRO. No dia a dia, desenvolvo scripts em SQL Server, apoio execuções em pipelines e acompanho processos no Azure Data Factory, analisando logs e corrigindo erros até a entrega final com dados consistentes.</p>
+        <p data-i18n="sobre.p2">Em mais de 30 clientes atendidos, 25+ foram migrações de banco a banco e cerca de 23 seguiram em consultoria recorrente. Mantenho um padrão de segurança em cada correção em produção (script declarativo, de execução e de rollback) e contribuí com 92 commits em ~5 meses em um repositório de migração mantido por um time de 18 pessoas, com mais de 40 scripts SQL de extração organizados por módulo.</p>
+        <p data-i18n="sobre.p3">Também crio ferramentas para ganhar produtividade: 8 scripts Python próprios, 7 macros VBA de validação de planilhas e o Unificador de Contatos (Python + Selenium), que idealizei e desenvolvi e hoje é usado por outros consultores em campo. Meu interesse agora é aprofundar automação e integração de sistemas, construindo processos mais escaláveis e confiáveis.</p>
+      </div>
+      <aside class="solve-card">
+        <p class="solve-title" data-i18n="sobre.resolvoTitulo">Problemas que sei resolver</p>
+        <ol class="solve-list">
+          <li>
+            <strong data-i18n="sobre.resolvo1t">Migrar dados entre sistemas</strong>
+            <span data-i18n="sobre.resolvo1d">De Astrea, Projuris, CPJ e CP-PRO para o Legal One, com pipeline por módulos e validação até a carga final.</span>
+          </li>
+          <li>
+            <strong data-i18n="sobre.resolvo2t">Corrigir produção com segurança</strong>
+            <span data-i18n="sobre.resolvo2d">Cada ajuste com script declarativo, de execução e de rollback, aprovado formalmente antes de rodar.</span>
+          </li>
+          <li>
+            <strong data-i18n="sobre.resolvo3t">Automatizar o que é manual</strong>
+            <span data-i18n="sobre.resolvo3d">Python, Selenium e VBA para eliminar gargalos repetitivos e distribuir a solução para o time.</span>
+          </li>
+        </ol>
+      </aside>
+    </div>
   </section>
 
   <section id="experiencias" class="section">
-    <h2 data-i18n="experiencias.titulo">Experiências</h2>
+    <div class="geo geo--experiencias" aria-hidden="true">
+      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1">
+        <polygon points="50,8 92,88 8,88"/>
+        <polygon points="50,40 70,78 30,78"/>
+      </svg>
+    </div>
+    <div class="section-head">
+      <span class="section-index" aria-hidden="true">02</span>
+      <h2 data-i18n="experiencias.titulo">Experiências</h2>
+    </div>
     <p class="muted" data-i18n="experiencias.intro">Cada experiência profissional relevante tem sua própria página, com projetos, métricas e evidências detalhadas.</p>
     <div class="experience-grid">
       <a class="card experience-card" href="experiencias/legal-one.html">
+        <span class="experience-meta" data-i18n="experiencias.legalOne.meta">5 projetos · 7 métricas · 3 feedbacks</span>
         <h3 data-i18n="experiencias.legalOne.titulo">Experiência com Legal One</h3>
         <p data-i18n="experiencias.legalOne.desc">Migração de plataformas concorrentes, consultoria recorrente, saneamento de dados e automações construídas ao longo da atuação com o Legal One.</p>
+        <div class="chip-list chip-list--card">
+          <span class="chip" data-i18n="experiencias.legalOne.tag1">Migração de dados</span>
+          <span class="chip" data-i18n="experiencias.legalOne.tag2">Consultoria recorrente</span>
+          <span class="chip" data-i18n="experiencias.legalOne.tag3">Automação</span>
+        </div>
         <span class="btn" data-i18n="experiencias.ver">Ver projetos e métricas →</span>
       </a>
       <div class="card experience-card experience-card--future">
@@ -81,7 +148,16 @@
   </section>
 
   <section id="trajetoria" class="section">
-    <h2 data-i18n="trajetoria.titulo">Trajetória</h2>
+    <div class="geo geo--trajetoria" aria-hidden="true">
+      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1">
+        <polygon points="50,6 88,28 88,72 50,94 12,72 12,28"/>
+        <path d="M12 28 L50 50 L88 28 M50 50 L50 94"/>
+      </svg>
+    </div>
+    <div class="section-head">
+      <span class="section-index" aria-hidden="true">03</span>
+      <h2 data-i18n="trajetoria.titulo">Trajetória</h2>
+    </div>
     <p class="muted" data-i18n="trajetoria.intro">Principais marcos de formação e carreira. Arraste para o lado para ver mais →</p>
     <div class="timeline-wrap">
       <div class="timeline" id="timeline-list"></div>
@@ -90,7 +166,17 @@
   </section>
 
   <section id="skills" class="section">
-    <h2 data-i18n="competencias.titulo">Skills</h2>
+    <div class="geo geo--skills geo--cyan" aria-hidden="true">
+      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1">
+        <polygon points="50,6 94,50 50,94 6,50"/>
+        <polygon points="50,30 70,50 50,70 30,50"/>
+        <path d="M50 6 L50 30 M94 50 L70 50 M50 94 L50 70 M6 50 L30 50"/>
+      </svg>
+    </div>
+    <div class="section-head">
+      <span class="section-index" aria-hidden="true">04</span>
+      <h2 data-i18n="competencias.titulo">Skills</h2>
+    </div>
     <p class="muted" data-i18n="competencias.intro">Avaliação baseada em evidências de arquivo, não em autoavaliação genérica — cada estrela reflete evidência real de projeto, não uma autoavaliação genérica. Detalhamento completo no repositório (matriz_de_competencias.md).</p>
 
     <h3 class="subsection-title" data-i18n="competencias.tabTecnicas">Competências Técnicas</h3>
@@ -105,6 +191,7 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-inner">
+      <span class="footer-brand">Carolina Nakasuka</span>
       <div class="social-links">
         <a href="https://www.linkedin.com/in/carolnakasuka" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/CarolNaka" target="_blank" rel="noopener">GitHub</a>
