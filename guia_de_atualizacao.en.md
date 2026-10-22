@@ -19,6 +19,17 @@
 4. Re-score **only if the evidence justifies it**, explaining the change in the justification.
 5. If it's a brand-new competency, use `templates/template_nova_experiencia.md` as a formatting guide.
 
+6. On the site, also update the `skillsTecnicas`/`skillsSoft` arrays in `site/script.js` — each item has a `score` (1 to 5) and a short note (`notePt`/`noteEn`) that must be concrete evidence, not a generic phrase.
+
+## How to update the timeline
+
+1. Open `site/script.js` and find the `timeline` array.
+2. Each milestone is an object with `date` (e.g. `"Mar 2025"`), `type` (`"edu"` for education or `"work"` for career — sets the colored label), `pt`, and `en`.
+3. Keep the list in chronological order — rendering does not sort automatically.
+4. No HTML changes are needed: the list is rendered into `#timeline-list` on the home page as a vertical, alternating timeline (single column on narrow screens). The last item automatically gets the dashed "expected/in progress" marker.
+5. The About texts (`sobre.p1`–`sobre.p3` in `i18n`) accept limited HTML for highlights: wrap key numbers and terms in `<em class="hl">…</em>`. Those elements carry `data-i18n-html` in `index.html`; every other key is plain text.
+6. The "Core stack" list (About section) comes from the `stack` array in `site/script.js` — groups with `pt`/`en` names and an `items` list. Only list technologies already documented in the projects.
+
 ## How to add new metrics
 
 1. Every metric needs a classification: **confirmed** (by file or your direct confirmation), **estimated**, or **pending validation**.

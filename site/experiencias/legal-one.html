@@ -8,16 +8,17 @@
 </head>
 <body>
 
-<header class="topbar">
+<header class="topbar" id="topbar">
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
   <div class="container topbar-inner">
-    <div class="identity">
+    <a class="identity" href="../index.html" aria-label="Carolina Nakasuka — início">
       <div class="avatar"><img src="../assets/perfil-avatar.jpg" alt="" class="avatar-img" width="38" height="38"></div>
       <div class="identity-text">
         <span class="brand-name">Carolina Nakasuka</span>
         <span class="brand-role" data-i18n="brand.role">Técnica em Banco de Dados</span>
       </div>
-    </div>
-    <nav class="nav">
+    </a>
+    <nav class="nav" aria-label="Seções">
       <a href="../index.html#sobre" data-i18n="nav.sobre">Sobre</a>
       <a href="../index.html#experiencias" data-i18n="nav.experiencias">Experiências</a>
       <a href="../index.html#trajetoria" data-i18n="nav.trajetoria">Trajetória</a>
@@ -27,9 +28,9 @@
       <a href="https://www.linkedin.com/in/carolnakasuka" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/CarolNaka" target="_blank" rel="noopener">GitHub</a>
     </div>
-    <div class="lang-toggle">
-      <button id="btn-pt" class="lang-btn active" data-lang="pt">PT</button>
-      <button id="btn-en" class="lang-btn" data-lang="en">EN</button>
+    <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+      <button id="btn-pt" class="lang-btn active" data-lang="pt" aria-pressed="true">PT</button>
+      <button id="btn-en" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
     </div>
   </div>
 </header>
@@ -65,11 +66,12 @@
         <path d="M50 50 L93 50 M50 50 L71.5 87.2 M50 50 L28.5 87.2 M50 50 L7 50 M50 50 L28.5 12.8 M50 50 L71.5 12.8"/>
       </svg>
     </div>
+    <p class="highlight-eyebrow" data-i18n="destaque.eyebrow">Projeto em destaque · Ideia e autoria própria</p>
     <h2 data-i18n="destaque.titulo">Projeto em destaque: Unificador de Contatos</h2>
     <p data-i18n="destaque.p1">Ferramenta Python + Selenium, com interface gráfica própria, empacotada em executável e distribuída para consultores em campo. Identifica contatos duplicados por CPF/CNPJ e aciona a função nativa de unificação do Legal One.</p>
     <p data-i18n="destaque.p2">Elimina, para esse cenário, a necessidade de extrair a base de produção, levar para homologação, tratar os dados e aguardar SLA de liberação — o consultor passa a resolver diretamente, em produção, com total autonomia.</p>
     <p class="muted" data-i18n="destaque.nota">Projeto de ideia e autoria própria. Código-fonte completo não publicado neste portfólio; descrição de arquitetura disponível no repositório.</p>
-    <a class="btn" href="../projetos/unificador-de-contatos.html" data-i18n="destaque.ver">Ver projeto completo →</a>
+    <a class="btn" href="../projetos/unificador-de-contatos.html"><span data-i18n="destaque.ver">Ver projeto completo</span><svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   </section>
 
   <section class="section">

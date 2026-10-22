@@ -23,10 +23,12 @@
 ## Como atualizar a linha do tempo (trajetória)
 
 1. Abra `site/script.js` e localize o array `timeline`.
-2. Cada marco é um objeto com `date` (ex.: `"Mar 2025"`), `pt` (descrição em português) e `en` (descrição em inglês).
+2. Cada marco é um objeto com `date` (ex.: `"Mar 2025"`), `type` (`"edu"` para formação ou `"work"` para carreira — define a etiqueta colorida do marco), `pt` (descrição em português) e `en` (descrição em inglês).
 3. Mantenha a lista em ordem cronológica — a renderização não reordena automaticamente.
 4. Não é necessário mexer no HTML: a lista é renderizada dinamicamente em `#timeline-list` na home.
-5. A linha do tempo é **horizontal e rolável** (pensada para crescer com muitos marcos, sem precisar de mais espaço vertical) — basta adicionar quantos itens quiser ao array que o scroll se ajusta sozinho. Mantenha a descrição (`pt`/`en`) curta, pois cada card tem largura fixa (220px).
+5. A linha do tempo é **vertical e alternada** (cartões à esquerda e à direita de um trilho central, que se preenche conforme a rolagem; em telas estreitas vira coluna única). Basta adicionar itens ao array — o último item recebe automaticamente o marcador tracejado de "previsto/em andamento".
+6. Os textos da seção Sobre (`sobre.p1`, `sobre.p2`, `sobre.p3` em `i18n`) aceitam HTML limitado para destaques: envolva números e termos-chave em `<em class="hl">…</em>`. Esses elementos têm o atributo `data-i18n-html` no `index.html`; as demais chaves são texto puro.
+7. A lista "Stack principal" (seção Sobre) vem do array `stack` em `site/script.js` — grupos com nome em `pt`/`en` e uma lista `items` de tecnologias. Cite apenas tecnologias já documentadas nos projetos.
 
 ## Como incluir novas métricas
 

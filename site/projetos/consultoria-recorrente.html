@@ -8,16 +8,17 @@
 </head>
 <body>
 
-<header class="topbar">
+<header class="topbar" id="topbar">
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
   <div class="container topbar-inner">
-    <div class="identity">
+    <a class="identity" href="../index.html" aria-label="Carolina Nakasuka — início">
       <div class="avatar"><img src="../assets/perfil-avatar.jpg" alt="" class="avatar-img" width="38" height="38"></div>
       <div class="identity-text">
         <span class="brand-name">Carolina Nakasuka</span>
         <span class="brand-role" data-i18n="brand.role">Técnica em Banco de Dados</span>
       </div>
-    </div>
-    <nav class="nav">
+    </a>
+    <nav class="nav" aria-label="Seções">
       <a href="../index.html#sobre" data-i18n="nav.sobre">Sobre</a>
       <a href="../index.html#experiencias" data-i18n="nav.experiencias">Experiências</a>
       <a href="../index.html#trajetoria" data-i18n="nav.trajetoria">Trajetória</a>
@@ -27,9 +28,9 @@
       <a href="https://www.linkedin.com/in/carolnakasuka" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/CarolNaka" target="_blank" rel="noopener">GitHub</a>
     </div>
-    <div class="lang-toggle">
-      <button id="btn-pt" class="lang-btn active" data-lang="pt">PT</button>
-      <button id="btn-en" class="lang-btn" data-lang="en">EN</button>
+    <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+      <button id="btn-pt" class="lang-btn active" data-lang="pt" aria-pressed="true">PT</button>
+      <button id="btn-en" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
     </div>
   </div>
 </header>
