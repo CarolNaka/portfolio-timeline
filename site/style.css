@@ -2301,3 +2301,17 @@ a.card:hover::before, .card--hover:hover::before { opacity: 1; width: 72px; }
   .metric-value { font-size: 2.1rem; }
   .impact-table { display: block; overflow-x: auto; }
 }
+
+/* Lista de atuação (página de experiência) */
+.atuacao-list { list-style: none; margin: var(--space-5) 0 0; padding: 0; display: grid; gap: var(--space-3); max-width: 78ch; }
+.atuacao-list li { position: relative; padding-left: var(--space-6); color: var(--text-muted); line-height: 1.6; }
+.atuacao-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid var(--cyan);
+  transform: rotate(45deg);
+}

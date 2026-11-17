@@ -12,6 +12,7 @@ const i18n = {
     "nav.sobre": "Sobre",
     "nav.competencias": "Competências",
     "nav.experiencias": "Experiências",
+    "nav.projetos": "Projetos",
     "nav.trajetoria": "Trajetória",
     "hero.eyebrow": "Portfólio Técnico",
     "hero.title": "Dados, automação e construção de soluções com IA",
@@ -29,9 +30,9 @@ const i18n = {
     "hero.scroll": "Rolar",
     "sobre.titulo": "Sobre mim",
     "sobre.aside": "Perfil · Stack · O que resolvo",
-    "sobre.p1": "Sou <em class=\"hl\">estagiária de dados na Thomson Reuters</em> e atuo com <em class=\"hl\">migração e mapeamento de bases de dados para o Legal One</em>, a partir de plataformas concorrentes como Astrea, Projuris, CPJ e CP-PRO. No dia a dia, desenvolvo scripts em SQL Server, apoio execuções em pipelines e acompanho processos no Azure Data Factory, analisando logs e corrigindo erros até a entrega final com dados consistentes.",
-    "sobre.p2": "Em <em class=\"hl\">mais de 30 clientes atendidos</em>, <em class=\"hl\">25+ foram migrações de banco a banco</em> e cerca de 23 seguiram em consultoria recorrente. Mantenho um padrão de segurança em cada correção em produção (script declarativo, de execução e de rollback) e contribuí com <em class=\"hl\">92 commits em ~5 meses</em> em um repositório de migração mantido por um time de 18 pessoas, com mais de 40 scripts SQL de extração organizados por módulo.",
-    "sobre.p3": "Também crio ferramentas para ganhar produtividade: <em class=\"hl\">8 scripts Python próprios</em>, 7 macros VBA de validação de planilhas e o <em class=\"hl\">Unificador de Contatos (Python + Selenium)</em>, que idealizei e desenvolvi e hoje é usado por outros consultores em campo. Meu interesse agora é aprofundar automação e integração de sistemas, construindo processos mais escaláveis e confiáveis.",
+    "sobre.p1": "Estudante de <em class=\"hl\">Análise e Desenvolvimento de Sistemas</em> (formação prevista para dezembro de 2026), com experiência profissional em <em class=\"hl\">dados, automação e desenvolvimento de soluções na Thomson Reuters</em>. Trabalho diretamente com SQL, ETL e pipelines no Azure Data Factory, atuando com autonomia desde a análise do problema até a definição e a execução da solução: tomo decisões, investigo falhas e busco soluções efetivas para o que surge nos projetos. Atuo no segmento do Legal One, em migração e mapeamento de bases de dados a partir de plataformas concorrentes como Astrea, Projuris, CPJ e CP-PRO.",
+    "sobre.p2": "Em <em class=\"hl\">mais de 30 clientes atendidos</em>, <em class=\"hl\">25+ foram migrações de banco a banco</em> e cerca de 23 seguiram em consultoria recorrente. Além da execução técnica, conduzo projetos de forma independente, organizo demandas, identifico melhorias e transformo necessidades em soluções práticas. Mantenho um padrão de segurança em cada correção em produção (script declarativo, de execução e de rollback) e contribuí com <em class=\"hl\">92 commits em ~5 meses</em> em um repositório de migração mantido por um time de 18 pessoas, com mais de 40 scripts SQL de extração organizados por módulo.",
+    "sobre.p3": "Também crio ferramentas para ganhar produtividade: <em class=\"hl\">8 scripts Python próprios</em>, 7 macros VBA de validação de planilhas e o <em class=\"hl\">Unificador de Contatos (Python + Selenium)</em>, que idealizei e desenvolvi e hoje é usado por outros consultores em campo. Agora busco ampliar minha atuação em tecnologia, aprofundando o uso de <em class=\"hl\">Inteligência Artificial</em>, automação e desenvolvimento de soluções.",
     "sobre.resolvoTitulo": "Problemas que sei resolver",
     "sobre.resolvo1t": "Migrar dados entre sistemas",
     "sobre.resolvo1d": "De Astrea, Projuris, CPJ e CP-PRO para o Legal One, com pipeline por módulos e validação até a carga final.",
@@ -46,6 +47,12 @@ const i18n = {
     "experiencias.legalOne.titulo": "Experiência na Thomson",
     "experiencias.legalOne.desc": "Atuação no segmento do Legal One: migrações de plataformas concorrentes, consultoria recorrente em produção e uma ferramenta de automação criada do zero.",
     "experiencias.legalOne.projetosTitulo": "Projetos documentados",
+    "gh.titulo": "Projetos no GitHub",
+    "gh.aside": "Projetos pessoais",
+    "gh.intro": "Projetos pessoais que publico no GitHub, fora do contexto corporativo. Novos projetos serão adicionados aqui.",
+    "gh.ver": "Ver no GitHub",
+    "gh.futuro.titulo": "Mais projetos a caminho",
+    "gh.futuro.desc": "Novos projetos serão adicionados aqui conforme forem publicados no GitHub.",
     "experiencias.statProjetos": "projetos",
     "experiencias.statMetricas": "métricas",
     "experiencias.statFeedbacks": "feedbacks",
@@ -56,7 +63,7 @@ const i18n = {
     "experiencias.futura.titulo": "Próxima experiência",
     "experiencias.futura.desc": "Novas páginas de experiência serão adicionadas aqui conforme novos projetos forem documentados.",
     "trajetoria.titulo": "Trajetória",
-    "trajetoria.aside": "2017 — 2027",
+    "trajetoria.aside": "2017 — 2026",
     "trajetoria.intro": "Principais marcos de formação e carreira, da engenharia mecânica à área de dados.",
     "trajetoria.tipo.edu": "Formação",
     "trajetoria.tipo.work": "Carreira",
@@ -70,6 +77,14 @@ const i18n = {
     "exp.legalOne.eyebrow": "Experiência · Técnica em Banco de Dados",
     "exp.legalOne.title": "Thomson Reuters Brasil",
     "exp.legalOne.subtitle": "Atuação no segmento do Legal One · Migração de plataformas concorrentes · Consultoria recorrente · Saneamento de dados · Automação",
+    "exp.atuacao.titulo": "Atuação",
+    "exp.atuacao.b1": "Atuação em projetos de migração e mapeamento de bases de dados de clientes e concorrentes, envolvendo processos de ETL, transformação, validação e garantia da integridade das informações.",
+    "exp.atuacao.b2": "Condução independente de atividades e projetos, assumindo responsabilidade pelas etapas de análise, execução, investigação de problemas e entrega das soluções.",
+    "exp.atuacao.b3": "Desenvolvimento de scripts em Microsoft SQL Server para execução e automação de processos de migração, considerando as particularidades e necessidades de cada projeto.",
+    "exp.atuacao.b4": "Atuação com Azure Data Factory no acompanhamento e execução de pipelines, realizando análise de logs, identificação de falhas e tomada de decisões para diagnóstico e resolução de problemas.",
+    "exp.atuacao.b5": "Análise e tratamento de dados para identificação de inconsistências, validação de resultados e garantia da qualidade das entregas.",
+    "exp.atuacao.b6": "Desenvolvimento e implementação de soluções e melhorias para necessidades identificadas durante os projetos, buscando reduzir retrabalho e tornar os processos mais eficientes.",
+    "exp.atuacao.b7": "Atuação com elevado grau de autonomia, sendo responsável por conduzir demandas, avaliar alternativas e definir abordagens para solucionar problemas técnicos encontrados durante a execução.",
     "exp.projetos.titulo": "Projetos",
     "destaque.eyebrow": "Projeto em destaque · Ideia e autoria própria",
     "destaque.titulo": "Projeto em destaque: Unificador de Contatos",
@@ -93,6 +108,7 @@ const i18n = {
     "nav.sobre": "About",
     "nav.competencias": "Skills",
     "nav.experiencias": "Experience",
+    "nav.projetos": "Projects",
     "nav.trajetoria": "Timeline",
     "hero.eyebrow": "Technical Portfolio",
     "hero.title": "Data, automation, and building solutions with AI",
@@ -110,9 +126,9 @@ const i18n = {
     "hero.scroll": "Scroll",
     "sobre.titulo": "About me",
     "sobre.aside": "Profile · Stack · What I solve",
-    "sobre.p1": "I'm a <em class=\"hl\">data intern at Thomson Reuters</em>, working on <em class=\"hl\">data migration and database mapping into Legal One</em> from competing platforms such as Astrea, Projuris, CPJ, and CP-PRO. Day to day, I build SQL Server scripts, support pipeline executions, and follow processes in Azure Data Factory — analyzing logs and fixing errors until the final delivery is consistent.",
-    "sobre.p2": "Of <em class=\"hl\">30+ clients served</em>, <em class=\"hl\">25+ were database-to-database migrations</em> and about 23 continued in recurring consulting. I follow a safety standard on every production fix (declarative, execution, and rollback scripts) and made <em class=\"hl\">92 commits in ~5 months</em> to a migration repository maintained by a team of 18, with 40+ SQL extraction scripts organized by module.",
-    "sobre.p3": "I also build tools to boost productivity: <em class=\"hl\">8 Python scripts of my own</em>, 7 VBA spreadsheet-validation macros, and the <em class=\"hl\">Contact Deduplication Tool (Python + Selenium)</em>, which I conceived and built and which is now used by other consultants in the field. My focus now is going deeper into automation and systems integration, building more scalable, reliable processes.",
+    "sobre.p1": "Systems Analysis and Development student (expected graduation in December 2026), with professional experience in <em class=\"hl\">data, automation, and solution development at Thomson Reuters</em>. I work directly with SQL, ETL, and Azure Data Factory pipelines, acting autonomously from analyzing the problem to defining and executing the solution: I make decisions, investigate failures, and look for effective answers to what comes up in projects. I work in the Legal One segment, migrating and mapping databases from competing platforms such as Astrea, Projuris, CPJ, and CP-PRO.",
+    "sobre.p2": "Of <em class=\"hl\">30+ clients served</em>, <em class=\"hl\">25+ were database-to-database migrations</em> and about 23 continued in recurring consulting. Beyond technical execution, I lead projects independently, organize demands, spot improvements, and turn needs into practical solutions. I follow a safety standard on every production fix (declarative, execution, and rollback scripts) and contributed <em class=\"hl\">92 commits in ~5 months</em> to a migration repository maintained by a team of 18, with 40+ SQL extraction scripts organized by module.",
+    "sobre.p3": "I also build tools to boost productivity: <em class=\"hl\">8 Python scripts of my own</em>, 7 VBA spreadsheet-validation macros, and the <em class=\"hl\">Contact Deduplication Tool (Python + Selenium)</em>, which I conceived and built and which is now used by other consultants in the field. I'm now looking to broaden my work in technology, going deeper into <em class=\"hl\">Artificial Intelligence</em>, automation, and solution development.",
     "sobre.resolvoTitulo": "Problems I solve",
     "sobre.resolvo1t": "Migrate data between systems",
     "sobre.resolvo1d": "From Astrea, Projuris, CPJ, and CP-PRO into Legal One, with a per-module pipeline and validation through final load.",
@@ -127,6 +143,12 @@ const i18n = {
     "experiencias.legalOne.titulo": "Experience at Thomson",
     "experiencias.legalOne.desc": "Working in the Legal One segment: competing-platform migrations, recurring production consulting, and an automation tool built from scratch.",
     "experiencias.legalOne.projetosTitulo": "Documented projects",
+    "gh.titulo": "Projects on GitHub",
+    "gh.aside": "Personal projects",
+    "gh.intro": "Personal projects I publish on GitHub, outside the corporate context. New projects will be added here.",
+    "gh.ver": "View on GitHub",
+    "gh.futuro.titulo": "More projects on the way",
+    "gh.futuro.desc": "New projects will be added here as they are published on GitHub.",
     "experiencias.statProjetos": "projects",
     "experiencias.statMetricas": "metrics",
     "experiencias.statFeedbacks": "feedbacks",
@@ -137,7 +159,7 @@ const i18n = {
     "experiencias.futura.titulo": "Next experience",
     "experiencias.futura.desc": "New experience pages will be added here as new projects are documented.",
     "trajetoria.titulo": "Timeline",
-    "trajetoria.aside": "2017 — 2027",
+    "trajetoria.aside": "2017 — 2026",
     "trajetoria.intro": "Key education and career milestones, from mechanical engineering to the data field.",
     "trajetoria.tipo.edu": "Education",
     "trajetoria.tipo.work": "Career",
@@ -151,6 +173,14 @@ const i18n = {
     "exp.legalOne.eyebrow": "Experience · Database Analyst",
     "exp.legalOne.title": "Thomson Reuters Brasil",
     "exp.legalOne.subtitle": "Working in the Legal One segment · Competing-platform migration · Recurring consulting · Data sanitization · Automation",
+    "exp.atuacao.titulo": "What I do",
+    "exp.atuacao.b1": "Working on migration and mapping projects for client and competitor databases, covering ETL, transformation, validation, and data-integrity assurance.",
+    "exp.atuacao.b2": "Leading activities and projects independently, owning the analysis, execution, problem-investigation, and solution-delivery stages.",
+    "exp.atuacao.b3": "Developing Microsoft SQL Server scripts to run and automate migration processes, taking each project's particularities and needs into account.",
+    "exp.atuacao.b4": "Working with Azure Data Factory to monitor and run pipelines, analyzing logs, identifying failures, and making decisions to diagnose and resolve problems.",
+    "exp.atuacao.b5": "Analyzing and treating data to find inconsistencies, validate results, and ensure the quality of deliverables.",
+    "exp.atuacao.b6": "Building solutions and improvements for needs identified during projects, aiming to reduce rework and make processes more efficient.",
+    "exp.atuacao.b7": "Working with a high degree of autonomy: driving demands, evaluating alternatives, and defining approaches to solve technical problems found during execution.",
     "exp.projetos.titulo": "Projects",
     "destaque.eyebrow": "Featured project · Original idea and solution",
     "destaque.titulo": "Featured project: Contact Deduplication Tool",
@@ -208,7 +238,13 @@ const timeline = [
   { date: "Jun 2021", type: "edu", pt: "Formação em Mecânica — Processos de Produção", en: "Graduated — Mechanical Engineering, Production Processes" },
   { date: "Jan 2023", type: "edu", pt: "Ingresso na FATEC — Análise e Desenvolvimento de Sistemas", en: "Started FATEC — Systems Analysis and Development" },
   { date: "Mar 2025", type: "work", pt: "Início do estágio na Thomson Reuters", en: "Started internship at Thomson Reuters" },
-  { date: "Jan 2027", type: "edu", pt: "Formação em Análise e Desenvolvimento de Sistemas (prevista)", en: "Graduation — Systems Analysis and Development (expected)" }
+  { date: "Dez 2026", dateEn: "Dec 2026", type: "edu", pt: "Formação em Análise e Desenvolvimento de Sistemas (prevista)", en: "Graduation — Systems Analysis and Development (expected)" }
+];
+
+// Projetos pessoais publicados no GitHub. Para adicionar um novo, inclua um item aqui.
+// desc (opcional): { pt, en }. tags (opcional): lista de tecnologias.
+const githubProjects = [
+  { name: "focus-clock", url: "https://github.com/CarolNaka/focus-clock", desc: null, tags: [] }
 ];
 
 const projects = [
@@ -317,7 +353,7 @@ function renderTimeline(lang) {
       <span class="timeline-node" aria-hidden="true"></span>
       <div class="timeline-card">
         <div class="timeline-meta">
-          <span class="timeline-date">${t.date}</span>
+          <span class="timeline-date">${(lang === "en" && t.dateEn) || t.date}</span>
           <span class="timeline-type timeline-type--${t.type}">${typeLabel}</span>
         </div>
         <p class="timeline-title">${t[lang]}</p>
@@ -336,6 +372,21 @@ function renderExperienceProjects(lang) {
     const href = base + data.link.replace(/^(\.\.\/)?projetos\//, "");
     return `<li><a href="${href}"><span class="idx">${pad2(i + 1)}</span><span>${data.title}</span><span class="arrow" aria-hidden="true">→</span></a></li>`;
   }).join("");
+}
+
+function renderGithubProjects(lang) {
+  const grid = document.getElementById("gh-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  githubProjects.forEach((p, i) => {
+    const card = document.createElement("div");
+    card.className = "card card--hover project-card spot";
+    const desc = p.desc && p.desc[lang] ? `<p>${p.desc[lang]}</p>` : "";
+    const tags = p.tags && p.tags.length
+      ? `<div class="chip-list chip-list--card">${p.tags.map(t => `<span class="chip">${t}</span>`).join("")}</div>` : "";
+    card.innerHTML = `<span class="project-idx">${pad2(i + 1)}</span><h3>${p.name}</h3>${desc}${tags}<a class="btn" href="${p.url}" target="_blank" rel="noopener"><span>${i18n[lang]["gh.ver"]}</span>${ARROW_SVG}</a>`;
+    grid.appendChild(card);
+  });
 }
 
 function renderProjects(lang) {
@@ -591,6 +642,7 @@ function setLanguage(lang) {
   renderSkills(lang);
   renderExperienceProjects(lang);
   renderProjects(lang);
+  renderGithubProjects(lang);
   renderMetrics(lang);
   renderTimeline(lang);
   toggleLangBlocks(lang);
