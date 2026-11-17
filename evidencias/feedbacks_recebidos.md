@@ -1,6 +1,6 @@
 # Feedbacks Recebidos
 
-> Fonte: planilha exportada do sistema interno de avaliação de desempenho, fornecida pela autora. Reproduzida aqui de forma curada — um nome de cliente foi removido, por privacidade. Texto completo também publicado, nos mesmos termos, na página [site/experiencias/legal-one.html](../site/experiencias/legal-one.html).
+> Fonte: planilha exportada do sistema interno de avaliação de desempenho, fornecida pela autora. Reproduzida aqui de forma curada — um nome de cliente foi removido, por privacidade. Texto completo também publicado, nos mesmos termos, na página [site/experiencias/thomson-reuters.html](../site/experiencias/thomson-reuters.html).
 
 ## Feedbacks formais (solicitados pela própria autora, via ferramenta interna)
 

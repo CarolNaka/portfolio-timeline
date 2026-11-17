@@ -48,7 +48,7 @@
 
 When a new relevant professional experience (beyond Legal One) needs its own page on the site:
 
-1. Copy `site/experiencias/legal-one.html` to a new file, e.g., `site/experiencias/experience-name.html`.
+1. Copy `site/experiencias/thomson-reuters.html` to a new file, e.g., `site/experiencias/experience-name.html`.
 2. Adjust the tab title (`<title>`), the hero eyebrow/title, and the experience-specific text.
 3. Add the new translation keys used by that page to `site/script.js`, inside the `i18n` object (both `pt` and `en`).
 4. If the experience has its own projects, add them to the `projects` array in `script.js` (or create a separate array if you want to keep each experience's projects isolated).

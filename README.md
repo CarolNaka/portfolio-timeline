@@ -14,7 +14,7 @@ Este repositório documenta, de forma técnica e baseada em evidências, os proj
 
 - **[Perfil profissional](perfil_profissional.md)** — resumo de especialidades, tecnologias e diferenciais, baseado em evidências.
 - **[Matriz de competências](matriz_de_competencias.md)** — avaliação técnica de 18 competências, divididas em **técnicas** e **soft skills**, cada uma com nota, evidência e justificativa.
-- **[Experiência: Legal One](site/experiencias/legal-one.html)** — projetos e métricas desta experiência (dentro do site). Documentação completa de cada projeto, em ordem de prioridade:
+- **[Experiência: Thomson Reuters Brasil](site/experiencias/thomson-reuters.html)** — projetos e métricas desta experiência (dentro do site). Documentação completa de cada projeto, em ordem de prioridade:
   1. [Migração de Banco a Banco entre Plataformas Concorrentes](projetos/migracoes/migracao-banco-a-banco-concorrentes.md)
   2. [Consultoria Recorrente em Banco de Dados](projetos/consultoria_recorrente/consultoria-recorrente-legal-one.md)
   3. [Unificador de Contatos](projetos/saneamento_contatos/unificador-de-contatos.md) — projeto de ideia e autoria própria
@@ -54,7 +54,7 @@ This repository documents, technically and based on evidence, the data migration
 
 - **[Professional profile](perfil_profissional.en.md)** — summary of specialties, technologies, and differentiators, based on evidence.
 - **[Competency matrix](matriz_de_competencias.en.md)** — technical assessment of 18 competencies, split into **technical skills** and **soft skills**, each with a score, evidence, and justification.
-- **[Legal One Experience](site/experiencias/legal-one.html)** — projects and metrics for this experience (within the site). Detailed documentation for each project, in priority order:
+- **[Thomson Reuters Brasil Experience](site/experiencias/thomson-reuters.html)** — projects and metrics for this experience (within the site). Detailed documentation for each project, in priority order:
   1. [Database-to-Database Migration Between Competing Platforms](projetos/migracoes/migracao-banco-a-banco-concorrentes.en.md)
   2. [Recurring Database Consulting](projetos/consultoria_recorrente/consultoria-recorrente-legal-one.en.md)
   3. [Contact Deduplication Tool](projetos/saneamento_contatos/unificador-de-contatos.en.md) — original idea and solution

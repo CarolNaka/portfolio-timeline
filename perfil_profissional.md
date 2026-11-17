@@ -4,7 +4,7 @@
 
 ## Especialidade
 
-**Técnica em Banco de Dados**, atualmente estagiária de dados na Thomson Reuters, atuando em projetos de migração e mapeamento de bases de dados. Utiliza SQL Server no desenvolvimento de scripts e no apoio a execuções de pipelines, além de acompanhar processos no Azure Data Factory — analisando logs e ajustando erros até a entrega final com dados consistentes. Tem experiência consolidada em migração de dados entre sistemas concorrentes (Astrea, Projuris, CPJ, CP-PRO) e o Legal One, incluindo consultoria recorrente em banco de dados e desenvolvimento de ferramentas próprias de automação.
+**Data | Automation | AI Builder.** Técnica em Banco de Dados e atualmente estagiária de dados na Thomson Reuters Brasil, no segmento do Legal One, atuando em projetos de migração e mapeamento de bases de dados. Utiliza SQL Server no desenvolvimento de scripts e no apoio a execuções de pipelines, além de acompanhar processos no Azure Data Factory — analisando logs e ajustando erros até a entrega final com dados consistentes. Tem experiência consolidada em migração de dados entre sistemas concorrentes (Astrea, Projuris, CPJ, CP-PRO) e o Legal One, incluindo consultoria recorrente em banco de dados e desenvolvimento de ferramentas próprias de automação.
 
 ## Tipos de problema que resolve
 

@@ -21,7 +21,7 @@ Lista de itens identificados durante a análise que podem ser incorporados em ve
 
 - [x] ~~Redesenhar com visual mais profissional (paleta navy/dourado, tipografia serifada para títulos)~~ — concluído.
 - [x] ~~Separar competências técnicas de soft skills, com abas no site~~ — ajustado: exibidas lado a lado/empilhadas, sem abas, conforme preferência da autora.
-- [x] ~~Mover projetos e métricas para uma página dedicada por experiência~~ — concluído (`site/experiencias/legal-one.html`); nova experiência = nova página, seguindo `guia_de_atualizacao.md`.
+- [x] ~~Mover projetos e métricas para uma página dedicada por experiência~~ — concluído (`site/experiencias/thomson-reuters.html`); nova experiência = nova página, seguindo `guia_de_atualizacao.md`.
 - [x] ~~Adicionar nome completo e espaço para foto no cabeçalho~~ — concluído (placeholder com iniciais "CN"; substituir por `<img>` quando houver foto).
 - [x] ~~Criar páginas HTML individuais para cada projeto, com visual consistente ao resto do site~~ — concluído (`site/projetos/*.html`, bilíngues via blocos `data-lang-block`).
 - [ ] Substituir o placeholder de iniciais por uma foto real, quando disponível.

@@ -4,7 +4,7 @@
 
 ## Specialty
 
-**Database Analyst**, currently a data intern at Thomson Reuters, working on data migration and database mapping projects. Uses SQL Server to build scripts and support pipeline executions, and also follows processes in Azure Data Factory — analyzing logs and fixing errors until the final delivery is consistent. Has solid experience migrating data between competing systems (Astrea, Projuris, CPJ, CP-PRO) and Legal One, including recurring database consulting and building proprietary automation tools.
+**Data | Automation | AI Builder.** Database Analyst, currently a data intern at Thomson Reuters Brasil in the Legal One segment, working on data migration and database mapping projects. Uses SQL Server to build scripts and support pipeline executions, and also follows processes in Azure Data Factory — analyzing logs and fixing errors until the final delivery is consistent. Has solid experience migrating data between competing systems (Astrea, Projuris, CPJ, CP-PRO) and Legal One, including recurring database consulting and building proprietary automation tools.
 
 ## Types of problems solved
 

@@ -59,7 +59,7 @@ Cada projeto tem uma página própria em `site/projetos/`, com conteúdo bilíng
 
 Quando uma nova experiência profissional relevante (além de Legal One) precisar de sua própria página no site:
 
-1. Copie `site/experiencias/legal-one.html` para um novo arquivo, ex.: `site/experiencias/nome-da-experiencia.html`.
+1. Copie `site/experiencias/thomson-reuters.html` para um novo arquivo, ex.: `site/experiencias/nome-da-experiencia.html`.
 2. Ajuste o título da aba (`<title>`), o `eyebrow`/título da seção hero e os textos específicos da experiência.
 3. Adicione as novas chaves de tradução usadas por essa página em `site/script.js`, dentro do objeto `i18n` (nos dois idiomas, `pt` e `en`).
 4. Se a experiência tiver projetos próprios, crie as páginas correspondentes em `site/projetos/` (ver seção acima) e aponte para elas no array `projects` em `script.js`.
