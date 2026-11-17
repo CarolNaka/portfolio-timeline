@@ -258,27 +258,25 @@ const skillsSoft = [
 
 // Ordem: do mais recente ao mais antigo.
 // type: "edu" (formação) | "work" (carreira); future: marco ainda por concluir.
-// details (opcional): destaques exibidos ao passar o mouse/focar no marco. Cada item: { pt, en, href? }.
+// details (opcional): destaques exibidos ao passar o mouse/focar no marco.
+//   Cada item: { pt: [título, descrição], en: [título, descrição], href? }.
 const timeline = [
   {
     date: "Dez 2026", dateEn: "Dec 2026", type: "edu", future: true,
     pt: "Formação em Análise e Desenvolvimento de Sistemas (prevista)", en: "Graduation — Systems Analysis and Development (expected)",
     details: [
-      { pt: "TCC: “Produtividade no desenvolvimento de software assistido por IA: alcance e limites das evidências sobre tempo, compreensão, qualidade e manutenção”",
-        en: "Thesis (TCC): “Productivity in AI-assisted software development: scope and limits of the evidence on time, comprehension, quality, and maintenance”" },
-      { pt: "Desenvolvimento de projeto: Batalha Naval (4º semestre), em grupo de 13 pessoas, como gestora de projeto líder",
-        en: "Project development: Battleship (4th semester), in a team of 13, as lead project manager",
-        href: null /* link da publicação no LinkedIn: preencher quando disponível */ }
+      { pt: ["TCC sobre IA no desenvolvimento de software", "“Produtividade no desenvolvimento de software assistido por IA: alcance e limites das evidências sobre tempo, compreensão, qualidade e manutenção”."], en: ["Thesis on AI in software development", "“Productivity in AI-assisted software development: scope and limits of the evidence on time, comprehension, quality, and maintenance”."] },
+      { pt: ["Batalha Naval: gestora de projeto líder", "Projeto de desenvolvimento de jogo no 4º semestre, liderando um grupo de 13 pessoas."], en: ["Battleship: lead project manager", "Game development project in the 4th semester, leading a team of 13 people."], href: null /* link da publicação no LinkedIn: preencher quando disponível */ }
     ]
   },
   {
     date: "Mar 2025", type: "work",
     pt: "Início do estágio na Thomson Reuters Brasil", en: "Started internship at Thomson Reuters Brasil",
     details: [
-      { pt: "Primeira migração de dados conduzida de forma totalmente independente", en: "First data migration carried out fully independently" },
-      { pt: "Criação do Unificador de Contatos, hoje usado por outros consultores", en: "Built the Contact Deduplication Tool, now used by other consultants" },
-      { pt: "Consultoria recorrente em produção, com rollback documentado", en: "Recurring production consulting, with documented rollback" },
-      { pt: "92 commits em ~5 meses no repositório de migração do time", en: "92 commits over ~5 months in the team's migration repository" }
+      { pt: ["Primeira migração totalmente independente", "Conduzi um processo de migração de ponta a ponta, sem apoio direto."], en: ["First fully independent migration", "I carried a migration process end to end, without direct support."] },
+      { pt: ["Unificador de Contatos", "Ferramenta que idealizei e desenvolvi em Python, hoje usada por outros consultores em campo."], en: ["Contact Deduplication Tool", "A Python tool I conceived and built, now used by other consultants in the field."] },
+      { pt: ["Produção com rede de segurança", "Consultoria recorrente em 23+ clientes, sempre com script de rollback e aprovação formal."], en: ["Production with a safety net", "Recurring consulting for 23+ clients, always with a rollback script and formal approval."] },
+      { pt: ["92 commits em ~5 meses", "Contribuição ao repositório de migração mantido por um time de 18 pessoas."], en: ["92 commits in ~5 months", "Contribution to the migration repository maintained by a team of 18."] }
     ]
   },
   { date: "Jan 2023", type: "edu", pt: "Ingresso na FATEC — Análise e Desenvolvimento de Sistemas", en: "Started FATEC — Systems Analysis and Development" },
@@ -286,10 +284,8 @@ const timeline = [
     date: "Jun 2021", type: "edu",
     pt: "Formação em Mecânica — Processos de Produção", en: "Graduated — Mechanical Engineering, Production Processes",
     details: [
-      { pt: "Trabalho de encerramento: prototipagem e usinagem de um macaco hidráulico, testado levantando 2 toneladas",
-        en: "Final course project: prototyping and machining of a hydraulic jack, tested lifting 2 tons" },
-      { pt: "Projeto completo de desenho técnico e usinagem das peças, realizado por um grupo de 7 pessoas",
-        en: "Complete technical-drawing design and machining of the parts, carried out by a team of 7" }
+      { pt: ["Protótipo de macaco hidráulico", "Trabalho de encerramento: prototipagem e usinagem, com teste levantando 2 toneladas."], en: ["Hydraulic jack prototype", "Final course project: prototyping and machining, tested lifting 2 tons."] },
+      { pt: ["Do desenho técnico à usinagem", "Projeto completo, incluindo o desenho técnico e a usinagem das peças, em grupo de 7 pessoas."], en: ["From technical drawing to machining", "Complete project, including the technical drawing and machining of the parts, by a team of 7."] }
     ]
   },
   { date: "Jan 2017", type: "edu", pt: "Ingresso na FATEC — Mecânica, Processos de Produção", en: "Started FATEC — Mechanical Engineering, Production Processes" }
@@ -403,9 +399,9 @@ function renderTimeline(lang) {
     const hasPop = Array.isArray(t.details) && t.details.length > 0;
     const pop = hasPop
       ? `<div class="timeline-pop" role="tooltip"><p class="timeline-pop-title">${t18["trajetoria.destaques"]}</p><ul>${t.details.map(d =>
-          `<li>${d[lang]}${d.href ? ` <a href="${d.href}" target="_blank" rel="noopener">${t18["trajetoria.verPublicacao"]} ↗</a>` : ""}</li>`).join("")}</ul></div>`
+          `<li><strong>${d[lang][0]}</strong><span>${d[lang][1]}</span>${d.href ? `<a href="${d.href}" target="_blank" rel="noopener">${t18["trajetoria.verPublicacao"]} ↗</a>` : ""}</li>`).join("")}</ul></div>`
       : "";
-    const hint = hasPop ? `<span class="timeline-hint">${t18["trajetoria.destaques"]}</span>` : "";
+    const hint = hasPop ? `<span class="timeline-hint">${t18["trajetoria.destaques"]} · ${t.details.length}</span>` : "";
     item.innerHTML = `
       <span class="timeline-node" aria-hidden="true"></span>
       <div class="timeline-card${hasPop ? " has-pop" : ""}"${hasPop ? ' tabindex="0"' : ""}>
