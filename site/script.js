@@ -661,6 +661,18 @@ function renderNavMenus(lang) {
     ).join("");
     prj.innerHTML = `<li class="nav-menu-label">${t["nav.menu.profissionais"]}</li>${prof}<li class="nav-menu-label">${t["nav.menu.github"]}</li>${gh}`;
   }
+
+  // Página atual: marca o item do submenu e o item pai no cabeçalho
+  const here = location.pathname.split("/").slice(-2).join("/");
+  nav.querySelectorAll(".nav-menu a").forEach(a => {
+    const href = a.getAttribute("href") || "";
+    if (!/^https?:/.test(href) && href.endsWith(here) && here.indexOf("/") > -1) {
+      a.setAttribute("aria-current", "page");
+      const parent = a.closest(".nav-item");
+      const label = parent && parent.querySelector(":scope > a");
+      if (label) label.classList.add("is-active");
+    }
+  });
 }
 
 function initNavMenus() {

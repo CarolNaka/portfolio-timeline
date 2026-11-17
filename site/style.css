@@ -379,6 +379,7 @@ code {
 
 .nav-menu a::after { display: none; }
 .nav-menu a:hover { background: rgba(0, 199, 217, 0.08); color: var(--cyan); }
+.nav-menu a[aria-current="page"] { background: rgba(0, 199, 217, 0.08); color: var(--cyan); }
 .nav-menu small { flex-basis: 100%; color: var(--text-faint); font-size: var(--fs-xs); font-weight: 400; }
 .nav-menu .nav-ext { color: var(--text-faint); }
 .nav-menu a:hover .nav-ext { color: var(--cyan); }
