@@ -22,7 +22,10 @@ const i18n = {
     "hero.stack4": "Migração de Dados",
     "hero.personal": "Gosto de pegar um processo manual, cheio de gargalos, e transformá-lo em algo simples, seguro e replicável por qualquer pessoa do time.",
     "hero.ctaExperiencias": "Ver experiências",
-    "hero.badge": "Estágio em Dados · Thomson Reuters Brasil",
+    "hero.tag1": "SQL Server · T-SQL",
+    "hero.tag2": "Azure Data Factory",
+    "hero.tag3": "Python · Selenium · VBA",
+    "hero.tag4": "ETL · Pipelines de dados",
     "hero.fact1": "clientes atendidos",
     "hero.fact2": "migrações banco a banco",
     "hero.fact3": "commits em ~5 meses",
@@ -114,7 +117,10 @@ const i18n = {
     "hero.stack4": "Data Migration",
     "hero.personal": "I like taking a manual, bottlenecked process and turning it into something simple, safe, and repeatable by anyone on the team.",
     "hero.ctaExperiencias": "See experience",
-    "hero.badge": "Data Intern · Thomson Reuters Brasil",
+    "hero.tag1": "SQL Server · T-SQL",
+    "hero.tag2": "Azure Data Factory",
+    "hero.tag3": "Python · Selenium · VBA",
+    "hero.tag4": "ETL · Data pipelines",
     "hero.fact1": "clients served",
     "hero.fact2": "database-to-database migrations",
     "hero.fact3": "commits in ~5 months",
@@ -610,6 +616,76 @@ function initToc(lang) {
   headings.forEach(h => observer.observe(h));
 }
 
+// Etiquetas flutuantes do retrato: desviam do ponteiro e saem da frente do rosto quando o mouse passa pela foto
+function initPortraitTags() {
+  const portrait = document.querySelector(".hero-portrait");
+  if (!portrait) return;
+  if (window.matchMedia("(hover: none)").matches) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const tags = Array.from(portrait.querySelectorAll(".float-tag")).map(el => ({ el, x: 0, y: 0, tx: 0, ty: 0 }));
+  if (!tags.length) return;
+
+  const RADIUS = 230;     // distância em que o ponteiro começa a empurrar a etiqueta
+  const MAX_PUSH = 70;    // deslocamento máximo por repulsão (px)
+  const OUTWARD = 48;     // empurrão extra para fora quando o ponteiro está sobre a foto (px)
+  let pointer = null;
+  let raf = 0;
+
+  function target() {
+    const pr = portrait.getBoundingClientRect();
+    const pc = { x: pr.left + pr.width / 2, y: pr.top + pr.height / 2 };
+    const overPortrait = pointer && pointer.x >= pr.left && pointer.x <= pr.right && pointer.y >= pr.top && pointer.y <= pr.bottom;
+    tags.forEach(t => {
+      const r = t.el.getBoundingClientRect();
+      // centro "de repouso": remove o deslocamento atual
+      const cx = r.left + r.width / 2 - t.x;
+      const cy = r.top + r.height / 2 - t.y;
+      let tx = 0, ty = 0;
+      if (pointer) {
+        let dx = cx - pointer.x, dy = cy - pointer.y;
+        const dist = Math.hypot(dx, dy);
+        if (dist < RADIUS) {
+          const k = Math.pow(1 - dist / RADIUS, 1.5) * MAX_PUSH;
+          const n = dist || 1;
+          tx += (dx / n) * k;
+          ty += (dy / n) * k;
+        }
+      }
+      if (overPortrait) {
+        const ox = cx - pc.x, oy = cy - pc.y;
+        const n = Math.hypot(ox, oy) || 1;
+        tx += (ox / n) * OUTWARD;
+        ty += (oy / n) * OUTWARD;
+      }
+      // mantém a etiqueta dentro da janela (evita rolagem horizontal)
+      const restLeft = r.left - t.x, restRight = r.right - t.x;
+      tx = Math.min(tx, window.innerWidth - 8 - restRight);
+      tx = Math.max(tx, 8 - restLeft);
+      t.tx = tx;
+      t.ty = ty;
+    });
+  }
+
+  function frame() {
+    target();
+    let moving = false;
+    tags.forEach(t => {
+      t.x += (t.tx - t.x) * 0.14;
+      t.y += (t.ty - t.y) * 0.14;
+      if (Math.abs(t.tx - t.x) > 0.15 || Math.abs(t.ty - t.y) > 0.15) moving = true;
+      t.el.style.setProperty("--tx", t.x.toFixed(2) + "px");
+      t.el.style.setProperty("--ty", t.y.toFixed(2) + "px");
+    });
+    raf = moving || pointer ? requestAnimationFrame(frame) : 0;
+  }
+
+  function kick() { if (!raf) raf = requestAnimationFrame(frame); }
+
+  window.addEventListener("pointermove", (e) => { pointer = { x: e.clientX, y: e.clientY }; kick(); }, { passive: true });
+  document.addEventListener("pointerleave", () => { pointer = null; kick(); });
+  window.addEventListener("blur", () => { pointer = null; kick(); });
+}
+
 /* ---------------------------------------------------------
    Idioma
    --------------------------------------------------------- */
@@ -650,4 +726,5 @@ document.getElementById("btn-en").addEventListener("click", () => setLanguage("e
 setLanguage(currentLang);
 initTopbar();
 initScrollSpy();
+initPortraitTags();
 initTimelineProgress();
