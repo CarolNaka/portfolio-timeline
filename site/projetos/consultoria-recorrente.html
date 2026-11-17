@@ -78,172 +78,91 @@
 
     <div data-lang-block="pt">
       <h2>Visão geral</h2>
-      <p>Suporte técnico recorrente a clientes já migrados para o Legal One: correções e ajustes diretamente em produção, sempre com plano de reversão (rollback) documentado.</p>
-
-      <h2>Problema resolvido</h2>
-      <p>Depois da migração, surgem necessidades que a interface do sistema não resolve: dados que vieram errados, regras de negócio específicas, baixa em massa de processos. Isso exige alterar o banco de produção diretamente — uma operação de risco, que precisa de rigor técnico e de um caminho de reversão.</p>
-
-      <h2>Contexto</h2>
-      <p>Essas demandas chegavam de forma recorrente, uma por cliente, sempre com aprovação formal por e-mail antes da execução. Cada caso tinha sua própria particularidade, mas o processo de execução seguia sempre o mesmo padrão de segurança.</p>
+      <p>Suporte recorrente a clientes já migrados para o Legal One: correções e ajustes direto no banco de produção para o que a interface não resolve, como dados incorretos, regras específicas e baixa em massa de processos. Por ser uma operação de risco, todo caso segue o mesmo padrão: aprovação formal por e-mail e plano de reversão (rollback) pronto antes de executar.</p>
 
       <h2>Minha atuação</h2>
       <ul>
-        <li>Recebimento e interpretação de solicitações de ajuste vindas de clientes já migrados.</li>
-        <li>Escrita de scripts SQL personalizados (correção de dados, baixa de processos, ajuste de centro de custo, ajuste de tipo de ação, reorganização de objetos).</li>
-        <li>Criação de um script "declarativo" de diagnóstico antes de qualquer alteração.</li>
-        <li>Execução do script de atualização em produção somente após aprovação formal.</li>
-        <li>Criação de um script de rollback para cada ajuste realizado.</li>
-        <li>Comunicação técnica com áreas internas e registro formal de aprovação por e-mail.</li>
+        <li>Interpreto a solicitação do cliente e a traduzo em escopo técnico.</li>
+        <li>Escrevo scripts SQL sob medida: correção de dados, baixa de processos, centro de custo, tipo de ação e reorganização de objetos.</li>
+        <li>Rodo o script de diagnóstico antes de qualquer alteração e só executo em produção após a aprovação formal.</li>
+        <li>Preparo o script de rollback de cada ajuste antes de executá-lo.</li>
       </ul>
 
-      <h2>Tecnologias utilizadas</h2>
-      <div class="chip-list">
-        <span class="chip">SQL Server (T-SQL)</span>
-        <span class="chip">E-mail (aprovação)</span>
-        <span class="chip">Excel (conferência)</span>
-      </div>
-
-      <h2>Solução implementada</h2>
-      <p>Cada demanda segue um <strong>padrão de 3 arquivos</strong>, repetido de forma consistente:</p>
+      <h2>Como funciona</h2>
+      <p>Cada demanda segue um <strong>padrão de 3 scripts</strong>:</p>
       <ul>
-        <li><strong>Script declarativo</strong> — levanta e lista exatamente quais registros serão afetados, sem alterar nada, servindo de base para aprovação.</li>
-        <li><strong>Script de execução</strong> — aplica a alteração em produção, já validada e aprovada.</li>
-        <li><strong>Script de rollback</strong> — reverte exatamente a alteração feita, preparado antes da execução do ajuste, não depois.</li>
+        <li><strong>Declarativo:</strong> lista exatamente quais registros serão afetados, sem alterar nada, e serve de base para a aprovação.</li>
+        <li><strong>Execução:</strong> aplica a alteração já validada em produção.</li>
+        <li><strong>Rollback:</strong> reverte a alteração; é preparado antes da execução, não depois.</li>
       </ul>
-      <p>Esse padrão transforma uma operação arriscada em um processo auditável e reversível.</p>
-
-      <h2>Processo técnico</h2>
+      <p>Assim, uma operação arriscada vira um processo auditável e reversível.</p>
       <pre class="flow">Solicitação do cliente (e-mail)
   └─&gt; Script declarativo (diagnóstico / escopo do impacto)
        └─&gt; Aprovação formal por e-mail
             └─&gt; Script de execução (update em produção)
                  └─&gt; Script de rollback já preparado (plano de reversão)</pre>
 
-      <h2>Desafios e decisões</h2>
-      <ul>
-        <li><strong>Risco de alteração em produção:</strong> sempre preparar um script de rollback antes de executar mitiga esse risco sistematicamente.</li>
-        <li><strong>Diversidade de demandas:</strong> cada cliente trazia uma regra de negócio diferente, exigindo leitura cuidadosa antes de traduzir em SQL.</li>
-        <li><strong>Necessidade de rastreabilidade:</strong> aprovação formal por e-mail garante histórico de quem autorizou o quê.</li>
-      </ul>
-
-      <h2>Impacto e métricas</h2>
+      <h2>Resultados</h2>
       <table class="impact-table">
         <tr><th>Métrica</th><th>Valor</th><th>Classificação</th></tr>
-        <tr><td>Clientes atendidos com este padrão (pasta principal)</td><td>20 escritórios distintos</td><td>Comprovada</td></tr>
+        <tr><td>Clientes atendidos com este padrão</td><td>20 escritórios distintos</td><td>Comprovada</td></tr>
         <tr><td>Casos adicionais via parceria/canal indireto</td><td>3+</td><td>Comprovada</td></tr>
         <tr><td>Cobertura do padrão declarativo → execução → rollback</td><td>100% dos casos revisados</td><td>Comprovada</td></tr>
-        <tr><td>Scripts de correção produzidos nos últimos 2 anos</td><td>~60 a 80 (estimativa)</td><td>Estimada</td></tr>
+        <tr><td>Scripts de correção nos últimos 2 anos</td><td>~60 a 80 (estimativa)</td><td>Estimada</td></tr>
       </table>
 
-      <h2>Competências demonstradas</h2>
+      <h2>Desafios e aprendizados</h2>
       <ul>
-        <li>Escrita de SQL de diagnóstico, atualização e reversão para cenários de produção.</li>
-        <li>Avaliação de risco antes de intervenções diretas em banco de dados ativo.</li>
-        <li>Interpretação de regras de negócio jurídicas e tradução para lógica de banco de dados.</li>
-        <li>Disciplina de documentação técnica mínima viável, suficiente para auditoria e reversão.</li>
+        <li><strong>Risco em produção:</strong> o rollback preparado antes de executar mitiga o risco de forma sistemática.</li>
+        <li><strong>Demandas diversas:</strong> cada cliente traz uma regra de negócio diferente, que exige leitura cuidadosa antes de virar SQL.</li>
+        <li><strong>Rastreabilidade:</strong> a aprovação por e-mail mantém o histórico de quem autorizou o quê.</li>
+        <li><strong>Próximos passos:</strong> transformar ajustes recorrentes em templates parametrizáveis e reunir os casos em um repositório único.</li>
       </ul>
-
-      <h2>Soft skills demonstradas</h2>
-      <ul>
-        <li><strong>Gestão de risco em ambiente sensível:</strong> plano de reversão sistemático, mesmo sob pressão de prazo.</li>
-        <li><strong>Comunicação técnica:</strong> tradução de pedidos de negócio em escopo técnico validado por e-mail.</li>
-        <li><strong>Confiabilidade e consistência:</strong> mesmo padrão de segurança independentemente do cliente.</li>
-        <li><strong>Autonomia:</strong> condução ponta a ponta de cada demanda.</li>
-      </ul>
-
-      <h2>Aprendizados e próximos passos</h2>
-      <ul>
-        <li>Processo manual — poderia evoluir para templates parametrizáveis para ajustes recorrentes.</li>
-        <li>Sem repositório centralizado único com todos os casos de consultoria recorrente.</li>
-        <li>Sem métricas sistemáticas de tempo de atendimento ou volume de registros afetados.</li>
-      </ul>
-
     </div>
 
     <div data-lang-block="en">
       <h2>Overview</h2>
-      <p>Ongoing technical support for Legal One clients already migrated: corrections and adjustments directly in production, always with a documented rollback plan.</p>
+      <p>Recurring support for clients already migrated to Legal One: fixes and adjustments made directly in the production database for what the interface can't solve, such as incorrect data, specific rules, and bulk case closing. Because this is a risky operation, every case follows the same standard: formal email approval and a rollback plan ready before running.</p>
 
-      <h2>Problem solved</h2>
-      <p>After migration, needs come up that the system's interface can't resolve: incorrectly loaded data, specific business rules, bulk case closures. These require direct changes to the production database — a risky operation that demands rigor and a rollback path.</p>
-
-      <h2>Context</h2>
-      <p>These requests arrived on a recurring basis, one per client, always with formal email approval before execution. Each case had its own specifics, but the execution process always followed the same safety standard.</p>
-
-      <h2>My role</h2>
+      <h2>What I did</h2>
       <ul>
-        <li>Receiving and interpreting adjustment requests from clients already migrated.</li>
-        <li>Writing custom SQL scripts (data correction, case closure, cost-center adjustment, case-type adjustment, object reorganization).</li>
-        <li>Creating a "declarative" diagnostic script before any change.</li>
-        <li>Executing the update script in production only after formal approval.</li>
-        <li>Creating a rollback script for every adjustment made.</li>
-        <li>Technical communication with internal teams and formal email approval records.</li>
+        <li>I interpret the client's request and translate it into technical scope.</li>
+        <li>I write tailored SQL scripts: data fixes, case closing, cost center, case type, and object reorganization.</li>
+        <li>I run the diagnostic script before any change and only execute in production after formal approval.</li>
+        <li>I prepare the rollback script for each adjustment before running it.</li>
       </ul>
 
-      <h2>Technologies used</h2>
-      <div class="chip-list">
-        <span class="chip">SQL Server (T-SQL)</span>
-        <span class="chip">Email (approval)</span>
-        <span class="chip">Excel (review)</span>
-      </div>
-
-      <h2>Solution implemented</h2>
-      <p>Each request follows a <strong>3-file pattern</strong>, applied consistently:</p>
+      <h2>How it works</h2>
+      <p>Each request follows a <strong>3-script standard</strong>:</p>
       <ul>
-        <li><strong>Declarative script</strong> — identifies and lists exactly which records will be affected, without changing anything, for review and approval.</li>
-        <li><strong>Execution script</strong> — applies the validated, approved change to production.</li>
-        <li><strong>Rollback script</strong> — reverts exactly the change made, prepared before executing the adjustment, not after.</li>
+        <li><strong>Declarative:</strong> lists exactly which records will be affected, changing nothing, and serves as the basis for approval.</li>
+        <li><strong>Execution:</strong> applies the validated change in production.</li>
+        <li><strong>Rollback:</strong> reverts the change; prepared before execution, not after.</li>
       </ul>
-      <p>This pattern turns a risky operation into an auditable, reversible process.</p>
-
-      <h2>Technical process</h2>
+      <p>This turns a risky operation into an auditable, reversible process.</p>
       <pre class="flow">Client request (email)
-  └─&gt; Declarative script (diagnosis / scope of impact)
-       └─&gt; Formal email approval
+  └─&gt; Declarative script (diagnosis / impact scope)
+       └─&gt; Formal approval by email
             └─&gt; Execution script (production update)
                  └─&gt; Rollback script already prepared (reversal plan)</pre>
 
-      <h2>Challenges and decisions</h2>
-      <ul>
-        <li><strong>Production change risk:</strong> always preparing a rollback script before executing systematically mitigates this risk.</li>
-        <li><strong>Request diversity:</strong> each client brought a different business rule, requiring careful reading before translating into SQL.</li>
-        <li><strong>Need for traceability:</strong> formal email approval ensures a record of who authorized what.</li>
-      </ul>
-
-      <h2>Impact and metrics</h2>
+      <h2>Results</h2>
       <table class="impact-table">
         <tr><th>Metric</th><th>Value</th><th>Classification</th></tr>
-        <tr><td>Clients served under this pattern (main folder)</td><td>20 distinct law firms</td><td>Confirmed</td></tr>
-        <tr><td>Additional cases via partner channel</td><td>3+</td><td>Confirmed</td></tr>
-        <tr><td>Coverage of declarative → execution → rollback pattern</td><td>100% of reviewed cases</td><td>Confirmed</td></tr>
-        <tr><td>Correction scripts produced over the last 2 years</td><td>~60–80 (estimate)</td><td>Estimated</td></tr>
+        <tr><td>Clients served with this standard</td><td>20 distinct firms</td><td>Confirmed</td></tr>
+        <tr><td>Additional cases via partner/indirect channel</td><td>3+</td><td>Confirmed</td></tr>
+        <tr><td>Declarative → execution → rollback coverage</td><td>100% of reviewed cases</td><td>Confirmed</td></tr>
+        <tr><td>Fix scripts produced in the last 2 years</td><td>~60 to 80 (estimate)</td><td>Estimate</td></tr>
       </table>
 
-      <h2>Skills demonstrated</h2>
+      <h2>Challenges and learnings</h2>
       <ul>
-        <li>Writing diagnostic, update, and rollback SQL for live production scenarios.</li>
-        <li>Risk assessment before direct interventions on an active database.</li>
-        <li>Interpreting legal-business rules and translating them into database logic.</li>
-        <li>Minimal-viable technical documentation discipline, sufficient for audit and rollback.</li>
+        <li><strong>Production risk:</strong> preparing the rollback before running mitigates the risk systematically.</li>
+        <li><strong>Varied demands:</strong> each client brings a different business rule, requiring careful reading before turning it into SQL.</li>
+        <li><strong>Traceability:</strong> email approval keeps a record of who authorized what.</li>
+        <li><strong>Next steps:</strong> turn recurring adjustments into parameterized templates and gather the cases in a single repository.</li>
       </ul>
-
-      <h2>Soft skills demonstrated</h2>
-      <ul>
-        <li><strong>Risk management in sensitive environments:</strong> systematic rollback plan, even under deadline pressure.</li>
-        <li><strong>Technical communication:</strong> translating business requests into validated technical scope.</li>
-        <li><strong>Reliability and consistency:</strong> same safety standard regardless of client.</li>
-        <li><strong>Autonomy:</strong> end-to-end ownership of each request.</li>
-      </ul>
-
-      <h2>Lessons learned and next steps</h2>
-      <ul>
-        <li>Manual process — could evolve into parameterized templates for recurring adjustments.</li>
-        <li>No single centralized repository for all recurring consulting cases.</li>
-        <li>No systematic metrics on turnaround time or affected record volume.</li>
-      </ul>
-
     </div>
-
   </article>
 </main>
 

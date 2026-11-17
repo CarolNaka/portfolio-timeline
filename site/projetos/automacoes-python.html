@@ -66,6 +66,9 @@
     </div>
     <div class="meta-row">
       <span class="meta-chip">Python</span>
+      <span class="meta-chip">pandas</span>
+      <span class="meta-chip">openpyxl</span>
+      <span class="meta-chip">SQLAlchemy</span>
       <span class="meta-chip">SQL Server</span>
       <span class="meta-chip">MySQL</span>
     </div>
@@ -77,160 +80,73 @@
 
     <div data-lang-block="pt">
       <h2>Visão geral</h2>
-      <p>Scripts Python para ganho de produtividade em migração e manutenção de dados: importação de CSV/Excel para banco, comparação de volumetria, extração de dados do MySQL e gestão de acesso de usuários.</p>
-
-      <h2>Problema resolvido</h2>
-      <p>Diversas etapas do processo de migração e suporte (conferir se duas bases têm a mesma quantidade de registros, subir uma planilha inteira para o banco, extrair dados de uma base MySQL, resetar o acesso de um usuário) eram candidatas a automação simples que elimina passos manuais repetitivos.</p>
-
-      <h2>Contexto</h2>
-      <p>Os scripts foram desenvolvidos como ferramentas de apoio paralelas ao trabalho principal de migração e consultoria, cada um resolvendo uma necessidade pontual identificada na rotina.</p>
+      <p>Scripts Python criados para tirar tarefas manuais do dia a dia de migração e suporte: importar planilhas para o banco, comparar volumes entre bases, extrair dados de MySQL, consolidar erros e avisos e apoiar a gestão de acessos. Cada um resolve uma necessidade pontual da rotina.</p>
 
       <h2>Minha atuação</h2>
       <ul>
-        <li>Importador genérico e parametrizável de Excel para banco.</li>
-        <li>Scripts de extração a partir de bases <strong>MySQL</strong> de origem (andamentos e compromissos/tarefas).</li>
-        <li>Scripts de comparação de volumetria entre bases, com relatório Excel.</li>
-        <li>Script de apoio à gestão de acesso de usuários do Legal One.</li>
-        <li>Script de extração de erros e avisos, conectando via <code>pyodbc</code>, consolidando em Excel formatado.</li>
+        <li><strong>Importador genérico</strong> de Excel para banco: lê todas as abas (ou uma específica) e padroniza os nomes de coluna.</li>
+        <li>Extração de andamentos e compromissos/tarefas de bases <strong>MySQL</strong> de origem.</li>
+        <li>Comparação de volumetria entre bases, com relatório em Excel.</li>
+        <li>Extração de erros e avisos (Totais, Erros, Avisos) em Excel formatado.</li>
+        <li>Apoio à gestão de acesso de usuários do Legal One.</li>
       </ul>
 
-      <h2>Tecnologias utilizadas</h2>
-      <div class="chip-list">
-        <span class="chip">Python</span>
-        <span class="chip">pandas</span>
-        <span class="chip">openpyxl</span>
-        <span class="chip">pyodbc</span>
-        <span class="chip">sqlalchemy</span>
-        <span class="chip">pymysql</span>
-      </div>
-
-      <h2>Solução implementada</h2>
-      <ul>
-        <li><strong>Importador genérico:</strong> lê planilha Excel inteira (todas as abas ou uma específica), sanitiza nomes de coluna e insere via <code>sqlalchemy</code>.</li>
-        <li><strong>Extração MySQL:</strong> conecta à base de origem e extrai andamentos e compromissos/tarefas.</li>
-        <li><strong>Comparação de volumetria:</strong> compara contagem de registros entre bases, apoiando validação pós-tratamento.</li>
-        <li><strong>Extração de erros e avisos:</strong> executa scripts SQL de verificação e organiza o resultado em Excel (Totais, Erros, Avisos).</li>
-        <li><strong>Gestão de acessos:</strong> automatiza tarefas de acesso de usuários.</li>
-      </ul>
-
-      <h2>Processo técnico</h2>
+      <h2>Como funciona</h2>
+      <p>Cada script parte de uma fonte (Excel, MySQL ou SQL Server) e entrega o banco atualizado ou um relatório consolidado. Bibliotecas: pandas, openpyxl, pyodbc, SQLAlchemy e PyMySQL.</p>
       <pre class="flow">Fonte de dados (Excel, MySQL, SQL Server)
   └─&gt; Script Python específico (importação, extração, comparação ou verificação)
        └─&gt; Banco de destino atualizado OU relatório Excel consolidado</pre>
 
-      <h2>Desafios e decisões</h2>
-      <ul>
-        <li><strong>Scripts pontuais vs. ferramenta única:</strong> priorizou agilidade de entrega para necessidades específicas.</li>
-        <li><strong>Evolução de abordagem:</strong> protótipo anterior (baseado em <code>pyautogui</code>) evoluiu para a abordagem Selenium do projeto Unificador de Contatos.</li>
-      </ul>
-
-      <h2>Impacto e métricas</h2>
+      <h2>Resultados</h2>
       <table class="impact-table">
         <tr><th>Métrica</th><th>Valor</th><th>Classificação</th></tr>
-        <tr><td>Scripts Python de produtividade identificados</td><td>8 scripts distintos</td><td>Comprovada</td></tr>
+        <tr><td>Scripts Python de produtividade</td><td>8 scripts distintos</td><td>Comprovada</td></tr>
         <tr><td>Bancos de origem suportados</td><td>SQL Server e MySQL</td><td>Comprovada</td></tr>
-        <tr><td>Redução de dependência técnica para subir planilha</td><td>Alta (importador genérico)</td><td>Estimativa qualitativa</td></tr>
+        <tr><td>Dependência técnica para subir planilha</td><td>Reduzida (importador genérico)</td><td>Estimativa qualitativa</td></tr>
       </table>
 
-      <h2>Competências demonstradas</h2>
+      <h2>Desafios e aprendizados</h2>
       <ul>
-        <li>Programação Python aplicada a integração de dados (Excel, SQL Server, MySQL).</li>
-        <li>Uso de bibliotecas de acesso a banco e manipulação de planilhas.</li>
-        <li>Identificação de tarefas manuais repetitivas e generalização em scripts reutilizáveis.</li>
+        <li><strong>Scripts pontuais em vez de uma ferramenta única:</strong> priorizei agilidade para necessidades específicas.</li>
+        <li><strong>Evolução:</strong> o protótipo anterior com <code>pyautogui</code> levou à abordagem com Selenium do Unificador de Contatos.</li>
+        <li><strong>Próximos passos:</strong> padronizar o tratamento de erros, criar testes e documentar o uso de cada script.</li>
       </ul>
-
-      <h2>Soft skills demonstradas</h2>
-      <ul>
-        <li><strong>Produtividade e melhoria contínua:</strong> ferramentas de apoio para acelerar tarefas recorrentes.</li>
-        <li><strong>Visão de reuso:</strong> construção de importador genérico em vez de script fixo por planilha.</li>
-      </ul>
-
-      <h2>Aprendizados e próximos passos</h2>
-      <ul>
-        <li>Sem tratamento de erro padronizado nem testes automatizados.</li>
-        <li>Sem documentação formal de uso para cada script.</li>
-      </ul>
-
     </div>
 
     <div data-lang-block="en">
       <h2>Overview</h2>
-      <p>Python scripts for productivity gains in data migration and maintenance: CSV/Excel-to-database import, volume comparison, MySQL data extraction, and user-access management.</p>
+      <p>Python scripts built to remove manual tasks from day-to-day migration and support: importing spreadsheets into databases, comparing volumes between databases, extracting MySQL data, consolidating errors and warnings, and supporting access management. Each one solves a specific need of the routine.</p>
 
-      <h2>Problem solved</h2>
-      <p>Several steps in the migration and support process (checking record counts, uploading a spreadsheet, extracting data from a MySQL database, resetting user access) were good candidates for simple automation removing repetitive manual steps.</p>
-
-      <h2>Context</h2>
-      <p>The scripts were developed as support tools running alongside the main migration and consulting work, each solving a specific need identified in day-to-day routine.</p>
-
-      <h2>My role</h2>
+      <h2>What I did</h2>
       <ul>
-        <li>Generic, parameterized Excel-to-database importer.</li>
-        <li>Extraction scripts from source <strong>MySQL</strong> databases (activity logs and appointments/tasks).</li>
-        <li>Database volume-comparison scripts, with Excel reporting.</li>
-        <li>Script supporting Legal One user-access management.</li>
-        <li>Error/warning extraction script, connecting via <code>pyodbc</code>, consolidated into formatted Excel.</li>
+        <li><strong>Generic importer</strong> from Excel to a database: reads every sheet (or a specific one) and standardizes column names.</li>
+        <li>Extraction of activity logs and appointments/tasks from <strong>MySQL</strong> source databases.</li>
+        <li>Volume comparison between databases, with an Excel report.</li>
+        <li>Errors-and-warnings extraction (Totals, Errors, Warnings) into a formatted Excel file.</li>
+        <li>Support for Legal One user-access management.</li>
       </ul>
 
-      <h2>Technologies used</h2>
-      <div class="chip-list">
-        <span class="chip">Python</span>
-        <span class="chip">pandas</span>
-        <span class="chip">openpyxl</span>
-        <span class="chip">pyodbc</span>
-        <span class="chip">sqlalchemy</span>
-        <span class="chip">pymysql</span>
-      </div>
-
-      <h2>Solution implemented</h2>
-      <ul>
-        <li><strong>Generic importer:</strong> reads an entire Excel spreadsheet (every sheet or one specified), sanitizes column names, and inserts via <code>sqlalchemy</code>.</li>
-        <li><strong>MySQL extraction:</strong> connects to the source database and extracts activity logs and appointments/tasks.</li>
-        <li><strong>Volume comparison:</strong> compares record counts between databases, supporting post-treatment validation.</li>
-        <li><strong>Error/warning extraction:</strong> runs verification SQL scripts and organizes the result into Excel (Totals, Errors, Warnings).</li>
-        <li><strong>Access management:</strong> automates user-access tasks.</li>
-      </ul>
-
-      <h2>Technical process</h2>
+      <h2>How it works</h2>
+      <p>Each script starts from a source (Excel, MySQL, or SQL Server) and delivers an updated database or a consolidated report. Libraries: pandas, openpyxl, pyodbc, SQLAlchemy, and PyMySQL.</p>
       <pre class="flow">Data source (Excel, MySQL, SQL Server)
-  └─&gt; Dedicated Python script (import, extraction, comparison, or verification)
+  └─&gt; Specific Python script (import, extraction, comparison, or verification)
        └─&gt; Updated target database OR consolidated Excel report</pre>
 
-      <h2>Challenges and decisions</h2>
-      <ul>
-        <li><strong>Point scripts vs. a single tool:</strong> prioritized delivery speed for specific needs.</li>
-        <li><strong>Approach evolution:</strong> the earlier prototype (based on <code>pyautogui</code>) later evolved into the Selenium approach used in the Contact Deduplication Tool.</li>
-      </ul>
-
-      <h2>Impact and metrics</h2>
+      <h2>Results</h2>
       <table class="impact-table">
         <tr><th>Metric</th><th>Value</th><th>Classification</th></tr>
-        <tr><td>Python productivity scripts identified</td><td>8 distinct scripts</td><td>Confirmed</td></tr>
+        <tr><td>Python productivity scripts</td><td>8 distinct scripts</td><td>Confirmed</td></tr>
         <tr><td>Source databases supported</td><td>SQL Server and MySQL</td><td>Confirmed</td></tr>
-        <tr><td>Reduction in technical dependency to upload a spreadsheet</td><td>High (generic importer)</td><td>Qualitative estimate</td></tr>
+        <tr><td>Technical dependency to upload a spreadsheet</td><td>Reduced (generic importer)</td><td>Qualitative estimate</td></tr>
       </table>
 
-      <h2>Skills demonstrated</h2>
+      <h2>Challenges and learnings</h2>
       <ul>
-        <li>Python programming applied to data integration (Excel, SQL Server, MySQL).</li>
-        <li>Use of database access and spreadsheet manipulation libraries.</li>
-        <li>Identifying repetitive manual tasks and generalizing them into reusable scripts.</li>
+        <li><strong>One-off scripts instead of a single tool:</strong> I prioritized delivery speed for specific needs.</li>
+        <li><strong>Evolution:</strong> the earlier <code>pyautogui</code> prototype led to the Selenium approach used in the Contact Deduplication Tool.</li>
+        <li><strong>Next steps:</strong> standardize error handling, add tests, and document the use of each script.</li>
       </ul>
-
-      <h2>Soft skills demonstrated</h2>
-      <ul>
-        <li><strong>Productivity and continuous improvement:</strong> support tools to speed up recurring tasks.</li>
-        <li><strong>Reuse mindset:</strong> building a generic importer instead of a fixed script per spreadsheet.</li>
-      </ul>
-
-      <h2>Lessons learned and next steps</h2>
-      <ul>
-        <li>No standardized error handling or automated tests.</li>
-        <li>No formal usage documentation for each script.</li>
-      </ul>
-
     </div>
-
   </article>
 </main>
 
