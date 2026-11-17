@@ -1525,6 +1525,8 @@ a.card:hover::before, .card--hover:hover::before { opacity: 1; width: 72px; }
 .timeline-type--edu { background: var(--cyan-soft); color: var(--cyan); }
 
 /* Destaques ao passar o mouse (ou focar / tocar) no marco */
+/* A seção fica acima das seguintes (que têm fundo próprio) para os painéis dos últimos marcos não serem cortados na divisa */
+#trajetoria { z-index: 2; }
 .timeline-item:hover, .timeline-item:focus-within, .timeline-item.is-open { z-index: 5; }
 .timeline-card.has-pop { cursor: default; outline-offset: 3px; }
 
