@@ -293,8 +293,7 @@ const timeline = [
     date: "Jun 2021", type: "edu",
     pt: "Formação em Mecânica — Processos de Produção", en: "Graduated — Mechanical Engineering, Production Processes",
     details: [
-      { pt: ["Protótipo de macaco hidráulico", "Trabalho de encerramento: prototipagem e usinagem, com teste levantando 2 toneladas."], en: ["Hydraulic jack prototype", "Final course project: prototyping and machining, tested lifting 2 tons."] },
-      { pt: ["Do desenho técnico à usinagem", "Projeto completo, incluindo o desenho técnico e a usinagem das peças, em grupo de 7 pessoas."], en: ["From technical drawing to machining", "Complete project, including the technical drawing and machining of the parts, by a team of 7."] }
+      { pt: ["Protótipo de macaco hidráulico", "Trabalho de encerramento: do projeto de desenho técnico à usinagem das peças, em grupo de 7 pessoas. O protótipo foi testado levantando 2 toneladas."], en: ["Hydraulic jack prototype", "Final course project: from the technical-drawing design to machining the parts, by a team of 7. The prototype was tested lifting 2 tons."] }
     ]
   },
   { date: "Jan 2017", type: "edu", pt: "Ingresso na FATEC — Mecânica, Processos de Produção", en: "Started FATEC — Mechanical Engineering, Production Processes" }
@@ -410,7 +409,7 @@ function renderTimeline(lang) {
       ? `<div class="timeline-pop" role="tooltip"><p class="timeline-pop-title">${t18["trajetoria.destaques"]}</p><ul>${t.details.map(d =>
           `<li><strong>${d[lang][0]}</strong><span>${d[lang][1]}</span>${d.href ? `<a href="${d.href}" target="_blank" rel="noopener">${t18["trajetoria.verPublicacao"]} ↗</a>` : ""}</li>`).join("")}</ul></div>`
       : "";
-    const hint = hasPop ? `<span class="timeline-hint">${t18["trajetoria.destaques"]} · ${t.details.length}</span>` : "";
+    const hint = hasPop ? `<span class="timeline-hint">${t18["trajetoria.destaques"]}${t.details.length > 1 ? " · " + t.details.length : ""}</span>` : "";
     item.innerHTML = `
       <span class="timeline-node" aria-hidden="true"></span>
       <div class="timeline-card${hasPop ? " has-pop" : ""}"${hasPop ? ' tabindex="0"' : ""}>
