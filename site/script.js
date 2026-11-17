@@ -266,8 +266,8 @@ const timeline = [
     details: [
       { pt: "TCC: “Produtividade no desenvolvimento de software assistido por IA: alcance e limites das evidências sobre tempo, compreensão, qualidade e manutenção”",
         en: "Thesis (TCC): “Productivity in AI-assisted software development: scope and limits of the evidence on time, comprehension, quality, and maintenance”" },
-      { pt: "Desenvolvimento de projeto: Batalha Naval (4º semestre)",
-        en: "Project development: Battleship (4th semester)",
+      { pt: "Desenvolvimento de projeto: Batalha Naval (4º semestre), em grupo de 13 pessoas, como gestora de projeto líder",
+        en: "Project development: Battleship (4th semester), in a team of 13, as lead project manager",
         href: null /* link da publicação no LinkedIn: preencher quando disponível */ }
     ]
   },
@@ -282,7 +282,16 @@ const timeline = [
     ]
   },
   { date: "Jan 2023", type: "edu", pt: "Ingresso na FATEC — Análise e Desenvolvimento de Sistemas", en: "Started FATEC — Systems Analysis and Development" },
-  { date: "Jun 2021", type: "edu", pt: "Formação em Mecânica — Processos de Produção", en: "Graduated — Mechanical Engineering, Production Processes" },
+  {
+    date: "Jun 2021", type: "edu",
+    pt: "Formação em Mecânica — Processos de Produção", en: "Graduated — Mechanical Engineering, Production Processes",
+    details: [
+      { pt: "Trabalho de encerramento: prototipagem e usinagem de um macaco hidráulico, testado levantando 2 toneladas",
+        en: "Final course project: prototyping and machining of a hydraulic jack, tested lifting 2 tons" },
+      { pt: "Projeto completo de desenho técnico e usinagem das peças, realizado por um grupo de 7 pessoas",
+        en: "Complete technical-drawing design and machining of the parts, carried out by a team of 7" }
+    ]
+  },
   { date: "Jan 2017", type: "edu", pt: "Ingresso na FATEC — Mecânica, Processos de Produção", en: "Started FATEC — Mechanical Engineering, Production Processes" }
 ];
 
