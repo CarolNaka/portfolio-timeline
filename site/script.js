@@ -80,7 +80,7 @@ const i18n = {
     "skills.apps": "Aplicada em",
     "competencias.tabTecnicas": "Competências técnicas",
     "competencias.tabSoft": "Soft skills",
-    "exp.voltar": "Voltar ao início",
+    "exp.voltar": "Voltar para Experiências",
     "exp.legalOne.eyebrow": "Experiência · Técnica em Banco de Dados",
     "exp.legalOne.title": "Thomson Reuters Brasil",
     "exp.legalOne.subtitle": "Atuação no segmento do Legal One · Migração de plataformas concorrentes · Consultoria recorrente · Saneamento de dados · Automação",
@@ -104,7 +104,8 @@ const i18n = {
     "proj.eyebrow.consultoria": "Projeto · Consultoria",
     "proj.eyebrow.saneamento": "Projeto · Saneamento de Dados",
     "proj.eyebrow.automacao": "Projeto · Automação",
-    "proj.voltar": "Voltar para Thomson Reuters Brasil",
+    "proj.voltar": "Projetos na Thomson Reuters Brasil",
+    "proj.voltarExperiencias": "Voltar para Experiências",
     "toc.titulo": "Nesta página",
     "proj.verDetalhes": "Ver detalhes"
   },
@@ -181,7 +182,7 @@ const i18n = {
     "skills.apps": "Applied in",
     "competencias.tabTecnicas": "Technical skills",
     "competencias.tabSoft": "Soft skills",
-    "exp.voltar": "Back to home",
+    "exp.voltar": "Back to Experience",
     "exp.legalOne.eyebrow": "Experience · Database Analyst",
     "exp.legalOne.title": "Thomson Reuters Brasil",
     "exp.legalOne.subtitle": "Working in the Legal One segment · Competing-platform migration · Recurring consulting · Data sanitization · Automation",
@@ -205,7 +206,8 @@ const i18n = {
     "proj.eyebrow.consultoria": "Project · Consulting",
     "proj.eyebrow.saneamento": "Project · Data Sanitization",
     "proj.eyebrow.automacao": "Project · Automation",
-    "proj.voltar": "Back to Thomson Reuters Brasil",
+    "proj.voltar": "Projects at Thomson Reuters Brasil",
+    "proj.voltarExperiencias": "Back to Experience",
     "toc.titulo": "On this page",
     "proj.verDetalhes": "View details"
   }
