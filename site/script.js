@@ -69,10 +69,12 @@ const i18n = {
     "experiencias.legalOne.tag3": "Automação",
     "experiencias.ver": "Ver projetos e métricas",
     "trajetoria.titulo": "Trajetória",
-    "trajetoria.aside": "2017 — 2026",
-    "trajetoria.intro": "Principais marcos de formação e carreira, da engenharia mecânica à área de dados.",
+    "trajetoria.aside": "2026 — 2017",
+    "trajetoria.intro": "Principais marcos de formação e carreira, do mais recente ao mais antigo.",
     "trajetoria.tipo.edu": "Formação",
     "trajetoria.tipo.work": "Carreira",
+    "trajetoria.destaques": "Destaques",
+    "trajetoria.verPublicacao": "Ver publicação no LinkedIn",
     "competencias.titulo": "Skills",
     "competencias.aside": "Técnicas · Comportamentais",
     "competencias.intro": "Habilidades que utilizo no dia a dia ou que já apliquei nos projetos apresentados neste portfólio. Cada uma indica onde foi aplicada.",
@@ -171,10 +173,12 @@ const i18n = {
     "experiencias.legalOne.tag3": "Automation",
     "experiencias.ver": "View projects and metrics",
     "trajetoria.titulo": "Timeline",
-    "trajetoria.aside": "2017 — 2026",
-    "trajetoria.intro": "Key education and career milestones, from mechanical engineering to the data field.",
+    "trajetoria.aside": "2026 — 2017",
+    "trajetoria.intro": "Key education and career milestones, from most recent to oldest.",
     "trajetoria.tipo.edu": "Education",
     "trajetoria.tipo.work": "Career",
+    "trajetoria.destaques": "Highlights",
+    "trajetoria.verPublicacao": "View LinkedIn post",
     "competencias.titulo": "Skills",
     "competencias.aside": "Technical · Behavioral",
     "competencias.intro": "Skills I use day to day or have already applied in the projects presented in this portfolio. Each one shows where it was applied.",
@@ -254,13 +258,34 @@ const skillsSoft = [
   { pt: "Responsabilidade com dados sensíveis", en: "Responsibility with sensitive data", descPt: "Rollback e aprovação formal em cada alteração de produção, protegendo a integridade e a confidencialidade dos dados.", descEn: "Rollback and formal approval on every production change, protecting data integrity and confidentiality.", daily: false, apps: ["consultoria"] }
 ];
 
-// type: "edu" (formação) | "work" (carreira)
+// Ordem: do mais recente ao mais antigo.
+// type: "edu" (formação) | "work" (carreira); future: marco ainda por concluir.
+// details (opcional): destaques exibidos ao passar o mouse/focar no marco. Cada item: { pt, en, href? }.
 const timeline = [
-  { date: "Jan 2017", type: "edu", pt: "Ingresso na FATEC — Mecânica, Processos de Produção", en: "Started FATEC — Mechanical Engineering, Production Processes" },
-  { date: "Jun 2021", type: "edu", pt: "Formação em Mecânica — Processos de Produção", en: "Graduated — Mechanical Engineering, Production Processes" },
+  {
+    date: "Dez 2026", dateEn: "Dec 2026", type: "edu", future: true,
+    pt: "Formação em Análise e Desenvolvimento de Sistemas (prevista)", en: "Graduation — Systems Analysis and Development (expected)",
+    details: [
+      { pt: "TCC: “Produtividade no desenvolvimento de software assistido por IA: alcance e limites das evidências sobre tempo, compreensão, qualidade e manutenção”",
+        en: "Thesis (TCC): “Productivity in AI-assisted software development: scope and limits of the evidence on time, comprehension, quality, and maintenance”" },
+      { pt: "Desenvolvimento de projeto: Batalha Naval (4º semestre)",
+        en: "Project development: Battleship (4th semester)",
+        href: null /* link da publicação no LinkedIn: preencher quando disponível */ }
+    ]
+  },
+  {
+    date: "Mar 2025", type: "work",
+    pt: "Início do estágio na Thomson Reuters Brasil", en: "Started internship at Thomson Reuters Brasil",
+    details: [
+      { pt: "Primeira migração de dados conduzida de forma totalmente independente", en: "First data migration carried out fully independently" },
+      { pt: "Criação do Unificador de Contatos, hoje usado por outros consultores", en: "Built the Contact Deduplication Tool, now used by other consultants" },
+      { pt: "Consultoria recorrente em produção, com rollback documentado", en: "Recurring production consulting, with documented rollback" },
+      { pt: "92 commits em ~5 meses no repositório de migração do time", en: "92 commits over ~5 months in the team's migration repository" }
+    ]
+  },
   { date: "Jan 2023", type: "edu", pt: "Ingresso na FATEC — Análise e Desenvolvimento de Sistemas", en: "Started FATEC — Systems Analysis and Development" },
-  { date: "Mar 2025", type: "work", pt: "Início do estágio na Thomson Reuters Brasil", en: "Started internship at Thomson Reuters Brasil" },
-  { date: "Dez 2026", dateEn: "Dec 2026", type: "edu", pt: "Formação em Análise e Desenvolvimento de Sistemas (prevista)", en: "Graduation — Systems Analysis and Development (expected)" }
+  { date: "Jun 2021", type: "edu", pt: "Formação em Mecânica — Processos de Produção", en: "Graduated — Mechanical Engineering, Production Processes" },
+  { date: "Jan 2017", type: "edu", pt: "Ingresso na FATEC — Mecânica, Processos de Produção", en: "Started FATEC — Mechanical Engineering, Production Processes" }
 ];
 
 // Projetos pessoais publicados no GitHub. Para adicionar um novo, inclua um item aqui.
@@ -362,22 +387,48 @@ function renderSkills(lang) {
 function renderTimeline(lang) {
   const list = document.getElementById("timeline-list");
   if (!list) return;
+  const t18 = i18n[lang];
   list.querySelectorAll(".timeline-item").forEach(el => el.remove());
-  timeline.forEach((t, i) => {
+  timeline.forEach(t => {
     const item = document.createElement("div");
-    item.className = "timeline-item" + (i === timeline.length - 1 ? " timeline-item--last" : "");
-    const typeLabel = i18n[lang][`trajetoria.tipo.${t.type}`] || "";
+    item.className = "timeline-item" + (t.future ? " timeline-item--future" : "");
+    const typeLabel = t18[`trajetoria.tipo.${t.type}`] || "";
+    const hasPop = Array.isArray(t.details) && t.details.length > 0;
+    const pop = hasPop
+      ? `<div class="timeline-pop" role="tooltip"><p class="timeline-pop-title">${t18["trajetoria.destaques"]}</p><ul>${t.details.map(d =>
+          `<li>${d[lang]}${d.href ? ` <a href="${d.href}" target="_blank" rel="noopener">${t18["trajetoria.verPublicacao"]} ↗</a>` : ""}</li>`).join("")}</ul></div>`
+      : "";
+    const hint = hasPop ? `<span class="timeline-hint">${t18["trajetoria.destaques"]}</span>` : "";
     item.innerHTML = `
       <span class="timeline-node" aria-hidden="true"></span>
-      <div class="timeline-card">
+      <div class="timeline-card${hasPop ? " has-pop" : ""}"${hasPop ? ' tabindex="0"' : ""}>
         <div class="timeline-meta">
           <span class="timeline-date">${(lang === "en" && t.dateEn) || t.date}</span>
           <span class="timeline-type timeline-type--${t.type}">${typeLabel}</span>
         </div>
         <p class="timeline-title">${t[lang]}</p>
+        ${hint}${pop}
       </div>`;
+    const card = item.querySelector(".timeline-card.has-pop");
+    if (card) {
+      card.addEventListener("click", (e) => {
+        if (e.target.closest("a")) return;
+        const open = !item.classList.contains("is-open");
+        list.querySelectorAll(".timeline-item.is-open").forEach(el => el.classList.remove("is-open"));
+        item.classList.toggle("is-open", open);
+      });
+    }
     list.appendChild(item);
   });
+  if (!list.dataset.outsideClose) {
+    list.dataset.outsideClose = "1";
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".timeline-card.has-pop")) list.querySelectorAll(".timeline-item.is-open").forEach(el => el.classList.remove("is-open"));
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") list.querySelectorAll(".timeline-item.is-open").forEach(el => el.classList.remove("is-open"));
+    });
+  }
 }
 
 // Lista compacta de projetos dentro do cartão de experiência (home)
