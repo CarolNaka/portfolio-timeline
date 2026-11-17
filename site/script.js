@@ -67,11 +67,12 @@ const i18n = {
     "trajetoria.tipo.edu": "Formação",
     "trajetoria.tipo.work": "Carreira",
     "competencias.titulo": "Skills",
-    "competencias.aside": "18 competências avaliadas",
-    "competencias.intro": "Cada nível, de 1 a 5, é baseado em evidências de projetos reais.",
-    "competencias.legenda": "escala de 1 a 5, por evidência de projeto",
-    "competencias.tabTecnicas": "Competências Técnicas",
-    "competencias.tabSoft": "Soft Skills",
+    "competencias.aside": "Técnicas · Comportamentais",
+    "competencias.intro": "Habilidades que utilizo no dia a dia ou que já apliquei nos projetos apresentados neste portfólio. Cada uma indica onde foi aplicada.",
+    "skills.daily": "Uso diário",
+    "skills.apps": "Aplicada em",
+    "competencias.tabTecnicas": "Competências técnicas",
+    "competencias.tabSoft": "Soft skills",
     "exp.voltar": "Voltar ao início",
     "exp.legalOne.eyebrow": "Experiência · Técnica em Banco de Dados",
     "exp.legalOne.title": "Thomson Reuters Brasil",
@@ -162,11 +163,12 @@ const i18n = {
     "trajetoria.tipo.edu": "Education",
     "trajetoria.tipo.work": "Career",
     "competencias.titulo": "Skills",
-    "competencias.aside": "18 competencies assessed",
-    "competencias.intro": "Each level, from 1 to 5, is based on evidence from real projects.",
-    "competencias.legenda": "1-to-5 scale, based on project evidence",
-    "competencias.tabTecnicas": "Technical Skills",
-    "competencias.tabSoft": "Soft Skills",
+    "competencias.aside": "Technical · Behavioral",
+    "competencias.intro": "Skills I use day to day or have already applied in the projects presented in this portfolio. Each one shows where it was applied.",
+    "skills.daily": "Daily use",
+    "skills.apps": "Applied in",
+    "competencias.tabTecnicas": "Technical skills",
+    "competencias.tabSoft": "Soft skills",
     "exp.voltar": "Back to home",
     "exp.legalOne.eyebrow": "Experience · Database Analyst",
     "exp.legalOne.title": "Thomson Reuters Brasil",
@@ -206,28 +208,38 @@ const stack = [
   { pt: "Ferramentas", en: "Tools", items: ["Git / GitHub", "Excel"] }
 ];
 
+const skillApps = {
+  migracao: { pt: "Migração de Banco a Banco", en: "Database-to-Database Migration", href: "projetos/migracao-banco-a-banco.html" },
+  consultoria: { pt: "Consultoria Recorrente", en: "Recurring Consulting", href: "projetos/consultoria-recorrente.html" },
+  unificador: { pt: "Unificador de Contatos", en: "Contact Deduplication Tool", href: "projetos/unificador-de-contatos.html" },
+  python: { pt: "Automações Python", en: "Python Automations", href: "projetos/automacoes-python.html" },
+  sqlvba: { pt: "Automações SQL e VBA", en: "SQL & VBA Automations", href: "projetos/automacoes-sql-vba.html" },
+  thomson: { pt: "Thomson Reuters Brasil", en: "Thomson Reuters Brasil", href: "experiencias/thomson-reuters.html" }
+};
+
+// daily: true = habilidade usada no dia a dia da função atual; apps = onde foi aplicada nos projetos apresentados
 const skillsTecnicas = [
-  { pt: "SQL e SQL Server", en: "SQL & SQL Server", score: 4, notePt: "Pipelines de extração, deduplicação e scripts de rollback em produção.", noteEn: "Extraction pipelines, deduplication, and production rollback scripts." },
-  { pt: "Migração e transformação de dados", en: "Migration & data transformation", score: 5, notePt: "92 commits em repositório de migração; 25+ clientes migrados.", noteEn: "92 commits in a migration repository; 25+ clients migrated." },
-  { pt: "Modelagem e manipulação de dados", en: "Data modeling & manipulation", score: 4, notePt: "Mapeamento de equivalência entre Astrea, Projuris, CPJ e Legal One.", noteEn: "Mapping equivalence between Astrea, Projuris, CPJ, and Legal One." },
-  { pt: "Qualidade e saneamento de dados", en: "Data quality & sanitization", score: 4, notePt: "Desenvolvimento do Unificador de Contatos (Python + Selenium).", noteEn: "Development of the Contact Deduplication Tool (Python + Selenium)." },
-  { pt: "Python", en: "Python", score: 4, notePt: "Automação de interface, scripts de integração de dados e GUI (Tkinter).", noteEn: "Interface automation, data-integration scripts, and GUI (Tkinter)." },
-  { pt: "Automação com Selenium", en: "Selenium automation", score: 4, notePt: "Evolução da automação por coordenadas de tela para a seleção direta de elementos, mais estável.", noteEn: "Evolution from screen-coordinate automation to direct element selection, which is more stable." },
-  { pt: "VBA e automação de Excel", en: "VBA & Excel automation", score: 3, notePt: "7 macros de validação estrutural de planilhas de migração.", noteEn: "7 macros for structural validation of migration spreadsheets." },
-  { pt: "Manutenção e suporte de scripts", en: "Script maintenance & support", score: 4, notePt: "Consultoria recorrente para 23+ clientes já migrados.", noteEn: "Recurring consulting for 23+ already-migrated clients." },
-  { pt: "Organização e reutilização de código", en: "Code organization & reuse", score: 3, notePt: "Importador genérico de Excel, reutilizável entre diferentes planilhas.", noteEn: "Generic Excel importer, reusable across different spreadsheets." },
-  { pt: "Documentação técnica", en: "Technical documentation", score: 2, notePt: "Em evolução: documentação formal dos projetos, iniciada com este portfólio.", noteEn: "In progress: formal project documentation, started with this portfolio." }
+  { pt: "SQL Server (T-SQL)", en: "SQL Server (T-SQL)", descPt: "Scripts de extração, transformação, deduplicação e correção de dados, incluindo scripts de rollback preparados antes de cada alteração em produção.", descEn: "Scripts for data extraction, transformation, deduplication, and correction, including rollback scripts prepared before every production change.", daily: true, apps: ["migracao", "consultoria", "sqlvba"] },
+  { pt: "ETL e migração de dados", en: "ETL & data migration", descPt: "Extração, transformação, validação e carga de dados entre plataformas diferentes, com foco em manter a integridade das informações.", descEn: "Extraction, transformation, validation, and loading of data between different platforms, focused on preserving data integrity.", daily: true, apps: ["migracao", "thomson"] },
+  { pt: "Azure Data Factory", en: "Azure Data Factory", descPt: "Execução e acompanhamento de pipelines de dados, com análise de logs, identificação de falhas e diagnóstico de problemas.", descEn: "Running and monitoring data pipelines, with log analysis, failure identification, and problem diagnosis.", daily: true, apps: ["thomson"] },
+  { pt: "Qualidade e saneamento de dados", en: "Data quality & sanitization", descPt: "Identificação de inconsistências e duplicidades, comparação de volumes entre bases e validação de resultados para garantir entregas confiáveis.", descEn: "Detecting inconsistencies and duplicates, comparing volumes between databases, and validating results to ensure reliable deliverables.", daily: true, apps: ["unificador", "sqlvba", "python"] },
+  { pt: "Mapeamento e modelagem de dados", en: "Data mapping & modeling", descPt: "Mapeamento de equivalência entre os modelos de dados de plataformas distintas (Astrea, Projuris, CPJ e CP-PRO para o Legal One).", descEn: "Mapping equivalence between the data models of different platforms (Astrea, Projuris, CPJ, and CP-PRO into Legal One).", daily: true, apps: ["migracao"] },
+  { pt: "Python", en: "Python", descPt: "Scripts e aplicações para integração de dados (Excel, SQL Server, MySQL), automação de tarefas e interfaces desktop com Tkinter.", descEn: "Scripts and applications for data integration (Excel, SQL Server, MySQL), task automation, and desktop interfaces with Tkinter.", daily: false, apps: ["python", "unificador"] },
+  { pt: "Automação com Selenium", en: "Selenium automation", descPt: "Automação de navegador para executar fluxos repetitivos em sistemas web, com seleção direta dos elementos da tela.", descEn: "Browser automation to run repetitive workflows on web systems, selecting on-screen elements directly.", daily: false, apps: ["unificador"] },
+  { pt: "VBA e automação de Excel", en: "VBA & Excel automation", descPt: "Macros que validam a estrutura das planilhas de migração e apontam divergências antes do envio para carga.", descEn: "Macros that validate the structure of migration spreadsheets and flag discrepancies before they are submitted for loading.", daily: false, apps: ["sqlvba"] },
+  { pt: "Git e GitHub", en: "Git & GitHub", descPt: "Versionamento colaborativo de scripts em um repositório de equipe, com 92 commits em cerca de 5 meses.", descEn: "Collaborative version control of scripts in a team repository, with 92 commits over about 5 months.", daily: true, apps: ["migracao"] },
+  { pt: "Consultoria e suporte em produção", en: "Production consulting & support", descPt: "Ajustes em ambiente de produção com script declarativo, de execução e de rollback, sempre com aprovação formal antes de executar.", descEn: "Production changes using declarative, execution, and rollback scripts, always with formal approval before running.", daily: false, apps: ["consultoria"] }
 ];
 
 const skillsSoft = [
-  { pt: "Autonomia", en: "Autonomy", score: 5, notePt: "Ferramenta própria idealizada, desenvolvida e distribuída por iniciativa própria.", noteEn: "Own tool conceived, built, and distributed on my own initiative." },
-  { pt: "Resolução de problemas", en: "Problem solving", score: 4, notePt: "Evolução de um protótipo por coordenadas de tela para uma solução robusta e distribuível.", noteEn: "Evolution from a screen-coordinate prototype into a robust, distributable solution." },
-  { pt: "Entendimento de processos de negócio", en: "Business-process understanding", score: 4, notePt: "Tradução de regras de negócio jurídicas (tipo de ação, centro de custo) em SQL.", noteEn: "Translation of legal business rules (case type, cost center) into SQL." },
-  { pt: "Colaboração em equipe", en: "Team collaboration", score: 4, notePt: "Contribuição sustentada em repositório com 18 pessoas.", noteEn: "Sustained contribution to a repository with 18 people." },
-  { pt: "Foco em produtividade e melhoria contínua", en: "Productivity & continuous improvement", score: 4, notePt: "8 scripts Python e 7 macros VBA desenvolvidos para reduzir tarefas manuais recorrentes.", noteEn: "8 Python scripts and 7 VBA macros built to reduce recurring manual tasks." },
-  { pt: "Análise de requisitos", en: "Requirements analysis", score: 3, notePt: "Interpretação de demandas de clientes e tradução em escopo técnico.", noteEn: "Interpretation of client requests and translation into technical scope." },
-  { pt: "Comunicação técnica", en: "Technical communication", score: 3, notePt: "Aprovação formal por e-mail antes de cada execução em produção.", noteEn: "Formal email approval before every production execution." },
-  { pt: "Gestão de riscos com dados sensíveis", en: "Risk management with sensitive data", score: 3, notePt: "Padrão de rollback em toda alteração de produção e login manual nas ferramentas desenvolvidas.", noteEn: "Rollback pattern on every production change and manual login in the tools built." }
+  { pt: "Autonomia", en: "Autonomy", descPt: "Condução de demandas de ponta a ponta, da análise do problema à definição e execução da solução, incluindo ferramentas criadas por iniciativa própria.", descEn: "Driving demands end to end, from analyzing the problem to defining and executing the solution, including tools built on my own initiative.", daily: true, apps: ["unificador", "thomson"] },
+  { pt: "Resolução de problemas", en: "Problem solving", descPt: "Investigação de falhas e escolha da abordagem mais efetiva para resolver problemas técnicos durante a execução dos projetos.", descEn: "Investigating failures and choosing the most effective approach to technical problems during project execution.", daily: true, apps: ["unificador", "thomson"] },
+  { pt: "Entendimento de processos de negócio", en: "Business-process understanding", descPt: "Tradução de regras de negócio jurídicas, como tipo de ação e centro de custo, em lógica de dados.", descEn: "Translating legal business rules, such as case type and cost center, into data logic.", daily: false, apps: ["consultoria"] },
+  { pt: "Análise de requisitos", en: "Requirements analysis", descPt: "Interpretação de demandas e definição do escopo técnico antes de construir a solução.", descEn: "Interpreting demands and defining the technical scope before building the solution.", daily: false, apps: ["consultoria", "unificador"] },
+  { pt: "Colaboração em equipe", en: "Team collaboration", descPt: "Trabalho em repositório e processos compartilhados com um time de 18 pessoas, mantendo os padrões definidos pelo grupo.", descEn: "Working in a shared repository and processes with a team of 18, following the standards set by the group.", daily: false, apps: ["migracao"] },
+  { pt: "Produtividade e melhoria contínua", en: "Productivity & continuous improvement", descPt: "Identificação de tarefas manuais repetitivas e criação de scripts e ferramentas que as reduzem para a equipe.", descEn: "Identifying repetitive manual tasks and building scripts and tools that reduce them for the team.", daily: false, apps: ["python", "sqlvba", "unificador"] },
+  { pt: "Comunicação técnica", en: "Technical communication", descPt: "Aprovação formal por e-mail antes de cada execução em produção e material de treinamento em vídeo para outros consultores.", descEn: "Formal email approval before every production execution, and training video material for other consultants.", daily: false, apps: ["consultoria", "unificador"] },
+  { pt: "Responsabilidade com dados sensíveis", en: "Responsibility with sensitive data", descPt: "Rollback e aprovação formal em cada alteração de produção, preservando a integridade e a confidencialidade dos dados de clientes.", descEn: "Rollback and formal approval on every production change, preserving the integrity and confidentiality of client data.", daily: false, apps: ["consultoria"] }
 ];
 
 // type: "edu" (formação) | "work" (carreira)
@@ -291,12 +303,6 @@ const ARROW_SVG = '<svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke
 
 function pad2(n) { return String(n).padStart(2, "0"); }
 
-function starsMarkup(score) {
-  return Array.from({ length: 5 }, (_, i) =>
-    `<span class="star ${i < score ? "filled" : ""}">★</span>`
-  ).join("");
-}
-
 /* ---------------------------------------------------------
    Renderização de conteúdo
    --------------------------------------------------------- */
@@ -321,22 +327,24 @@ function renderStack(lang) {
     </div>`).join("");
 }
 
-function renderSkillGroup(gridId, list, lang, variant) {
+function renderSkillGroup(gridId, list, lang) {
   const grid = document.getElementById(gridId);
   if (!grid) return;
   grid.innerHTML = "";
+  const t = i18n[lang];
   list.forEach(s => {
-    const card = document.createElement("div");
-    card.className = `card ${variant}`;
-    const note = lang === "pt" ? s.notePt : s.noteEn;
-    card.innerHTML = `<h3>${s[lang]}</h3><span class="skill-score" aria-label="${s.score} / 5">${s.score}/5</span><div class="star-rating" aria-hidden="true">${starsMarkup(s.score)}</div><p>${note}</p>`;
+    const card = document.createElement("article");
+    card.className = "card skill-card";
+    const badge = s.daily ? `<span class="skill-badge">${t["skills.daily"]}</span>` : "";
+    const apps = s.apps.map(k => `<a class="skill-app" href="${skillApps[k].href}">${skillApps[k][lang]}</a>`).join("");
+    card.innerHTML = `<div class="skill-head"><h3>${s[lang]}</h3>${badge}</div><p>${lang === "pt" ? s.descPt : s.descEn}</p><div class="skill-apps"><span class="skill-apps-label">${t["skills.apps"]}</span>${apps}</div>`;
     grid.appendChild(card);
   });
 }
 
 function renderSkills(lang) {
-  renderSkillGroup("skills-grid-tecnicas", skillsTecnicas, lang, "skill-card");
-  renderSkillGroup("skills-grid-soft", skillsSoft, lang, "skill-row");
+  renderSkillGroup("skills-grid-tecnicas", skillsTecnicas, lang);
+  renderSkillGroup("skills-grid-soft", skillsSoft, lang);
 }
 
 function renderTimeline(lang) {
@@ -420,7 +428,7 @@ function renderMetrics(lang) {
    --------------------------------------------------------- */
 
 const REVEAL_SELECTOR = [
-  ".section-head", ".section > .muted", ".skills-legend", ".card", ".highlight", ".timeline-item",
+  ".section-head", ".section > .muted", ".card", ".highlight", ".timeline-item",
   ".solve-card", ".stack-card", ".experience-feature", ".experience-card--future",
   ".testimonial-card", ".prose h2", ".impact-table", ".prose pre.flow", ".section > .subsection-title"
 ].join(", ");
