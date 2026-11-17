@@ -12,7 +12,11 @@ const i18n = {
     "aria.inicio": "Carolina Nakasuka — início",
     "aria.secoes": "Seções",
     "aria.especialidades": "Especialidades",
+    "aria.submenu": "Abrir submenu",
+    "nav.menu.profissionais": "Projetos profissionais",
+    "nav.menu.github": "No GitHub",
     "nav.sobre": "Sobre",
+    "nav.home": "Home",
     "nav.competencias": "Competências",
     "nav.experiencias": "Experiências",
     "nav.projetos": "Projetos",
@@ -111,7 +115,11 @@ const i18n = {
     "aria.inicio": "Carolina Nakasuka — home",
     "aria.secoes": "Sections",
     "aria.especialidades": "Specialties",
+    "aria.submenu": "Open submenu",
+    "nav.menu.profissionais": "Professional projects",
+    "nav.menu.github": "On GitHub",
     "nav.sobre": "About",
+    "nav.home": "Home",
     "nav.competencias": "Skills",
     "nav.experiencias": "Experience",
     "nav.projetos": "Projects",
@@ -630,6 +638,56 @@ function initToc(lang) {
   headings.forEach(h => observer.observe(h));
 }
 
+// Submenus do cabeçalho (Experiências e Projetos): montados a partir dos mesmos dados das seções
+function renderNavMenus(lang) {
+  const nav = document.querySelector("nav.nav[data-base]");
+  if (!nav) return;
+  const base = nav.getAttribute("data-base") || "";
+  const t = i18n[lang];
+
+  const exp = document.getElementById("menu-experiencias");
+  if (exp) {
+    exp.innerHTML = `<li><a href="${base}experiencias/thomson-reuters.html"><span>${t["experiencias.legalOne.titulo"]}</span><small>${t["experiencias.legalOne.org"]}</small></a></li>`;
+  }
+
+  const prj = document.getElementById("menu-projetos");
+  if (prj) {
+    const prof = projects.map(p => {
+      const d = p[lang];
+      return `<li><a href="${base}${d.link.replace(/^(\.\.\/)?/, "")}"><span>${d.title}</span></a></li>`;
+    }).join("");
+    const gh = githubProjects.map(p =>
+      `<li><a href="${p.url}" target="_blank" rel="noopener"><span>${p.name}</span><span class="nav-ext" aria-hidden="true">↗</span></a></li>`
+    ).join("");
+    prj.innerHTML = `<li class="nav-menu-label">${t["nav.menu.profissionais"]}</li>${prof}<li class="nav-menu-label">${t["nav.menu.github"]}</li>${gh}`;
+  }
+}
+
+function initNavMenus() {
+  const items = Array.from(document.querySelectorAll(".nav-item.has-menu"));
+  if (!items.length) return;
+  const closeAll = (except) => items.forEach(it => {
+    if (it === except) return;
+    it.classList.remove("is-open");
+    const b = it.querySelector(".nav-caret");
+    if (b) b.setAttribute("aria-expanded", "false");
+  });
+  items.forEach(item => {
+    const btn = item.querySelector(".nav-caret");
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const open = !item.classList.contains("is-open");
+      closeAll(item);
+      item.classList.toggle("is-open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    item.addEventListener("click", (e) => { if (e.target.closest("a")) closeAll(); });
+  });
+  document.addEventListener("click", (e) => { if (!e.target.closest(".nav-item.has-menu")) closeAll(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeAll(); });
+}
+
 // Etiquetas flutuantes do retrato: desviam do ponteiro e saem da frente do rosto quando o mouse passa pela foto
 function initPortraitTags() {
   const portrait = document.querySelector(".hero-portrait");
@@ -738,6 +796,7 @@ function setLanguage(lang) {
   renderStack(lang);
   renderSkills(lang);
   renderExperienceProjects(lang);
+  renderNavMenus(lang);
   renderProjects(lang);
   renderGithubProjects(lang);
   renderMetrics(lang);
@@ -756,4 +815,5 @@ setLanguage(currentLang);
 initTopbar();
 initScrollSpy();
 initPortraitTags();
+initNavMenus();
 initTimelineProgress();

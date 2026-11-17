@@ -18,10 +18,19 @@
         <span class="brand-role" data-i18n="brand.role">Data | Automation | AI Builder</span>
       </div>
     </a>
-    <nav class="nav" aria-label="Seções">
+    <nav class="nav" aria-label="Seções" data-i18n-aria="aria.secoes" data-base="../">
+      <a href="../index.html" data-i18n="nav.home">Home</a>
       <a href="../index.html#sobre" data-i18n="nav.sobre">Sobre</a>
-      <a href="../index.html#experiencias" data-i18n="nav.experiencias">Experiências</a>
-      <a href="../index.html#projetos" data-i18n="nav.projetos">Projetos</a>
+      <div class="nav-item has-menu">
+        <a href="../index.html#experiencias" data-i18n="nav.experiencias">Experiências</a>
+        <button type="button" class="nav-caret" aria-expanded="false" aria-controls="menu-experiencias" aria-label="Abrir submenu" data-i18n-aria="aria.submenu"></button>
+        <ul class="nav-menu" id="menu-experiencias"></ul>
+      </div>
+      <div class="nav-item has-menu">
+        <a href="../index.html#projetos" data-i18n="nav.projetos">Projetos</a>
+        <button type="button" class="nav-caret" aria-expanded="false" aria-controls="menu-projetos" aria-label="Abrir submenu" data-i18n-aria="aria.submenu"></button>
+        <ul class="nav-menu" id="menu-projetos"></ul>
+      </div>
       <a href="../index.html#trajetoria" data-i18n="nav.trajetoria">Trajetória</a>
       <a href="../index.html#skills" data-i18n="nav.competencias">Skills</a>
     </nav>
