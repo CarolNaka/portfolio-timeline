@@ -281,6 +281,15 @@ const timeline = [
   },
   { date: "Jan 2023", type: "edu", pt: "Ingresso na FATEC — Análise e Desenvolvimento de Sistemas", en: "Started FATEC — Systems Analysis and Development" },
   {
+    date: "2022 – 2023", type: "work",
+    pt: "Consultora e Processista na Beyond HR", en: "Consultant and Process Specialist at Beyond HR",
+    details: [
+      { pt: ["Pesquisa de mercado e mapeamento de talentos", "Atuação com pesquisa de mercado, mapeamento de talentos e ferramentas de recrutamento."], en: ["Market research and talent mapping", "Worked with market research, talent mapping, and recruitment tools."] },
+      { pt: ["Reestruturação do processo seletivo", "Redesenhei todo o processo de seleção e recrutamento, da definição de perfis à condução de entrevistas."], en: ["Selection process redesign", "Redesigned the entire selection and recruitment process, from defining profiles to conducting interviews."] },
+      { pt: ["Novas metodologias e ferramentas", "Implementei metodologias e ferramentas que otimizaram a triagem de currículos e a identificação de talentos, minimizando erros e retrabalho."], en: ["New methodologies and tools", "Implemented methodologies and tools that optimized resume screening and talent identification, minimizing errors and rework."] }
+    ]
+  },
+  {
     date: "Jun 2021", type: "edu",
     pt: "Formação em Mecânica — Processos de Produção", en: "Graduated — Mechanical Engineering, Production Processes",
     details: [
