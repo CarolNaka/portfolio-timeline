@@ -9,6 +9,9 @@
 const i18n = {
   pt: {
     "brand.role": "Data | Automation | AI Builder",
+    "aria.inicio": "Carolina Nakasuka — início",
+    "aria.secoes": "Seções",
+    "aria.especialidades": "Especialidades",
     "nav.sobre": "Sobre",
     "nav.competencias": "Competências",
     "nav.experiencias": "Experiências",
@@ -105,6 +108,9 @@ const i18n = {
   },
   en: {
     "brand.role": "Data | Automation | AI Builder",
+    "aria.inicio": "Carolina Nakasuka — home",
+    "aria.secoes": "Sections",
+    "aria.especialidades": "Specialties",
     "nav.sobre": "About",
     "nav.competencias": "Skills",
     "nav.experiencias": "Experience",
@@ -714,6 +720,21 @@ function setLanguage(lang) {
     btn.setAttribute("aria-pressed", lang === code ? "true" : "false");
   });
   renderStaticText(lang);
+  // Título da aba, meta description e rótulos de acessibilidade acompanham o idioma
+  const titleEl = document.querySelector("title[data-en]");
+  if (titleEl) {
+    if (!titleEl.dataset.pt) titleEl.dataset.pt = titleEl.textContent;
+    document.title = lang === "en" ? titleEl.dataset.en : titleEl.dataset.pt;
+  }
+  const metaDesc = document.querySelector('meta[name="description"][data-en]');
+  if (metaDesc) {
+    if (!metaDesc.dataset.pt) metaDesc.dataset.pt = metaDesc.getAttribute("content");
+    metaDesc.setAttribute("content", lang === "en" ? metaDesc.dataset.en : metaDesc.dataset.pt);
+  }
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => {
+    const v = i18n[lang][el.getAttribute("data-i18n-aria")];
+    if (v) el.setAttribute("aria-label", v);
+  });
   renderStack(lang);
   renderSkills(lang);
   renderExperienceProjects(lang);
