@@ -296,7 +296,7 @@ const timeline = [
     details: [
       { pt: ["Primeira migração totalmente independente", "Conduzi um processo de migração de ponta a ponta, sem apoio direto."], en: ["First fully independent migration", "I carried a migration process end to end, without direct support."] },
       { pt: ["Unificador de Contatos", "Ferramenta que idealizei e desenvolvi em Python, hoje usada por outros consultores em campo."], en: ["Contact Deduplication Tool", "A Python tool I conceived and built, now used by other consultants in the field."] },
-      { pt: ["Produção com rede de segurança", "Consultoria recorrente em 23+ clientes, sempre com script de rollback e aprovação formal."], en: ["Production with a safety net", "Recurring consulting for 23+ clients, always with a rollback script and formal approval."] },
+      { pt: ["Produção com rede de segurança", "Consultoria recorrente em 27+ clientes, sempre com script de rollback e aprovação formal."], en: ["Production with a safety net", "Recurring consulting for 27+ clients, always with a rollback script and formal approval."] },
       { pt: ["92 commits em ~5 meses", "Contribuição ao repositório de migração mantido por um time de 7 pessoas."], en: ["92 commits in ~5 months", "Contribution to the migration repository maintained by a team of 7."] }
     ]
   },
@@ -332,8 +332,8 @@ const projects = [
     en: { title: "Database-to-Database Migration (Competitors)", desc: "Extraction/transformation/load pipeline between competing platforms and Legal One, by module (Contacts/Cases/Services).", slug: "migracao" }
   },
   {
-    pt: { title: "Consultoria Recorrente em Banco de Dados", desc: "Ajustes em produção com padrão de diagnóstico, aprovação, execução e rollback, aplicado a 23+ clientes.", slug: "consultoria" },
-    en: { title: "Recurring Database Consulting", desc: "Production adjustments with a diagnose, approve, execute, rollback pattern, applied to 23+ clients.", slug: "consultoria" }
+    pt: { title: "Consultoria Recorrente em Banco de Dados", desc: "Ajustes em produção com padrão de diagnóstico, aprovação, execução e rollback, aplicado a 27+ clientes.", slug: "consultoria" },
+    en: { title: "Recurring Database Consulting", desc: "Production adjustments with a diagnose, approve, execute, rollback pattern, applied to 27+ clients.", slug: "consultoria" }
   },
   {
     pt: { title: "Unificador de Contatos", desc: "Ferramenta autoral (Python + Selenium) de saneamento de duplicidade, distribuída como executável.", slug: "unificador" },
@@ -352,7 +352,7 @@ const projects = [
 const metrics = [
   { value: "45+", pt: "Clientes atendidos, em todos os tipos de serviço", en: "Clients served, across all service types" },
   { value: "20+", pt: "Migrações realizadas", en: "Migrations completed" },
-  { value: "23+", pt: "Clientes em consultoria recorrente, com plano de rollback documentado", en: "Clients in recurring consulting, with a documented rollback plan" },
+  { value: "27+", pt: "Clientes em consultoria recorrente, com plano de rollback documentado", en: "Clients in recurring consulting, with a documented rollback plan" },
   { value: "92", pt: "Commits pessoais em repositório de migração colaborativo", en: "Personal commits in a collaborative migration repository" },
   { value: "7", pt: "Pessoas no time que mantém o pipeline de migração", en: "People maintaining the migration pipeline" }
 ];
