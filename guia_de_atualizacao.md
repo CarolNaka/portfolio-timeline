@@ -44,16 +44,15 @@
 - Ao citar um exemplo de código, sempre use dados fictícios ou genéricos (ex.: "Cliente A", "usuario_exemplo", "senha_exemplo").
 - Revise o arquivo `.gitignore` (ver `guia_de_publicacao_github.md`) sempre que adicionar um novo tipo de arquivo ao repositório.
 
-## Como adicionar uma nova página de projeto no site
+## Como adicionar um novo projeto à seção "Atuação prática e soluções"
 
-Cada projeto tem uma página própria em `site/projetos/`, com conteúdo bilíngue dentro do mesmo arquivo HTML (sem precisar de arquivos separados por idioma):
+Os projetos documentados ficam dentro da página da experiência (`site/experiencias/thomson-reuters.html`), na seção `#projetos`, como cards expansíveis (um por linha; ao abrir um, os outros se fecham). O conteúdo é bilíngue no mesmo arquivo HTML:
 
-1. Copie um arquivo existente em `site/projetos/` (ex.: `unificador-de-contatos.html`) como ponto de partida.
-2. Mantenha o cabeçalho (`<header class="topbar">`) e o rodapé (`<footer class="footer">`) idênticos aos outros — eles usam as mesmas chaves `data-i18n` já traduzidas em `script.js`.
-3. O conteúdo principal fica dentro de dois blocos: `<div data-lang-block="pt">...</div>` e `<div data-lang-block="en">...</div>`. O script alterna automaticamente qual bloco aparece conforme o idioma selecionado — edite o texto diretamente dentro de cada bloco, sem precisar mexer em `script.js` para isso.
-4. Use as classes já definidas para manter o visual consistente: `.chip-list`/`.chip` para listas de tecnologias, `.impact-table` para a tabela de métricas, `pre.flow` para o diagrama do processo técnico, e `.status-badge` para o status de publicação.
-5. Adicione o link da nova página ao array `projects` em `site/script.js` (ou ao array específico da experiência à qual o projeto pertence).
-6. Crie também a documentação Markdown correspondente em `projetos/` (pasta na raiz do repositório), seguindo `templates/template_projeto.md`, para manter a versão "fonte" do conteúdo fora do site.
+1. Copie um bloco `<article class="proj-card" id="proj-...">` existente e altere o `id` (formato `proj-<identificador>`, usado também nos links `#proj-...`).
+2. No cabeçalho do card, edite título e descrição curta dentro de `<div data-lang-block="pt">` e `<div data-lang-block="en">`, e as tecnologias em `.meta-row`.
+3. O conteúdo completo fica em `.proj-panel`, também em dois blocos `data-lang-block` (pt/en), com seções em `<h4>`. Classes úteis: `.impact-table` (tabela de resultados) e `pre.flow` (diagrama do fluxo técnico).
+4. Para listar o projeto no card da experiência na home e permitir links diretos, adicione-o ao array `projects` em `site/script.js` com o mesmo identificador no campo `slug`.
+5. Crie também a documentação Markdown correspondente em `projetos/` (pasta na raiz do repositório), seguindo `templates/template_projeto.md`, para manter a versão "fonte" do conteúdo fora do site.
 
 ## Como adicionar uma nova página de experiência
 
@@ -62,7 +61,7 @@ Quando uma nova experiência profissional relevante (além de Legal One) precisa
 1. Copie `site/experiencias/thomson-reuters.html` para um novo arquivo, ex.: `site/experiencias/nome-da-experiencia.html`.
 2. Ajuste o título da aba (`<title>`), o `eyebrow`/título da seção hero e os textos específicos da experiência.
 3. Adicione as novas chaves de tradução usadas por essa página em `site/script.js`, dentro do objeto `i18n` (nos dois idiomas, `pt` e `en`).
-4. Se a experiência tiver projetos próprios, crie as páginas correspondentes em `site/projetos/` (ver seção acima) e aponte para elas no array `projects` em `script.js`.
+4. Se a experiência tiver projetos próprios, crie os cards correspondentes na seção de projetos da página da experiência (ver seção acima) e registre-os no array `projects` em `script.js`.
 5. Adicione um novo card em `site/index.html`, na seção `#experiencias`, apontando para a nova página (substitua o card "Próxima experiência" ou adicione um novo).
 6. Crie a documentação Markdown correspondente em `projetos/` (ou em uma nova pasta de nível superior, se a experiência não for relacionada a projetos técnicos), seguindo `templates/template_projeto.md`.
 
@@ -70,7 +69,7 @@ Quando uma nova experiência profissional relevante (além de Legal One) precisa
 
 1. Abra o arquivo `site/index.html` diretamente no navegador (duplo clique ou arrastar para a janela do navegador).
 2. Não é necessário instalar nada — o site não depende de servidor, build ou bibliotecas externas.
-3. Para testar mudanças de conteúdo, edite os arquivos `site/index.html`, `site/experiencias/*.html`, `site/projetos/*.html`, `site/style.css` ou `site/script.js` diretamente e recarregue a página no navegador.
+3. Para testar mudanças de conteúdo, edite os arquivos `site/index.html`, `site/experiencias/*.html`, `site/style.css` ou `site/script.js` diretamente e recarregue a página no navegador.
 4. Teste o alternador de idioma (PT/EN) em todas as páginas — na home, confira as duas listas de skills (Técnicas e Soft Skills); nas páginas de projeto, confira se o conteúdo completo troca de idioma corretamente.
 5. Teste a navegação entre a página inicial, a página de experiência e cada página de projeto (links e botões "Voltar").
 

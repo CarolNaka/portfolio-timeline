@@ -83,7 +83,7 @@ const i18n = {
     "exp.legalOne.title": "Thomson Reuters Brasil",
     "exp.legalOne.desc1": "Faço parte do time de migração do Legal One, trabalhando com dados de clientes que vêm de diferentes sistemas. Além das migrações, também atendo demandas de consultoria em bancos de dados de clientes que já utilizam o sistema, envolvendo ajustes, correções e melhorias em ambientes de produção.",
     "exp.legalOne.desc2": "Tenho autonomia para entender cada necessidade, investigar os problemas e decidir a melhor forma de conduzir e executar a solução, acompanhando o processo até a validação e entrega.",
-    "exp.legalOne.desc3": "Além das demandas do dia a dia, gosto de identificar oportunidades de melhoria. Foi assim que surgiu o <a href=\"../projetos/unificador-de-contatos.html\">Unificador de Contatos</a>: percebi uma dificuldade enfrentada por outro time e, por iniciativa própria, decidi desenvolver uma ferramenta para resolver esse problema. Hoje, ela também é utilizada por outros consultores.",
+    "exp.legalOne.desc3": "Além das demandas do dia a dia, gosto de identificar oportunidades de melhoria. Foi assim que surgiu o <a href=\"#proj-unificador\">Unificador de Contatos</a>: percebi uma dificuldade enfrentada por outro time e, por iniciativa própria, decidi desenvolver uma ferramenta para resolver esse problema. Hoje, ela também é utilizada por outros consultores.",
     "exp.atuacao.titulo": "Frentes de atuação",
     "exp.atuacao.f1t": "Migração e integração de dados",
     "exp.atuacao.f1d": "Migração de bases de sistemas como Astrea, Projuris, CPJ e CP-PRO para o Legal One, envolvendo mapeamento de estruturas, regras de transformação, processos ETL e pipelines no Azure Data Factory.",
@@ -92,7 +92,7 @@ const i18n = {
     "exp.atuacao.f3t": "Automação e melhoria de processos",
     "exp.atuacao.f3d": "Identificação de atividades manuais e gargalos operacionais, desenvolvimento de soluções com Python, Selenium e VBA para automatizar tarefas e facilitar a execução de processos recorrentes.",
     "exp.atuacao.f4t": "Iniciativas e projetos",
-    "exp.atuacao.f4d": "Além das atividades do dia a dia, busco identificar oportunidades de melhoria que possam beneficiar outros profissionais e equipes. Um exemplo é o <a href=\"../projetos/unificador-de-contatos.html\">Unificador de Contatos</a>, ferramenta que desenvolvi por iniciativa própria após identificar uma dificuldade enfrentada por outro time. A solução passou a ser utilizada também por outros consultores.",
+    "exp.atuacao.f4d": "Além das atividades do dia a dia, busco identificar oportunidades de melhoria que possam beneficiar outros profissionais e equipes. Um exemplo é o <a href=\"#proj-unificador\">Unificador de Contatos</a>, ferramenta que desenvolvi por iniciativa própria após identificar uma dificuldade enfrentada por outro time. A solução passou a ser utilizada também por outros consultores.",
     "exp.resolvoTitulo": "Como conduzo meu trabalho",
     "exp.resolvoIntro": "Mais do que executar tarefas, busco entender o cenário, definir uma abordagem adequada e garantir que cada entrega seja confiável.",
     "exp.resolvo1t": "Investigação antes da execução",
@@ -105,23 +105,19 @@ const i18n = {
     "exp.resolvo4d": "Conduzo demandas de ponta a ponta, investigando causas, definindo abordagens e acompanhando a solução até a entrega.",
     "exp.resolvo5t": "Melhoria contínua",
     "exp.resolvo5d": "Identifico oportunidades de simplificação e automação, buscando reduzir atividades repetitivas e retrabalho.",
-    "exp.projetos.titulo": "Projetos",
+    "exp.projetos.titulo": "Atuação prática e soluções",
+    "exp.projetos.intro": "Frentes de atuação e soluções que desenvolvi na rotina para melhorar processos.",
     "destaque.eyebrow": "Projeto em destaque · Ideia e autoria própria",
     "destaque.titulo": "Projeto em destaque: Unificador de Contatos",
     "destaque.p1": "Ferramenta Python + Selenium com interface gráfica própria, distribuída como executável para consultores em campo. Identifica contatos duplicados por CPF/CNPJ e aciona a unificação nativa do Legal One.",
     "destaque.p2": "Elimina a necessidade de extrair a base, tratar em homologação e aguardar SLA: o consultor resolve direto em produção, com autonomia.",
-    "destaque.nota": "Ideia e autoria próprias. O código-fonte não é público; a arquitetura está descrita na página do projeto.",
+    "destaque.nota": "Ideia e autoria próprias. O código-fonte não é público; a arquitetura está descrita na seção abaixo.",
     "destaque.ver": "Ver projeto completo",
     "metricas.titulo": "Métricas e impacto",
     "footer.texto": "Documentação técnica completa disponível no GitHub.",
-    "proj.eyebrow.migracao": "Projeto · Migração",
-    "proj.eyebrow.consultoria": "Projeto · Consultoria",
-    "proj.eyebrow.saneamento": "Projeto · Saneamento de Dados",
-    "proj.eyebrow.automacao": "Projeto · Automação",
-    "proj.voltar": "Projetos na Thomson Reuters Brasil",
-    "proj.voltarExperiencias": "Voltar para Experiências",
     "toc.titulo": "Nesta página",
-    "proj.verDetalhes": "Ver detalhes"
+    "proj.expandir": "Ver detalhes",
+    "proj.recolher": "Ocultar detalhes"
   },
   en: {
     "brand.role": "Data | Automation | AI Builder",
@@ -199,7 +195,7 @@ const i18n = {
     "exp.legalOne.title": "Thomson Reuters Brasil",
     "exp.legalOne.desc1": "I am part of the Legal One migration team, working with client data that comes from different systems. Besides migrations, I also handle database consulting requests from clients who already use the system, involving adjustments, fixes, and improvements in production environments.",
     "exp.legalOne.desc2": "I have the autonomy to understand each need, investigate problems, and decide the best way to carry out and execute the solution, following the process through validation and delivery.",
-    "exp.legalOne.desc3": "Beyond day-to-day requests, I like to identify improvement opportunities. That is how the <a href=\"../projetos/unificador-de-contatos.html\">Contact Deduplication Tool</a> came about: I noticed a difficulty faced by another team and, on my own initiative, decided to build a tool to solve it. Today, it is also used by other consultants.",
+    "exp.legalOne.desc3": "Beyond day-to-day requests, I like to identify improvement opportunities. That is how the <a href=\"#proj-unificador\">Contact Deduplication Tool</a> came about: I noticed a difficulty faced by another team and, on my own initiative, decided to build a tool to solve it. Today, it is also used by other consultants.",
     "exp.atuacao.titulo": "Areas of work",
     "exp.atuacao.f1t": "Data migration and integration",
     "exp.atuacao.f1d": "Migration of databases from systems such as Astrea, Projuris, CPJ, and CP-PRO into Legal One, involving structure mapping, transformation rules, ETL processes, and Azure Data Factory pipelines.",
@@ -208,7 +204,7 @@ const i18n = {
     "exp.atuacao.f3t": "Automation and process improvement",
     "exp.atuacao.f3d": "Identifying manual activities and operational bottlenecks, and building solutions with Python, Selenium, and VBA to automate tasks and make recurring processes easier to run.",
     "exp.atuacao.f4t": "Initiatives and projects",
-    "exp.atuacao.f4d": "Beyond day-to-day work, I look for improvement opportunities that can benefit other professionals and teams. One example is the <a href=\"../projetos/unificador-de-contatos.html\">Contact Deduplication Tool</a>, which I built on my own initiative after identifying a difficulty faced by another team. The solution came to be used by other consultants as well.",
+    "exp.atuacao.f4d": "Beyond day-to-day work, I look for improvement opportunities that can benefit other professionals and teams. One example is the <a href=\"#proj-unificador\">Contact Deduplication Tool</a>, which I built on my own initiative after identifying a difficulty faced by another team. The solution came to be used by other consultants as well.",
     "exp.resolvoTitulo": "How I approach my work",
     "exp.resolvoIntro": "More than executing tasks, I try to understand the scenario, define a suitable approach, and make sure each deliverable is reliable.",
     "exp.resolvo1t": "Investigation before execution",
@@ -221,23 +217,19 @@ const i18n = {
     "exp.resolvo4d": "I drive requests end to end, investigating causes, defining approaches, and following the solution through to delivery.",
     "exp.resolvo5t": "Continuous improvement",
     "exp.resolvo5d": "I identify opportunities for simplification and automation, aiming to reduce repetitive tasks and rework.",
-    "exp.projetos.titulo": "Projects",
+    "exp.projetos.titulo": "Hands-on work and solutions",
+    "exp.projetos.intro": "Areas of work and solutions I built along the way to improve processes.",
     "destaque.eyebrow": "Featured project · Original idea and solution",
     "destaque.titulo": "Featured project: Contact Deduplication Tool",
     "destaque.p1": "Python + Selenium tool with its own graphical interface, distributed as an executable to field consultants. Identifies duplicate contacts by tax ID and triggers Legal One's native merge.",
     "destaque.p2": "Removes the need to extract the database, treat it in staging, and wait for an SLA: the consultant resolves it directly in production, with autonomy.",
-    "destaque.nota": "Original idea and authorship. The source code is not public; the architecture is described on the project page.",
+    "destaque.nota": "Original idea and authorship. The source code is not public; the architecture is described in the section below.",
     "destaque.ver": "View full project",
     "metricas.titulo": "Metrics and impact",
     "footer.texto": "Full technical documentation available on GitHub.",
-    "proj.eyebrow.migracao": "Project · Migration",
-    "proj.eyebrow.consultoria": "Project · Consulting",
-    "proj.eyebrow.saneamento": "Project · Data Sanitization",
-    "proj.eyebrow.automacao": "Project · Automation",
-    "proj.voltar": "Projects at Thomson Reuters Brasil",
-    "proj.voltarExperiencias": "Back to Experience",
     "toc.titulo": "On this page",
-    "proj.verDetalhes": "View details"
+    "proj.expandir": "View details",
+    "proj.recolher": "Hide details"
   }
 };
 
@@ -250,11 +242,11 @@ const stack = [
 ];
 
 const skillApps = {
-  migracao: { pt: "Migração de Banco a Banco", en: "Database-to-Database Migration", href: "projetos/migracao-banco-a-banco.html" },
-  consultoria: { pt: "Consultoria Recorrente", en: "Recurring Consulting", href: "projetos/consultoria-recorrente.html" },
-  unificador: { pt: "Unificador de Contatos", en: "Contact Deduplication Tool", href: "projetos/unificador-de-contatos.html" },
-  python: { pt: "Automações Python", en: "Python Automations", href: "projetos/automacoes-python.html" },
-  sqlvba: { pt: "Automações SQL e VBA", en: "SQL & VBA Automations", href: "projetos/automacoes-sql-vba.html" },
+  migracao: { pt: "Migração de Banco a Banco", en: "Database-to-Database Migration", href: "experiencias/thomson-reuters.html#proj-migracao" },
+  consultoria: { pt: "Consultoria Recorrente", en: "Recurring Consulting", href: "experiencias/thomson-reuters.html#proj-consultoria" },
+  unificador: { pt: "Unificador de Contatos", en: "Contact Deduplication Tool", href: "experiencias/thomson-reuters.html#proj-unificador" },
+  python: { pt: "Automações Python", en: "Python Automations", href: "experiencias/thomson-reuters.html#proj-python" },
+  sqlvba: { pt: "Automações SQL e VBA", en: "SQL & VBA Automations", href: "experiencias/thomson-reuters.html#proj-sqlvba" },
   thomson: { pt: "Thomson Reuters Brasil", en: "Thomson Reuters Brasil", href: "experiencias/thomson-reuters.html" }
 };
 
@@ -334,24 +326,24 @@ const githubProjects = [
 
 const projects = [
   {
-    pt: { title: "Migração de Banco a Banco (Concorrentes)", desc: "Pipeline de extração/transformação/carga entre plataformas concorrentes e o Legal One, por módulos (Contatos/Processos/Serviços).", link: "../projetos/migracao-banco-a-banco.html" },
-    en: { title: "Database-to-Database Migration (Competitors)", desc: "Extraction/transformation/load pipeline between competing platforms and Legal One, by module (Contacts/Cases/Services).", link: "../projetos/migracao-banco-a-banco.html" }
+    pt: { title: "Migração de Banco a Banco (Concorrentes)", desc: "Pipeline de extração/transformação/carga entre plataformas concorrentes e o Legal One, por módulos (Contatos/Processos/Serviços).", slug: "migracao" },
+    en: { title: "Database-to-Database Migration (Competitors)", desc: "Extraction/transformation/load pipeline between competing platforms and Legal One, by module (Contacts/Cases/Services).", slug: "migracao" }
   },
   {
-    pt: { title: "Consultoria Recorrente em Banco de Dados", desc: "Ajustes em produção com padrão de diagnóstico, aprovação, execução e rollback, aplicado a 23+ clientes.", link: "../projetos/consultoria-recorrente.html" },
-    en: { title: "Recurring Database Consulting", desc: "Production adjustments with a diagnose, approve, execute, rollback pattern, applied to 23+ clients.", link: "../projetos/consultoria-recorrente.html" }
+    pt: { title: "Consultoria Recorrente em Banco de Dados", desc: "Ajustes em produção com padrão de diagnóstico, aprovação, execução e rollback, aplicado a 23+ clientes.", slug: "consultoria" },
+    en: { title: "Recurring Database Consulting", desc: "Production adjustments with a diagnose, approve, execute, rollback pattern, applied to 23+ clients.", slug: "consultoria" }
   },
   {
-    pt: { title: "Unificador de Contatos", desc: "Ferramenta autoral (Python + Selenium) de saneamento de duplicidade, distribuída como executável.", link: "../projetos/unificador-de-contatos.html" },
-    en: { title: "Contact Deduplication Tool", desc: "Original tool (Python + Selenium) for deduplication, distributed as an executable.", link: "../projetos/unificador-de-contatos.html" }
+    pt: { title: "Unificador de Contatos", desc: "Ferramenta autoral (Python + Selenium) de saneamento de duplicidade, distribuída como executável.", slug: "unificador" },
+    en: { title: "Contact Deduplication Tool", desc: "Original tool (Python + Selenium) for deduplication, distributed as an executable.", slug: "unificador" }
   },
   {
-    pt: { title: "Automações Python de Produtividade", desc: "8 scripts para importação, extração MySQL, comparação de volumetria e gestão de acessos.", link: "../projetos/automacoes-python.html" },
-    en: { title: "Python Productivity Automations", desc: "8 scripts for import, MySQL extraction, volume comparison, and access management.", link: "../projetos/automacoes-python.html" }
+    pt: { title: "Automações Python de Produtividade", desc: "8 scripts para importação, extração MySQL, comparação de volumetria e gestão de acessos.", slug: "python" },
+    en: { title: "Python Productivity Automations", desc: "8 scripts for import, MySQL extraction, volume comparison, and access management.", slug: "python" }
   },
   {
-    pt: { title: "Automações SQL e VBA", desc: "Scripts de deduplicação e macros de validação estrutural de planilha de migração.", link: "../projetos/automacoes-sql-vba.html" },
-    en: { title: "SQL & VBA Automations", desc: "Deduplication scripts and structural-validation macros for migration spreadsheets.", link: "../projetos/automacoes-sql-vba.html" }
+    pt: { title: "Automações SQL e VBA", desc: "Scripts de deduplicação e macros de validação estrutural de planilha de migração.", slug: "sqlvba" },
+    en: { title: "SQL & VBA Automations", desc: "Deduplication scripts and structural-validation macros for migration spreadsheets.", slug: "sqlvba" }
   }
 ];
 
@@ -474,7 +466,7 @@ function renderExperienceProjects(lang) {
   const base = list.getAttribute("data-base") || "";
   list.innerHTML = projects.map((p, i) => {
     const data = p[lang];
-    const href = base + data.link.replace(/^(\.\.\/)?projetos\//, "");
+    const href = base + "#proj-" + data.slug;
     return `<li><a href="${href}"><span class="idx">${pad2(i + 1)}</span><span>${data.title}</span><span class="arrow" aria-hidden="true">→</span></a></li>`;
   }).join("");
 }
@@ -490,19 +482,6 @@ function renderGithubProjects(lang) {
     const tags = p.tags && p.tags.length
       ? `<div class="chip-list chip-list--card">${p.tags.map(t => `<span class="chip">${t}</span>`).join("")}</div>` : "";
     card.innerHTML = `<span class="project-idx">${pad2(i + 1)}</span><h3>${p.name}</h3>${desc}${tags}<a class="btn" href="${p.url}" target="_blank" rel="noopener"><span>${i18n[lang]["gh.ver"]}</span>${ARROW_SVG}</a>`;
-    grid.appendChild(card);
-  });
-}
-
-function renderProjects(lang) {
-  const grid = document.getElementById("projects-grid");
-  if (!grid) return;
-  grid.innerHTML = "";
-  projects.forEach((p, i) => {
-    const data = p[lang];
-    const card = document.createElement("div");
-    card.className = "card card--hover project-card spot";
-    card.innerHTML = `<span class="project-idx">${pad2(i + 1)}</span><h3>${data.title}</h3><p>${data.desc}</p><a class="btn" href="${data.link}"><span>${i18n[lang]["proj.verDetalhes"]}</span>${ARROW_SVG}</a>`;
     grid.appendChild(card);
   });
 }
@@ -743,12 +722,39 @@ function renderNavMenus(lang) {
       if (label) label.classList.add("is-active");
     }
   });
-  // Páginas de projeto documentado pertencem à experiência na Thomson Reuters
-  if (/\/projetos\/[^/]+$/.test(location.pathname)) {
-    const expLink = nav.querySelector("#menu-experiencias");
-    const lbl = expLink && expLink.closest(".nav-item").querySelector(":scope > a");
-    if (lbl) lbl.classList.add("is-active");
-  }
+}
+
+function initProjAccordion() {
+  const cards = Array.from(document.querySelectorAll(".proj-card"));
+  if (!cards.length) return;
+  const setOpen = (card, open) => {
+    card.classList.toggle("is-open", open);
+    const btn = card.querySelector(".proj-toggle");
+    if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
+  };
+  const reveal = (card) => {
+    setTimeout(() => card.scrollIntoView({ behavior: prefersReducedMotion() ? "auto" : "smooth", block: "start" }), 60);
+  };
+  cards.forEach(card => {
+    card.querySelector(".proj-toggle").addEventListener("click", () => {
+      const willOpen = !card.classList.contains("is-open");
+      cards.forEach(c => setOpen(c, c === card && willOpen));
+      if (willOpen) reveal(card);
+    });
+  });
+  const fromHash = (hash) => {
+    const card = hash && hash.indexOf("#proj-") === 0 ? document.getElementById(hash.slice(1)) : null;
+    if (card && card.classList.contains("proj-card")) {
+      cards.forEach(c => setOpen(c, c === card));
+      reveal(card);
+    }
+  };
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest('a[href^="#proj-"]');
+    if (a) fromHash(a.getAttribute("href"));
+  });
+  window.addEventListener("hashchange", () => fromHash(location.hash));
+  fromHash(location.hash);
 }
 
 function initNavMenus() {
@@ -885,7 +891,6 @@ function setLanguage(lang) {
   renderSkills(lang);
   renderExperienceProjects(lang);
   renderNavMenus(lang);
-  renderProjects(lang);
   renderGithubProjects(lang);
   renderMetrics(lang);
   renderTimeline(lang);
@@ -904,4 +909,5 @@ initTopbar();
 initScrollSpy();
 initPortraitTags();
 initNavMenus();
+initProjAccordion();
 initTimelineProgress();

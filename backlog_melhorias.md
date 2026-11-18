@@ -23,7 +23,7 @@ Lista de itens identificados durante a análise que podem ser incorporados em ve
 - [x] ~~Separar competências técnicas de soft skills, com abas no site~~ — ajustado: exibidas lado a lado/empilhadas, sem abas, conforme preferência da autora.
 - [x] ~~Mover projetos e métricas para uma página dedicada por experiência~~ — concluído (`site/experiencias/thomson-reuters.html`); nova experiência = nova página, seguindo `guia_de_atualizacao.md`.
 - [x] ~~Adicionar nome completo e espaço para foto no cabeçalho~~ — concluído (placeholder com iniciais "CN"; substituir por `<img>` quando houver foto).
-- [x] ~~Criar páginas HTML individuais para cada projeto, com visual consistente ao resto do site~~ — concluído (`site/projetos/*.html`, bilíngues via blocos `data-lang-block`).
+- [x] ~~Criar páginas HTML individuais para cada projeto, com visual consistente ao resto do site~~ — concluído (`site/projetos/*.html`, bilíngues via blocos `data-lang-block`). Posteriormente, o conteúdo foi consolidado em cards expansíveis dentro da página da experiência (`site/experiencias/thomson-reuters.html`) e as páginas individuais foram removidas.
 - [ ] Substituir o placeholder de iniciais por uma foto real, quando disponível.
 - [ ] Avaliar inclusão de uma seção "Linha do tempo" caso datas mais precisas de projetos sejam reconstituídas.
 - [ ] Avaliar inclusão de diagramas visuais (não apenas texto) para os principais pipelines, uma vez que estejam sanitizados.
