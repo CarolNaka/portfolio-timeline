@@ -1958,6 +1958,9 @@ a.card:hover::before, .card--hover:hover::before { opacity: 1; width: 72px; }
 .atuacao-list--fronts span { color: var(--text-muted); line-height: 1.6; }
 .atuacao-list--fronts a { font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--mint-line); }
 
+.solve-intro { margin: 0 0 var(--space-5); color: var(--text-muted); line-height: 1.6; font-size: var(--fs-md); }
+
+.exp-split h2 { font-size: clamp(1.5rem, 2.3vw, 2rem); }
 .exp-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-12); align-items: start; }
 .exp-split .atuacao-list { max-width: none; }
 @media (max-width: 900px) { .exp-split { grid-template-columns: 1fr; gap: var(--space-10); } }
