@@ -897,7 +897,15 @@ code {
 .float-tag--2 { top: 73%; right: -80px; animation: floatY 9s ease-in-out 1.2s infinite; }
 .float-tag--3 { top: 80%; left: -58px; animation: floatY 8s ease-in-out 0.6s infinite; }
 .float-tag--4 { top: 92%; right: -20px; animation: floatY 10s ease-in-out 2s infinite; }
-.float-tag--5 { top: 40%; left: -64px; animation: floatY 11s ease-in-out 0.9s infinite; }
+.float-tag--5 { top: 28%; left: -64px; animation: floatY 11s ease-in-out 0.9s infinite; }
+/* Telas largas: etiquetas mais afastadas do centro da foto */
+@media (min-width: 1281px) {
+  .float-tag--1 { top: -22px; right: -70px; }
+  .float-tag--2 { right: -112px; }
+  .float-tag--3 { left: -92px; }
+  .float-tag--4 { right: -56px; }
+  .float-tag--5 { left: -100px; }
+}
 .float-tag--2::before, .float-tag--4::before { background: var(--mint); box-shadow: 0 0 8px var(--mint); }
 
 /* Fatos rápidos abaixo do hero */
