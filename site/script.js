@@ -239,7 +239,8 @@ const i18n = {
 const stack = [
   { pt: "Dados", en: "Data", items: ["SQL Server (T-SQL)", "Azure Data Factory"] },
   { pt: "Automação", en: "Automation", items: ["Python", "Selenium", "Tkinter", "VBA", "PowerShell"] },
-  { pt: "Ferramentas", en: "Tools", items: ["Git / GitHub", "Excel"] }
+  { pt: "Ferramentas", en: "Tools", items: ["Git", "GitHub", "Excel"] },
+  { pt: "Explorando", en: "Exploring", items: ["IA aplicada", "Automação com IA"], itemsEn: ["Applied AI", "AI automation"] }
 ];
 
 const skillApps = {
@@ -391,7 +392,7 @@ function renderStack(lang) {
   host.innerHTML = stack.map(group => `
     <div class="stack-group">
       <span class="stack-group-name">${group[lang]}</span>
-      <div class="stack-items">${group.items.map(item => `<span class="chip">${item}</span>`).join("")}</div>
+      <div class="stack-items">${((lang === "en" && group.itemsEn) || group.items).map(item => `<span class="chip">${item}</span>`).join("")}</div>
     </div>`).join("");
 }
 
