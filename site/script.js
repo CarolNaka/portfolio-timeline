@@ -13,8 +13,6 @@ const i18n = {
     "aria.secoes": "Seções",
     "aria.especialidades": "Especialidades",
     "aria.submenu": "Abrir submenu",
-    "nav.menu.profissionais": "Projetos profissionais",
-    "nav.menu.github": "No GitHub",
     "nav.sobre": "Sobre",
     "nav.home": "Home",
     "nav.competencias": "Competências",
@@ -131,8 +129,6 @@ const i18n = {
     "aria.secoes": "Sections",
     "aria.especialidades": "Specialties",
     "aria.submenu": "Open submenu",
-    "nav.menu.profissionais": "Professional projects",
-    "nav.menu.github": "On GitHub",
     "nav.sobre": "About",
     "nav.home": "Home",
     "nav.competencias": "Skills",
@@ -736,18 +732,6 @@ function renderNavMenus(lang) {
     exp.innerHTML = `<li><a href="${base}experiencias/thomson-reuters.html"><span>${t["experiencias.legalOne.titulo"]}</span><small>${t["experiencias.legalOne.org"]}</small></a></li>`;
   }
 
-  const prj = document.getElementById("menu-projetos");
-  if (prj) {
-    const prof = projects.map(p => {
-      const d = p[lang];
-      return `<li><a href="${base}${d.link.replace(/^(\.\.\/)?/, "")}"><span>${d.title}</span></a></li>`;
-    }).join("");
-    const gh = githubProjects.map(p =>
-      `<li><a href="${p.url}" target="_blank" rel="noopener"><span>${p.name}</span><span class="nav-ext" aria-hidden="true">↗</span></a></li>`
-    ).join("");
-    prj.innerHTML = `<li class="nav-menu-label">${t["nav.menu.profissionais"]}</li>${prof}<li class="nav-menu-label">${t["nav.menu.github"]}</li>${gh}`;
-  }
-
   // Página atual: marca o item do submenu e o item pai no cabeçalho
   const here = location.pathname.split("/").slice(-2).join("/");
   nav.querySelectorAll(".nav-menu a").forEach(a => {
@@ -759,6 +743,12 @@ function renderNavMenus(lang) {
       if (label) label.classList.add("is-active");
     }
   });
+  // Páginas de projeto documentado pertencem à experiência na Thomson Reuters
+  if (/\/projetos\/[^/]+$/.test(location.pathname)) {
+    const expLink = nav.querySelector("#menu-experiencias");
+    const lbl = expLink && expLink.closest(".nav-item").querySelector(":scope > a");
+    if (lbl) lbl.classList.add("is-active");
+  }
 }
 
 function initNavMenus() {
