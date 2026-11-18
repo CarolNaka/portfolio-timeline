@@ -64,21 +64,21 @@ Source database (competitor platform)
 
 | Metric | Value | Classification |
 |---|---|---|
-| Data modules covered by the extraction pipeline | 3 core modules (Contacts, Cases, Services), totaling 40+ SQL extraction scripts per entity/sub-entity | **Evidence-backed** (file count in the repository) |
+| Data modules covered by the extraction pipeline | 5 modules (Contacts, Cases, Services, Client Contracts, and Fees), with 7+ mappings completed | **Evidence-backed** (file count in the repository) |
 | Pre/post-processing scripts (pre-extraction, pre-migration, post-migration) | 14 dedicated data-treatment and integrity scripts | **Evidence-backed** |
-| Personal contribution to the shared pipeline repository | 92 commits between May and October 2026, ~5 months of continuous activity, touching 209 `.sql`, 34 `.xlsx`, and 20 `.json` files | **Evidence-backed** (Git history) |
-| Size of the team maintaining this repository | 18 active contributors in the history (1,291 total commits) | **Evidence-backed** |
+| Personal contribution to the shared pipeline repository | 92+ commits, including changes to 209 `.sql`, 34 `.xlsx`, and 20 `.json` files | **Evidence-backed** (Git history) |
+| Size of the team maintaining this repository | 7 people on the team | **Evidence-backed** |
 | Source platforms handled | 4+ distinct competing platforms, with at least 20 documented migration cases in the local files analyzed | **Evidence-backed** (project folder count) |
 | Largest data volume handled in a single project | ~170 MB load script, split into 44 files for execution | **Evidence-backed** (file size) |
 | Total records migrated for this type of project | Not quantified in the files analyzed | **Pending validation** — you could pull this figure from load reports, if they exist |
-| Total clients served in database-to-database (competitor) migration over the last 2 years, via reseller partners | More than 25 (a subset of the 30+ total clients served across all service types, confirmed by the author) | **Confirmed** |
+| Migrations completed over the last 2 years | 20+ clients (a subset of the 45+ total clients served across all service types, provided by the author) | **Confirmed** |
 
 ## Skills demonstrated
 
 - Modeling, extraction, and transformation of complex relational data (SQL Server).
 - Mapping equivalence between heterogeneous data models.
 - Building documented, reproducible, version-controlled ETL pipelines.
-- Collaborative work in a Git repository shared by a technical team of at least 18 people, with a sustained multi-month contribution history.
+- Collaborative work in a Git repository shared by a technical team of 7 people, with a sustained multi-month contribution history.
 - Handling large data volumes and partitioning execution when needed.
 - Post-load integrity verification and proactive inconsistency correction.
 

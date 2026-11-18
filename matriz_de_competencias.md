@@ -21,7 +21,7 @@ A matriz está dividida em duas partes: **Competências Técnicas** (ferramentas
 ### SQL e SQL Server
 
 - **Nota: 4**
-- **Evidências:** pipeline de extração com 40+ scripts organizados por módulo (Contatos/Processos/Serviços); 14 scripts de pré/pós-tratamento; padrão declarativo/execução/rollback aplicado em 23+ casos de clientes; scripts de deduplicação; pipeline estruturado em etapas numeradas.
+- **Evidências:** 7+ mapeamentos feitos entre sistemas de origem e o Legal One; padrão declarativo/execução/rollback aplicado em 27+ casos de clientes; scripts de deduplicação; pipeline estruturado em etapas numeradas.
 - **Projetos relacionados:** Migração de Banco a Banco, Consultoria Recorrente, Automações SQL/VBA.
 - **Justificativa:** volume, consistência e sofisticação dos scripts (tratamento de integridade referencial, rollback, diagnóstico pré-execução) indicam domínio avançado aplicado a cenários reais de produção. Não atribuído nível 5 por ausência de evidência de modelagem de banco do zero (criação de schema) ou de otimização de performance documentada.
 - **Lacunas:** não há evidência de trabalho com stored procedures, triggers ou otimização de índices/planos de execução.
@@ -39,7 +39,7 @@ A matriz está dividida em duas partes: **Competências Técnicas** (ferramentas
 ### Migração e transformação de dados
 
 - **Nota: 5**
-- **Evidências:** este é o núcleo mais comprovado do trabalho — 92 commits em repositório de pipeline de migração ao longo de ~5 meses; 23+ casos de clientes migrados de múltiplas plataformas; pipeline de 4 fases documentado (pré-extração, extração por módulo, pré-migração, pós-migração).
+- **Evidências:** este é o núcleo mais comprovado do trabalho — 92+ commits em repositório de pipeline de migração; 27+ casos de clientes migrados de múltiplas plataformas; pipeline de 4 fases documentado (pré-extração, extração por módulo, pré-migração, pós-migração).
 - **Projetos relacionados:** Migração de Banco a Banco.
 - **Justificativa:** volume, recorrência, diversidade de plataformas de origem e maturidade do processo (versionado, documentado, com tratamento de integridade) demonstram autonomia elevada e nível de referência nesta competência específica.
 - **Lacunas:** nenhuma relevante identificada.
@@ -57,7 +57,7 @@ A matriz está dividida em duas partes: **Competências Técnicas** (ferramentas
 ### Python
 
 - **Nota: 4**
-- **Evidências:** Unificador de Contatos (Selenium + Tkinter + PyInstaller); 8 scripts de produtividade (importação genérica, extração MySQL, comparação de volumetria, gestão de acesso); evolução documentada de protótipo `pyautogui` para solução robusta em Selenium.
+- **Evidências:** Unificador de Contatos (Selenium + Tkinter + PyInstaller); 12 scripts de produtividade (importação genérica, extração MySQL, comparação de volumetria, gestão de acesso); evolução documentada de protótipo `pyautogui` para solução robusta em Selenium.
 - **Projetos relacionados:** Unificador de Contatos, Automações Python.
 - **Justificativa:** construção de uma aplicação completa (interface gráfica + automação + empacotamento em executável) distribuída para terceiros é evidência de nível avançado aplicado. Não atribuído nível 5 por não haver evidência de testes automatizados, arquitetura modular madura ou uso de frameworks mais robustos (ex.: PyQt, FastAPI, pytest).
 - **Lacunas:** ausência de testes automatizados.
@@ -93,7 +93,7 @@ A matriz está dividida em duas partes: **Competências Técnicas** (ferramentas
 ### Manutenção e suporte de scripts
 
 - **Nota: 4**
-- **Evidências:** consultoria recorrente para 23+ clientes já migrados, cada caso exigindo diagnóstico, ajuste e plano de reversão; evolução de versões da ferramenta Unificador de Contatos (pasta `ANTIGO` vs. `NOVO_UNIFICADOR`).
+- **Evidências:** consultoria recorrente para 27+ clientes já migrados, cada caso exigindo diagnóstico, ajuste e plano de reversão; evolução de versões da ferramenta Unificador de Contatos (pasta `ANTIGO` vs. `NOVO_UNIFICADOR`).
 - **Projetos relacionados:** Consultoria Recorrente, Unificador de Contatos.
 - **Justificativa:** manutenção recorrente e de longo prazo de soluções em produção, com histórico de versionamento e evolução.
 - **Lacunas:** nenhuma relevante identificada.
@@ -102,7 +102,7 @@ A matriz está dividida em duas partes: **Competências Técnicas** (ferramentas
 ### Organização e reutilização de código
 
 - **Nota: 3**
-- **Evidências:** importador genérico de Excel parametrizável, reutilizável entre diferentes planilhas; padrão consistente de 3 arquivos (declarativo/execução/rollback) repetido em 23+ casos.
+- **Evidências:** importador genérico de Excel parametrizável, reutilizável entre diferentes planilhas; padrão consistente de 3 arquivos (declarativo/execução/rollback) repetido em 27+ casos.
 - **Projetos relacionados:** Automações Python, Consultoria Recorrente.
 - **Justificativa:** há exemplos concretos de generalização e reuso, mas a maioria dos scripts analisados é específica por caso/cliente, sem uma biblioteca central compartilhada.
 - **Lacunas:** ausência de um repositório único organizando as automações pessoais (estão espalhadas em pastas de cliente).
@@ -160,7 +160,7 @@ A matriz está dividida em duas partes: **Competências Técnicas** (ferramentas
 ### Colaboração com consultores e times multidisciplinares
 
 - **Nota: 4**
-- **Evidências:** 92 commits próprios em um repositório de equipe com 18 colaboradores ativos, mantendo os padrões já estabelecidos pelo grupo; ferramenta de saneamento de contatos distribuída e usada por outros consultores.
+- **Evidências:** 92+ commits próprios em um repositório de equipe com 7 colaboradores ativos, mantendo os padrões já estabelecidos pelo grupo; ferramenta de saneamento de contatos distribuída e usada por outros consultores.
 - **Projetos relacionados:** Migração de Banco a Banco (repositório Git), Unificador de Contatos.
 - **Justificativa:** contribuição sustentada e consistente em um projeto de equipe, aliado à construção de uma ferramenta que beneficia diretamente outros profissionais, demonstra colaboração efetiva.
 - **Lacunas:** nenhuma relevante identificada.
@@ -169,7 +169,7 @@ A matriz está dividida em duas partes: **Competências Técnicas** (ferramentas
 ### Foco em produtividade e melhoria contínua
 
 - **Nota: 4**
-- **Evidências:** 8 scripts Python e 7 macros VBA criados especificamente para eliminar tarefas manuais repetitivas; evolução de uma automação frágil para uma robusta.
+- **Evidências:** 12 scripts Python e 7 macros VBA criados especificamente para eliminar tarefas manuais repetitivas; evolução de uma automação frágil para uma robusta.
 - **Projetos relacionados:** Automações Python, Automações SQL/VBA, Unificador de Contatos.
 - **Justificativa:** volume e consistência de ferramentas paralelas criadas para ganho de produtividade, além da iteração visível sobre soluções já existentes.
 - **Lacunas:** ausência de métricas quantitativas de tempo economizado.

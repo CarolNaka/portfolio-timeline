@@ -4,7 +4,7 @@ Lista de evidências que sustentam as afirmações feitas nos documentos de proj
 
 ## Migração de Banco a Banco
 
-- Repositório Git interno de pipeline de migração por planilha padrão (nome do repositório disponível para verificação interna; 1.291 commits totais, 18 colaboradores, 92 commits da autora entre mai/2026 e out/2026).
+- Repositório Git interno de pipeline de migração por planilha padrão (nome do repositório disponível para verificação interna; 7 pessoas no time, 92+ commits da autora).
 - Estrutura de pastas do repositório acima, organizada por módulo (Contatos, Processos, Serviços) e por etapas de pré/pós-tratamento (sem conteúdo de dados).
 - 20+ pastas de projeto de cliente (plataformas de origem diversas), com planilhas de validação, backups de base concorrente e logs de erro (metadados apenas).
 
@@ -23,6 +23,6 @@ Lista de evidências que sustentam as afirmações feitas nos documentos de proj
 
 ## Automações Python e SQL/VBA
 
-- 8 scripts Python de produtividade (importação, extração, comparação de volumetria, extração de erros e avisos, gestão de acessos).
+- 12 scripts Python de produtividade (importação, extração, comparação de volumetria, extração de erros e avisos, gestão de acessos).
 - 7 macros VBA de validação estrutural de planilha.
 - 3 scripts SQL de deduplicação/extração direcionada.

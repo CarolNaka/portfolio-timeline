@@ -9,7 +9,7 @@
 const i18n = {
   pt: {
     "brand.role": "Data | Automation | AI Builder",
-    "aria.inicio": "Carolina Nakasuka — início",
+    "aria.inicio": "Carolina Nakasuka, início",
     "aria.secoes": "Seções",
     "aria.especialidades": "Especialidades",
     "aria.submenu": "Abrir submenu",
@@ -48,7 +48,7 @@ const i18n = {
     "sobre.como4d": "Não basta o processo terminar sem erro. Gosto de conferir os dados, validar o resultado e entender se aquilo que foi produzido realmente está correto.",
     "sobre.stackTitulo": "Tecnologias",
     "experiencias.titulo": "Experiências",
-    "experiencias.legalOne.org": "Técnica em Banco de Dados · Mar/2025 – Atual",
+    "experiencias.legalOne.org": "Técnica de Migração de Dados · Mar/2025 até hoje",
     "experiencias.legalOne.titulo": "Thomson Reuters Brasil",
     "experiencias.legalOne.desc": "Atuação com dados, migrações, consultoria e desenvolvimento de soluções para o Legal One.",
     "experiencias.legalOne.projetosTitulo": "Atuação prática e soluções",
@@ -60,7 +60,7 @@ const i18n = {
     "experiencias.legalOne.tag3": "Automação",
     "experiencias.ver": "Ver projetos e métricas",
     "trajetoria.titulo": "Trajetória",
-    "trajetoria.aside": "2026 — 2017",
+    "trajetoria.aside": "2026 · 2017",
     "trajetoria.intro": "Principais marcos de formação e carreira, do mais recente ao mais antigo.",
     "trajetoria.tipo.edu": "Formação",
     "trajetoria.tipo.work": "Carreira",
@@ -74,7 +74,7 @@ const i18n = {
     "competencias.tabTecnicas": "Competências técnicas",
     "competencias.tabSoft": "Soft skills",
     "exp.voltar": "Voltar para Experiências",
-    "exp.legalOne.eyebrow": "Experiência · Técnica em Banco de Dados",
+    "exp.legalOne.eyebrow": "Experiência · Técnica de Migração de Dados",
     "exp.legalOne.title": "Thomson Reuters Brasil",
     "exp.legalOne.desc1": "Faço parte do time de migração do Legal One, trabalhando com dados de clientes que vêm de diferentes sistemas. Além das migrações, também atendo demandas de consultoria em bancos de dados de clientes que já utilizam o sistema, envolvendo ajustes, correções e melhorias em ambientes de produção.",
     "exp.legalOne.desc2": "Tenho autonomia para entender cada necessidade, investigar os problemas e decidir a melhor forma de conduzir e executar a solução, acompanhando o processo até a validação e entrega.",
@@ -114,7 +114,7 @@ const i18n = {
   },
   en: {
     "brand.role": "Data | Automation | AI Builder",
-    "aria.inicio": "Carolina Nakasuka — home",
+    "aria.inicio": "Carolina Nakasuka, home",
     "aria.secoes": "Sections",
     "aria.especialidades": "Specialties",
     "aria.submenu": "Open submenu",
@@ -153,7 +153,7 @@ const i18n = {
     "sobre.como4d": "It is not enough for the process to finish without errors. I like to check the data, validate the result, and understand whether what was produced is actually correct.",
     "sobre.stackTitulo": "Technologies",
     "experiencias.titulo": "Experience",
-    "experiencias.legalOne.org": "Database Analyst · Mar 2025 – Present",
+    "experiencias.legalOne.org": "Data Migration Technician · Mar 2025 to Present",
     "experiencias.legalOne.titulo": "Thomson Reuters Brasil",
     "experiencias.legalOne.desc": "Working with data, migrations, consulting, and solution development for Legal One.",
     "experiencias.legalOne.projetosTitulo": "Hands-on work and solutions",
@@ -165,7 +165,7 @@ const i18n = {
     "experiencias.legalOne.tag3": "Automation",
     "experiencias.ver": "View projects and metrics",
     "trajetoria.titulo": "Timeline",
-    "trajetoria.aside": "2026 — 2017",
+    "trajetoria.aside": "2026 · 2017",
     "trajetoria.intro": "Key education and career milestones, from most recent to oldest.",
     "trajetoria.tipo.edu": "Education",
     "trajetoria.tipo.work": "Career",
@@ -179,7 +179,7 @@ const i18n = {
     "competencias.tabTecnicas": "Technical skills",
     "competencias.tabSoft": "Soft skills",
     "exp.voltar": "Back to Experience",
-    "exp.legalOne.eyebrow": "Experience · Database Analyst",
+    "exp.legalOne.eyebrow": "Experience · Data Migration Technician",
     "exp.legalOne.title": "Thomson Reuters Brasil",
     "exp.legalOne.desc1": "I am part of the Legal One migration team, working with client data that comes from different systems. Besides migrations, I also handle database consulting requests from clients who already use the system, involving adjustments, fixes, and improvements in production environments.",
     "exp.legalOne.desc2": "I have the autonomy to understand each need, investigate problems, and decide the best way to carry out and execute the solution, following the process through validation and delivery.",
@@ -246,7 +246,7 @@ const skillsTecnicas = [
   { pt: "Python", en: "Python", descPt: "Integração de dados (Excel, SQL Server, MySQL), automação de tarefas e interfaces desktop com Tkinter.", descEn: "Data integration (Excel, SQL Server, MySQL), task automation, and desktop interfaces with Tkinter.", daily: false, apps: ["python", "unificador"] },
   { pt: "Automação com Selenium", en: "Selenium automation", descPt: "Automação de navegador para fluxos repetitivos, com seleção direta dos elementos da tela.", descEn: "Browser automation for repetitive workflows, selecting on-screen elements directly.", daily: false, apps: ["unificador"] },
   { pt: "VBA e automação de Excel", en: "VBA & Excel automation", descPt: "Macros que validam a estrutura das planilhas de migração antes do envio para carga.", descEn: "Macros that validate the structure of migration spreadsheets before they are submitted for loading.", daily: false, apps: ["sqlvba"] },
-  { pt: "Git e GitHub", en: "Git & GitHub", descPt: "Versionamento colaborativo de scripts em repositório de equipe: 92 commits em cerca de 5 meses.", descEn: "Collaborative version control of scripts in a team repository: 92 commits over about 5 months.", daily: true, apps: ["migracao"] },
+  { pt: "Git e GitHub", en: "Git & GitHub", descPt: "Versionamento colaborativo de scripts em repositório de equipe: 92+ commits.", descEn: "Collaborative version control of scripts in a team repository: 92+ commits.", daily: true, apps: ["migracao"] },
   { pt: "Consultoria e suporte em produção", en: "Production consulting & support", descPt: "Ajustes em produção com scripts declarativo, de execução e de rollback, sempre após aprovação formal.", descEn: "Production changes with declarative, execution, and rollback scripts, always after formal approval.", daily: false, apps: ["consultoria"] }
 ];
 
@@ -268,25 +268,25 @@ const skillsSoft = [
 const timeline = [
   {
     date: "Dez 2026", dateEn: "Dec 2026", type: "edu", future: true,
-    pt: "Formação em Análise e Desenvolvimento de Sistemas (prevista)", en: "Graduation — Systems Analysis and Development (expected)",
+    pt: "Formação em Análise e Desenvolvimento de Sistemas (prevista)", en: "Graduation in Systems Analysis and Development (expected)",
     details: [
       { pt: ["TCC sobre IA no desenvolvimento de software", "“Produtividade no desenvolvimento de software assistido por IA: alcance e limites das evidências sobre tempo, compreensão, qualidade e manutenção”."], en: ["Thesis on AI in software development", "“Productivity in AI-assisted software development: scope and limits of the evidence on time, comprehension, quality, and maintenance”."] },
-      { pt: ["Batalha Naval: gestora de projeto líder", "Projeto de desenvolvimento de jogo no 4º semestre, liderando um grupo de 13 pessoas."], en: ["Battleship: lead project manager", "Game development project in the 4th semester, leading a team of 13 people."], href: null /* link da publicação no LinkedIn: preencher quando disponível */ }
+      { pt: ["Batalha Naval: gestora de projeto líder", "Projeto de desenvolvimento de jogo no 4º semestre, liderando um grupo de 13 pessoas."], en: ["Battleship: lead project manager", "Game development project in the 4th semester, leading a team of 13 people."] }
     ]
   },
   {
     date: "Mar 2025", type: "work",
-    pt: "Início do estágio na Thomson Reuters Brasil", en: "Started internship at Thomson Reuters Brasil",
+    pt: "Início como Técnica de Migração de Dados na Thomson Reuters Brasil", en: "Started as Data Migration Technician at Thomson Reuters Brasil",
     details: [
       { pt: ["Primeira migração totalmente independente", "Conduzi um processo de migração de ponta a ponta, sem apoio direto."], en: ["First fully independent migration", "I carried a migration process end to end, without direct support."] },
       { pt: ["Unificador de Contatos", "Ferramenta que idealizei e desenvolvi em Python, hoje usada por outros consultores em campo."], en: ["Contact Deduplication Tool", "A Python tool I conceived and built, now used by other consultants in the field."] },
       { pt: ["Produção com rede de segurança", "Consultoria recorrente em 27+ clientes, sempre com script de rollback e aprovação formal."], en: ["Production with a safety net", "Recurring consulting for 27+ clients, always with a rollback script and formal approval."] },
-      { pt: ["92 commits em ~5 meses", "Contribuição ao repositório de migração mantido por um time de 7 pessoas."], en: ["92 commits in ~5 months", "Contribution to the migration repository maintained by a team of 7."] }
+      { pt: ["92+ commits", "Contribuição ao repositório de migração mantido por um time de 7 pessoas."], en: ["92+ commits", "Contribution to the migration repository maintained by a team of 7."] }
     ]
   },
-  { date: "Jan 2023", type: "edu", pt: "Ingresso na FATEC — Análise e Desenvolvimento de Sistemas", en: "Started FATEC — Systems Analysis and Development" },
+  { date: "Jan 2023", type: "edu", pt: "Ingresso na FATEC em Análise e Desenvolvimento de Sistemas", en: "Started FATEC in Systems Analysis and Development" },
   {
-    date: "2022 – 2023", type: "work",
+    date: "2022 a 2023", dateEn: "2022 to 2023", type: "work",
     pt: "Consultora e Processista na Beyond HR", en: "Consultant and Process Specialist at Beyond HR",
     details: [
       { pt: ["Pesquisa de mercado e mapeamento de talentos", "Atuação com pesquisa de mercado, mapeamento de talentos e ferramentas de recrutamento."], en: ["Market research and talent mapping", "Worked with market research, talent mapping, and recruitment tools."] },
@@ -296,12 +296,12 @@ const timeline = [
   },
   {
     date: "Jun 2021", type: "edu",
-    pt: "Formação em Mecânica — Processos de Produção", en: "Graduated — Mechanical Engineering, Production Processes",
+    pt: "Formação em Mecânica, Processos de Produção", en: "Graduated in Mechanical Engineering, Production Processes",
     details: [
       { pt: ["Protótipo de macaco hidráulico", "Trabalho de encerramento: do projeto de desenho técnico à usinagem das peças, em grupo de 7 pessoas. O protótipo foi testado levantando 2 toneladas."], en: ["Hydraulic jack prototype", "Final course project: from the technical-drawing design to machining the parts, by a team of 7. The prototype was tested lifting 2 tons."] }
     ]
   },
-  { date: "Jan 2017", type: "edu", pt: "Ingresso na FATEC — Mecânica, Processos de Produção", en: "Started FATEC — Mechanical Engineering, Production Processes" }
+  { date: "Jan 2017", type: "edu", pt: "Ingresso na FATEC em Mecânica, Processos de Produção", en: "Started FATEC in Mechanical Engineering, Production Processes" }
 ];
 
 const projects = [

@@ -18,7 +18,7 @@
 3. Adicione a evidência ao campo correspondente.
 4. Reavalie a nota **somente se a evidência justificar**, explicando a mudança na justificativa.
 5. Se for uma competência nova, use `templates/template_nova_experiencia.md` como guia de formato.
-6. No site, atualize também os arrays `skillsTecnicas`/`skillsSoft` em `site/script.js` — cada item tem `score` (1 a 5 estrelas) e uma nota curta (`notePt`/`noteEn`) que deve ser uma evidência concreta, não uma frase genérica (ex.: "92 commits em repositório de migração", não "boa experiência com Git").
+6. No site, atualize também os arrays `skillsTecnicas`/`skillsSoft` em `site/script.js` — cada item tem `score` (1 a 5 estrelas) e uma nota curta (`notePt`/`noteEn`) que deve ser uma evidência concreta, não uma frase genérica (ex.: "92+ commits em repositório de migração", não "boa experiência com Git").
 
 ## Como atualizar a linha do tempo (trajetória)
 

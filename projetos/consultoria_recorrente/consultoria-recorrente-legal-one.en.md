@@ -61,7 +61,7 @@ Client request (email)
 | Additional cases via partner/indirect channel | At least 3 more documented cases following the same declarative/rollback pattern | **Evidence-backed** |
 | Coverage rate of the declarative → execution → rollback pattern in cases reviewed | 100% of reviewed cases followed all 3 steps | **Evidence-backed** |
 | Average turnaround time per request | Not recorded in the files analyzed | **Pending validation** |
-| Total correction scripts produced over the last 2 years | Estimated 60–80 scripts (counting declarative + execution + rollback for each of the ~23 identified cases) | **Estimate**, to be validated |
+| Total correction scripts produced over the last 2 years | Estimated 60–80 scripts (counting declarative + execution + rollback for each of the 27+ identified cases) | **Estimate**, to be validated |
 
 ## Skills demonstrated
 

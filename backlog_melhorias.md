@@ -4,7 +4,7 @@ Lista de itens identificados durante a análise que podem ser incorporados em ve
 
 ## Conteúdo
 
-- [x] ~~Obter, mediante sua autorização explícita, a lista de clientes atendidos nos últimos 2 anos a partir do OneNote~~ — resolvido: você forneceu o valor aproximado (mais de 30 clientes no total), consulta ao OneNote dispensada.
+- [x] ~~Obter, mediante sua autorização explícita, a lista de clientes atendidos nos últimos 2 anos a partir do OneNote~~ — resolvido: você forneceu o valor aproximado (45+ clientes no total), consulta ao OneNote dispensada.
 - [ ] Registrar o volume total de registros migrados ao longo da carreira (se reconstituível a partir de relatórios antigos).
 - [ ] Medir e documentar o tempo economizado pelo Unificador de Contatos em relação ao processo tradicional.
 - [ ] Adicionar telemetria simples (log local) ao Unificador de Contatos, para quantificar uso real.
@@ -13,7 +13,7 @@ Lista de itens identificados durante a análise que podem ser incorporados em ve
 
 ## Estrutura e manutenção
 
-- [ ] Consolidar os 8 scripts Python de produtividade em um repositório próprio e documentado (hoje estão espalhados em pastas de cliente).
+- [ ] Consolidar os 12 scripts Python de produtividade em um repositório próprio e documentado (hoje estão espalhados em pastas de cliente).
 - [ ] Adicionar diagrama simplificado do fluxo de dados do pipeline de migração (Contatos/Processos/Serviços) à documentação do projeto de migração.
 - [ ] Revisar periodicamente se novos projetos/scripts foram criados desde a última atualização do portfólio.
 

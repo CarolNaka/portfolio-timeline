@@ -64,21 +64,20 @@ Banco de origem (concorrente)
 
 | Métrica | Valor | Classificação |
 |---|---|---|
-| Módulos de dados cobertos pelo pipeline de extração | 3 módulos centrais (Contatos, Processos, Serviços), somando mais de 40 scripts SQL de extração por entidade/sub-entidade | **Comprovado por evidência** (contagem de arquivos no repositório) |
-| Scripts de pré/pós-tratamento (pré-extração, pré-migração, pós-migração) | 14 scripts dedicados de tratamento de dados e integridade | **Comprovado por evidência** |
-| Contribuição pessoal no repositório compartilhado do pipeline | 92 commits, entre maio e outubro de 2026, totalizando ~5 meses de atividade contínua, alterando 209 arquivos `.sql`, 34 `.xlsx` e 20 `.json` | **Comprovado por evidência** (histórico Git) |
-| Tamanho do time que mantém este repositório | 18 colaboradores ativos no histórico (1.291 commits no total) | **Comprovado por evidência** |
+| Módulos de dados cobertos pelo pipeline de extração | 5 módulos (Contatos, Processos, Serviços, Contratos de Clientes e Honorários), com 7+ mapeamentos feitos | **Comprovado por evidência** (contagem de arquivos no repositório) |
+| Contribuição pessoal no repositório compartilhado do pipeline | 92+ commits, incluindo alterações em 209 arquivos `.sql`, 34 `.xlsx` e 20 `.json` | **Comprovado por evidência** (histórico Git) |
+| Tamanho do time que mantém este repositório | 7 pessoas no time | **Comprovado por evidência** |
 | Plataformas de origem atendidas | 4 ou mais plataformas concorrentes distintas, com pelo menos 20 casos de migração documentados nos arquivos locais analisados | **Comprovado por evidência de pastas de projeto** (contagem de pastas de cliente) |
 | Maior volume de dados tratado em um único projeto | Script de carga de ~170 MB, fracionado em 44 arquivos para execução | **Comprovado por evidência** (tamanho de arquivo) |
 | Volume total de registros migrados nesse tipo de projeto | Não quantificado nos arquivos analisados | **Pendente de validação** — você pode levantar esse número a partir de relatórios de carga, se existirem |
-| Número total de clientes atendidos em migração de banco a banco (concorrentes) nos últimos 2 anos, via parceiros de revenda | Mais de 25 (subconjunto do total de 30+ clientes atendidos em todos os tipos de serviço, confirmado pela autora) | **Comprovada** |
+| Migrações realizadas nos últimos 2 anos | 20+ clientes (subconjunto do total de 45+ clientes atendidos em todos os tipos de serviço, informado pela autora) | **Comprovada** |
 
 ## Competências demonstradas
 
 - Modelagem, extração e transformação de dados relacionais complexos (SQL Server).
 - Mapeamento de equivalência entre modelos de dados heterogêneos.
 - Construção de pipelines de ETL documentados, reprodutíveis e versionados.
-- Trabalho colaborativo em repositório Git compartilhado por um time técnico de ao menos 18 pessoas, com histórico de contribuição consistente ao longo de meses.
+- Trabalho colaborativo em repositório Git compartilhado por um time técnico de 7 pessoas, com histórico de contribuição consistente ao longo de meses.
 - Tratamento de grandes volumes de dados e particionamento de execução quando necessário.
 - Verificação de integridade pós-carga e correção proativa de inconsistências.
 

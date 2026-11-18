@@ -65,7 +65,7 @@ Data source (Excel, MySQL, SQL Server)
 
 | Metric | Value | Classification |
 |---|---|---|
-| Number of Python productivity scripts identified | 8 distinct scripts (import, MySQL extraction ×2, volume comparison ×2, errors/warnings, access management, generic importer) | **Evidence-backed** |
+| Number of Python productivity scripts identified | 12 distinct scripts | **Evidence-backed** |
 | Source databases supported by the extraction scripts | SQL Server and MySQL | **Evidence-backed** |
 | Time saved per automated run vs. the equivalent manual process | Not quantified in the files analyzed | **Pending validation** |
 | Reduction in technical-knowledge dependency to upload a spreadsheet to the database | High — the generic importer eliminates the need to manually write insert SQL for every new spreadsheet | **Qualitative estimate**, not numeric |

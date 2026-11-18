@@ -65,7 +65,7 @@ Fonte de dados (Excel, MySQL, SQL Server)
 
 | Métrica | Valor | Classificação |
 |---|---|---|
-| Número de scripts Python de produtividade identificados | 8 scripts distintos (importação, extração MySQL ×2, comparação de volumetria ×2, erros/avisos, gestão de acessos, importador genérico) | **Comprovado por evidência** |
+| Número de scripts Python de produtividade identificados | 12 scripts distintos | **Comprovado por evidência** |
 | Bancos de dados de origem suportados pelos scripts de extração | SQL Server e MySQL | **Comprovado por evidência** |
 | Tempo economizado por execução automatizada vs. processo manual equivalente | Não quantificado nos arquivos analisados | **Pendente de validação** |
 | Redução de dependência de conhecimento técnico para subir uma planilha ao banco | Alta — o importador genérico elimina a necessidade de escrever SQL de inserção manualmente a cada nova planilha | **Estimativa qualitativa**, não numérica |

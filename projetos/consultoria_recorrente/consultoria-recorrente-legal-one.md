@@ -61,7 +61,7 @@ Solicitação do cliente (e-mail)
 | Número de casos adicionais em contexto de parceria/canal indireto | Pelo menos mais 3 casos documentados com o mesmo padrão declarativo/rollback | **Comprovado por evidência** |
 | Taxa de cobertura do padrão declarativo → execução → rollback nos casos analisados | 100% dos casos revisados seguiam as 3 etapas | **Comprovado por evidência** |
 | Tempo médio de atendimento por solicitação | Não registrado nos arquivos analisados | **Pendente de validação** |
-| Número total de scripts de correção produzidos nos últimos 2 anos | Estimativa de 60 a 80 scripts (contando declarativo + execução + rollback para cada um dos ~23 casos identificados) | **Estimativa**, a validar |
+| Número total de scripts de correção produzidos nos últimos 2 anos | Estimativa de ~80 scripts (contando declarativo + execução + rollback para cada um dos 27+ casos identificados) | **Estimativa**, a validar |
 
 ## Competências demonstradas
 
