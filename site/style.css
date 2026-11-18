@@ -1949,6 +1949,10 @@ a.card:hover::before, .card--hover:hover::before { opacity: 1; width: 72px; }
   display: block;
 }
 
+.exp-desc { max-width: 74ch; display: grid; gap: var(--space-4); margin-top: var(--space-5); }
+.exp-desc p { margin: 0; color: var(--text-muted); font-size: var(--fs-md); line-height: 1.7; }
+.exp-desc a { font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--mint-line); }
+
 .hero--compact .subtitle {
   color: var(--text-muted);
   font-size: var(--fs-lg);
