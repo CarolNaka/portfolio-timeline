@@ -61,7 +61,7 @@ const i18n = {
     "gh.ver": "Ver no GitHub",
     "experiencias.stat1": "clientes atendidos",
     "experiencias.stat2": "migrações realizadas",
-    "experiencias.stat3": "scripts desenvolvidos",
+    "experiencias.stat3": "clientes em consultoria recorrente",
     "experiencias.legalOne.tag1": "Migração de dados",
     "experiencias.legalOne.tag2": "Consultoria em bancos de dados",
     "experiencias.legalOne.tag3": "Automação",
@@ -171,7 +171,7 @@ const i18n = {
     "gh.ver": "View on GitHub",
     "experiencias.stat1": "clients served",
     "experiencias.stat2": "migrations completed",
-    "experiencias.stat3": "scripts developed",
+    "experiencias.stat3": "clients in recurring consulting",
     "experiencias.legalOne.tag1": "Data migration",
     "experiencias.legalOne.tag2": "Database consulting",
     "experiencias.legalOne.tag3": "Automation",
@@ -346,7 +346,6 @@ const projects = [
 const metrics = [
   { value: "45+", pt: "Clientes atendidos, em todos os tipos de serviço", en: "Clients served, across all service types" },
   { value: "20+", pt: "Migrações realizadas", en: "Migrations completed" },
-  { value: "25+", pt: "Scripts desenvolvidos", en: "Scripts developed" },
   { value: "23+", pt: "Clientes em consultoria recorrente, com plano de rollback documentado", en: "Clients in recurring consulting, with a documented rollback plan" },
   { value: "92", pt: "Commits pessoais em repositório de migração colaborativo (~5 meses)", en: "Personal commits in a collaborative migration repository (~5 months)" },
   { value: "18", pt: "Pessoas no time que mantém o pipeline de migração", en: "People maintaining the migration pipeline" }
