@@ -85,8 +85,3 @@ git push
 
 Nunca use `git add .` sem antes revisar com `git status` o que será incluído, para evitar subir arquivo sensível por engano.
 
-## Como adicionar um projeto do GitHub
-
-1. Abra `site/script.js` e localize a lista `githubProjects`.
-2. Inclua um item: `{ name: "nome-do-repo", url: "https://github.com/CarolNaka/nome-do-repo", desc: { pt: "...", en: "..." }, tags: ["Python"] }`.
-3. Use apenas descrições que o próprio repositório sustente (sem métricas ou resultados inventados). O repositório precisa estar público para o link funcionar.

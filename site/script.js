@@ -17,7 +17,6 @@ const i18n = {
     "nav.home": "Home",
     "nav.competencias": "Competências",
     "nav.experiencias": "Experiências",
-    "nav.projetos": "Projetos",
     "nav.trajetoria": "Trajetória",
     "hero.eyebrow": "Portfólio Técnico",
     "hero.title": "Dados, automação e construção de soluções com IA",
@@ -53,10 +52,6 @@ const i18n = {
     "experiencias.legalOne.titulo": "Thomson Reuters Brasil",
     "experiencias.legalOne.desc": "Atuação com dados, migrações, consultoria e desenvolvimento de soluções para o Legal One.",
     "experiencias.legalOne.projetosTitulo": "Atuação prática e soluções",
-    "gh.titulo": "Projetos no GitHub",
-    "gh.aside": "Projetos pessoais",
-    "gh.intro": "Projetos pessoais publicados no GitHub, desenvolvidos fora do contexto corporativo.",
-    "gh.ver": "Ver no GitHub",
     "experiencias.stat1": "clientes atendidos",
     "experiencias.stat2": "migrações realizadas",
     "experiencias.stat3": "clientes em consultoria recorrente",
@@ -127,7 +122,6 @@ const i18n = {
     "nav.home": "Home",
     "nav.competencias": "Skills",
     "nav.experiencias": "Experience",
-    "nav.projetos": "Projects",
     "nav.trajetoria": "Timeline",
     "hero.eyebrow": "Technical Portfolio",
     "hero.title": "Data, automation, and building solutions with AI",
@@ -163,10 +157,6 @@ const i18n = {
     "experiencias.legalOne.titulo": "Thomson Reuters Brasil",
     "experiencias.legalOne.desc": "Working with data, migrations, consulting, and solution development for Legal One.",
     "experiencias.legalOne.projetosTitulo": "Hands-on work and solutions",
-    "gh.titulo": "Projects on GitHub",
-    "gh.aside": "Personal projects",
-    "gh.intro": "Personal projects published on GitHub, built outside the corporate context.",
-    "gh.ver": "View on GitHub",
     "experiencias.stat1": "clients served",
     "experiencias.stat2": "migrations completed",
     "experiencias.stat3": "clients in recurring consulting",
@@ -312,12 +302,6 @@ const timeline = [
     ]
   },
   { date: "Jan 2017", type: "edu", pt: "Ingresso na FATEC — Mecânica, Processos de Produção", en: "Started FATEC — Mechanical Engineering, Production Processes" }
-];
-
-// Projetos pessoais publicados no GitHub. Para adicionar um novo, inclua um item aqui.
-// desc (opcional): { pt, en }. tags (opcional): lista de tecnologias.
-const githubProjects = [
-  { name: "focus-clock", url: "https://github.com/CarolNaka/focus-clock", desc: null, tags: [] }
 ];
 
 const projects = [
@@ -466,21 +450,6 @@ function renderExperienceProjects(lang) {
     const href = base + "#proj-" + data.slug;
     return `<li><a href="${href}"><span class="idx">${pad2(i + 1)}</span><span>${data.title}</span><span class="arrow" aria-hidden="true">→</span></a></li>`;
   }).join("");
-}
-
-function renderGithubProjects(lang) {
-  const grid = document.getElementById("gh-grid");
-  if (!grid) return;
-  grid.innerHTML = "";
-  githubProjects.forEach((p, i) => {
-    const card = document.createElement("div");
-    card.className = "card card--hover project-card spot";
-    const desc = p.desc && p.desc[lang] ? `<p>${p.desc[lang]}</p>` : "";
-    const tags = p.tags && p.tags.length
-      ? `<div class="chip-list chip-list--card">${p.tags.map(t => `<span class="chip">${t}</span>`).join("")}</div>` : "";
-    card.innerHTML = `<span class="project-idx">${pad2(i + 1)}</span><h3>${p.name}</h3>${desc}${tags}<a class="btn" href="${p.url}" target="_blank" rel="noopener"><span>${i18n[lang]["gh.ver"]}</span>${ARROW_SVG}</a>`;
-    grid.appendChild(card);
-  });
 }
 
 function renderMetrics(lang) {
@@ -888,7 +857,6 @@ function setLanguage(lang) {
   renderSkills(lang);
   renderExperienceProjects(lang);
   renderNavMenus(lang);
-  renderGithubProjects(lang);
   renderMetrics(lang);
   renderTimeline(lang);
   toggleLangBlocks(lang);
