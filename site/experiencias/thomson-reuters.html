@@ -123,10 +123,11 @@
       <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="50" cy="22" rx="9" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="22" rx="9" ry="24" transform="rotate(45 50 50)"/><ellipse cx="50" cy="22" rx="9" ry="24" transform="rotate(90 50 50)"/><ellipse cx="50" cy="22" rx="9" ry="24" transform="rotate(135 50 50)"/><ellipse cx="50" cy="22" rx="9" ry="24" transform="rotate(180 50 50)"/><ellipse cx="50" cy="22" rx="9" ry="24" transform="rotate(225 50 50)"/><ellipse cx="50" cy="22" rx="9" ry="24" transform="rotate(270 50 50)"/><ellipse cx="50" cy="22" rx="9" ry="24" transform="rotate(315 50 50)"/><circle cx="50" cy="50" r="7"/><circle cx="50" cy="50" r="2.5"/></svg>
     </div>
     <p class="highlight-eyebrow" data-i18n="destaque.eyebrow">Projeto em destaque · Ideia e autoria própria</p>
-    <h2 data-i18n="destaque.titulo">Projeto em destaque: Unificador de Contatos</h2>
-    <p data-i18n="destaque.p1">Ferramenta Python + Selenium com interface gráfica própria, distribuída como executável para consultores em campo. Identifica contatos duplicados por CPF/CNPJ e aciona a unificação nativa do Legal One.</p>
-    <p data-i18n="destaque.p2">Elimina a necessidade de extrair a base, tratar em homologação e aguardar SLA: o consultor resolve direto em produção, com autonomia.</p>
-    <p class="muted" data-i18n="destaque.nota">Ideia e autoria próprias. O código-fonte não é público; a arquitetura está descrita na página do projeto.</p>
+    <h2 data-i18n="destaque.titulo">Unificador de Contatos</h2>
+    <p data-i18n="destaque.p1">Ferramenta desenvolvida em Python (Selenium + Tkinter) para automatizar a identificação e unificação de contatos duplicados no Legal One. Possui interface gráfica própria e é distribuída como executável, permitindo que consultores realizem o procedimento diretamente no ambiente do cliente.</p>
+    <p data-i18n="destaque.p2">O projeto surgiu da identificação de um gargalo operacional: pelo processo tradicional, a correção de duplicidades exigia extração da base de produção, tratamento em homologação, validação e posterior agendamento da atualização em produção. Um fluxo longo, dependente do time de migração e sujeito aos prazos de atendimento (SLA).</p>
+    <p data-i18n="destaque.p3">Com a ferramenta, esse fluxo é substituído por uma execução automatizada. O consultor precisa apenas ter acesso ao ambiente do cliente e fornecer a planilha com os contatos identificados. A partir daí, o programa conduz o restante do processo: identifica os grupos de duplicidade por CPF/CNPJ, aciona a funcionalidade nativa de unificação do Legal One e gera um log detalhado para conferência durante e após a execução.</p>
+    <p class="muted" data-i18n="destaque.nota">Ideia, desenvolvimento e autoria próprios. O código-fonte não é público; a arquitetura e o funcionamento estão documentados nesta apresentação.</p>
     <a class="btn" href="#proj-unificador"><span data-i18n="destaque.ver">Ver projeto completo</span><svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   </section>
 
@@ -370,84 +371,123 @@
         <div class="proj-panel" id="proj-unificador-panel">
           <div class="proj-panel-inner">
             <div class="prose">
-                <div data-lang-block="pt">
-                  <h4>Visão geral</h4>
-                  <p>Ferramenta própria em Python (Selenium + Tkinter), distribuída como executável para consultores em campo, que identifica e unifica contatos duplicados direto na base do Legal One, usando a função nativa de unificação. Nasceu de um gargalo real: pelo processo tradicional, corrigir duplicidade exigia extrair a base, tratar em homologação, aguardar SLA e reaplicar em produção, sempre dependendo do time de migração. <strong>Ideia e autoria próprias.</strong></p>
+              <div data-lang-block="pt">
+                <h4>Visão geral</h4>
+                <p>Ferramenta desenvolvida em Python (Selenium + Tkinter) para automatizar a identificação e unificação de contatos duplicados no Legal One. Possui interface gráfica própria e é distribuída como executável, permitindo que consultores realizem o procedimento diretamente no ambiente do cliente.</p>
+                <p>O projeto surgiu da identificação de um gargalo operacional: pelo processo tradicional, a correção de duplicidades exigia extração da base de produção, tratamento em homologação, validação e posterior agendamento da atualização em produção. Um fluxo longo, dependente do time de migração e sujeito aos prazos de atendimento (SLA).</p>
+                <p>Com a ferramenta, esse fluxo é substituído por uma execução automatizada. O consultor precisa apenas ter acesso ao ambiente do cliente e fornecer a planilha com os contatos identificados. A partir daí, o programa conduz o restante do processo: identifica os grupos de duplicidade por CPF/CNPJ, aciona a funcionalidade nativa de unificação do Legal One e gera um log detalhado para conferência durante e após a execução.</p>
 
-                  <h4>Minha atuação</h4>
-                  <ul>
-                    <li>Identifiquei o problema e idealizei a solução.</li>
-                    <li>Prototipei com <code>pyautogui</code> (coordenadas de tela) e evoluí para <strong>Selenium</strong>, com seleção direta dos elementos da interface.</li>
-                    <li>Criei a interface gráfica (Tkinter) e empacotei em executável único (PyInstaller).</li>
-                    <li>Gerei log colorido por status e produzi material de treinamento em vídeo para outros consultores.</li>
-                  </ul>
+                <h4>Minha atuação</h4>
+                <ul>
+                  <li>Identifiquei o gargalo operacional e idealizei uma solução para eliminar a dependência do time de migração nesse tipo de demanda.</li>
+                  <li>Desenvolvi a automação em Python, inicialmente utilizando PyAutoGUI e posteriormente migrando para Selenium.</li>
+                  <li>Criei uma interface gráfica intuitiva com Tkinter, pensada para facilitar a utilização por consultores sem conhecimento técnico em programação.</li>
+                  <li>Implementei a geração de logs de execução para acompanhamento, identificação de ocorrências e conferência dos resultados durante e após o processamento.</li>
+                  <li>Empacotei a aplicação em um executável único com PyInstaller, facilitando sua distribuição e utilização.</li>
+                  <li>Produzi um vídeo de treinamento para orientar outros consultores na utilização da ferramenta.</li>
+                </ul>
 
-                  <h4>Como funciona</h4>
-                  <p>O consultor faz login manual no navegador controlado pela ferramenta e carrega a planilha. A ferramenta agrupa os duplicados por CPF/CNPJ, aciona a função nativa “Unificar Contatos” de cada grupo e gera um log em Excel.</p>
-                  <pre class="flow">Planilha de contatos do cliente
-  └─&gt; Login manual no navegador controlado pela ferramenta
-       └─&gt; Agrupamento de contatos duplicados por CPF/CNPJ
-            └─&gt; Para cada grupo: aciona função nativa "Unificar Contatos" via Selenium
-                 └─&gt; Log de execução em Excel (colorido por status)</pre>
+                <h4>Como funciona</h4>
+                <p>O processo foi projetado para exigir o mínimo de intervenção do consultor. Não é necessário preparar ambientes intermediários, executar scripts manualmente ou encaminhar a demanda ao time de migração.</p>
+                <ul>
+                  <li><strong>Acesso ao ambiente:</strong> o consultor inicia a ferramenta e realiza o login manual no navegador, utilizando suas próprias credenciais.</li>
+                  <li><strong>Entrada dos dados:</strong> carrega a planilha fornecida pelo cliente com os contatos que precisam ser tratados.</li>
+                  <li><strong>Identificação:</strong> a ferramenta agrupa automaticamente os contatos duplicados com base no CPF/CNPJ.</li>
+                  <li><strong>Execução:</strong> para cada grupo identificado, aciona a funcionalidade nativa de unificação de contatos do Legal One.</li>
+                  <li><strong>Conferência:</strong> gera um log detalhado de execução, permitindo acompanhar o processamento e verificar os resultados posteriormente.</li>
+                </ul>
+                <p><strong>Fluxo operacional:</strong></p>
+                <pre class="flow">Planilha fornecida pelo cliente + acesso ao ambiente
+→ Identificação e agrupamento de duplicidades
+→ Execução automatizada da unificação nativa
+→ Geração de log para conferência</pre>
 
-                  <h4>Resultados</h4>
-                  <table class="impact-table">
-                    <tr><th>Métrica</th><th>Valor</th><th>Classificação</th></tr>
-                    <tr><td>Etapas do processo tradicional</td><td>Elimina extração → homologação → tratamento → SLA → liberação</td><td>Comprovada pela arquitetura</td></tr>
-                    <tr><td>Dependência do time de migração</td><td>Eliminada para duplicidade de contatos</td><td>Comprovada pela arquitetura</td></tr>
-                    <tr><td>Autonomia do consultor</td><td>Ação direta, sem abrir chamado</td><td>Comprovada pela arquitetura</td></tr>
-                    <tr><td>Uso real em base de cliente</td><td>Logs e planilhas de contatos duplicados</td><td>Comprovada</td></tr>
-                    <tr><td>Material de treinamento</td><td>Vídeo de ~36 MB</td><td>Comprovada</td></tr>
-                  </table>
+                <h4>Resultados e impacto</h4>
+                <table class="impact-table impact-table--text">
+                  <tr><th>Aspecto</th><th>Resultado</th></tr>
+                  <tr><td>Complexidade operacional</td><td>Substituição de um fluxo com extração, homologação, tratamento, validação e liberação em produção por uma execução automatizada</td></tr>
+                  <tr><td>Dependência do time de migração</td><td>Eliminada para demandas de unificação de contatos contempladas pela ferramenta</td></tr>
+                  <tr><td>Autonomia do consultor</td><td>Execução direta no ambiente do cliente, sem necessidade de abrir chamado para o time de migração</td></tr>
+                  <tr><td>Facilidade de utilização</td><td>Interface gráfica intuitiva e aplicação distribuída como executável</td></tr>
+                  <tr><td>Rastreabilidade</td><td>Geração de logs para acompanhamento e conferência durante e após a execução</td></tr>
+                  <tr><td>Disseminação</td><td>Ferramenta disponibilizada a outros consultores, acompanhada de material próprio de treinamento</td></tr>
+                </table>
 
-                  <h4>Desafios e aprendizados</h4>
-                  <ul>
-                    <li><strong>Fragilidade da 1ª versão:</strong> a automação por coordenadas quebrava com mudança de resolução; a reescrita com Selenium resolveu.</li>
-                    <li><strong>Usabilidade:</strong> interface simples e executável único, pensados para quem não é técnico.</li>
-                    <li><strong>Pragmatismo:</strong> não é a arquitetura mais sofisticada (automação de interface, não API), mas é a solução certa para o problema real.</li>
-                    <li><strong>Limites e próximos passos:</strong> depende do layout do Legal One; unifica por CPF/CNPJ (poderia evoluir para similaridade de nome); integração via API, se disponível; medir a frequência de uso.</li>
-                  </ul>
-                </div>
+                <h4>Desafios e aprendizados</h4>
+                <ol>
+                  <li><strong>Escalabilidade da automação</strong><br>A primeira versão utilizava PyAutoGUI, baseado em coordenadas e interações com a tela. Além de apresentar limitações de escalabilidade, a execução dependia da interface visual e não permitia trabalhar adequadamente em segundo plano, deixando o processo condicionado à disponibilidade da minha própria sessão. A evolução para Selenium permitiu interagir diretamente com os elementos da página e tornou a automação mais flexível.</li>
+                  <li><strong>Autenticação e diferentes ambientes</strong><br>Um dos desafios foi desenvolver uma abordagem de autenticação que funcionasse para diferentes clientes, considerando particularidades de acesso e as diferenças entre os ambientes de produção e homologação. A solução precisava respeitar as credenciais e permissões individuais, sem depender de um login global.</li>
+                  <li><strong>Escolha da abordagem técnica</strong><br>A solução utiliza automação de interface em vez de integração direta por API. Embora não represente a arquitetura mais sofisticada, foi uma escolha pragmática diante das possibilidades de integração disponíveis e da necessidade de aproveitar a funcionalidade nativa de unificação do Legal One.</li>
+                  <li><strong>Limitações e possibilidades de evolução</strong><br>A automação depende da estrutura e dos elementos da interface do Legal One, exigindo manutenção caso ocorram mudanças relevantes. Atualmente, a identificação considera CPF/CNPJ. Entre as possibilidades de evolução estão:
+                    <ul>
+                      <li>Identificação de possíveis duplicidades por similaridade de nomes e outros atributos.</li>
+                      <li>Análise inteligente dos dados para sugerir contatos potencialmente duplicados, sem interferir na utilização da base.</li>
+                      <li>Geração de recomendações para conferência do consultor, permitindo que o cliente avalie quais contatos podem ser unificados antes de qualquer alteração.</li>
+                      <li>Integração via API, caso exista disponibilidade e suporte adequado.</li>
+                      <li>Coleta de indicadores de utilização para mensurar o impacto operacional da ferramenta.</li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
 
-                <div data-lang-block="en">
-                  <h4>Overview</h4>
-                  <p>Own tool built in Python (Selenium + Tkinter), distributed as an executable to field consultants, that identifies and merges duplicate contacts directly in the Legal One database using its native merge function. It came from a real bottleneck: with the traditional process, fixing duplicates meant extracting the database, treating it in staging, waiting for an SLA, and reapplying in production, always depending on the migration team. <strong>Original idea and authorship.</strong></p>
+              <div data-lang-block="en">
+                <h4>Overview</h4>
+                <p>Tool developed in Python (Selenium + Tkinter) to automate the identification and merging of duplicate contacts in Legal One. It has its own graphical interface and is distributed as an executable, allowing consultants to run the procedure directly in the client's environment.</p>
+                <p>The project came from spotting an operational bottleneck: in the traditional process, fixing duplicates required extracting the production database, treating it in staging, validating, and then scheduling the update in production. A long flow, dependent on the migration team and subject to service-level deadlines (SLA).</p>
+                <p>With the tool, that flow is replaced by an automated run. The consultant only needs access to the client's environment and the spreadsheet with the identified contacts. From there, the program handles the rest: it identifies duplicate groups by tax ID (CPF/CNPJ), triggers Legal One's native merge feature, and generates a detailed log for checking during and after the run.</p>
 
-                  <h4>What I did</h4>
-                  <ul>
-                    <li>I identified the problem and conceived the solution.</li>
-                    <li>I prototyped with <code>pyautogui</code> (screen coordinates) and evolved to <strong>Selenium</strong>, selecting interface elements directly.</li>
-                    <li>I built the graphical interface (Tkinter) and packaged it as a single executable (PyInstaller).</li>
-                    <li>I generated a status-colored log and produced training video material for other consultants.</li>
-                  </ul>
+                <h4>What I did</h4>
+                <ul>
+                  <li>I identified the operational bottleneck and conceived a solution to remove the migration team's involvement in this type of request.</li>
+                  <li>I developed the automation in Python, initially using PyAutoGUI and later moving to Selenium.</li>
+                  <li>I built an intuitive graphical interface with Tkinter, designed to be easy for consultants without programming knowledge to use.</li>
+                  <li>I implemented execution logs to follow progress, spot issues, and check results during and after processing.</li>
+                  <li>I packaged the application as a single executable with PyInstaller, making it easy to distribute and use.</li>
+                  <li>I produced a training video to guide other consultants in using the tool.</li>
+                </ul>
 
-                  <h4>How it works</h4>
-                  <p>The consultant logs in manually in the browser controlled by the tool and loads the spreadsheet. The tool groups duplicates by tax ID, triggers Legal One's native “Merge Contacts” function for each group, and generates an Excel log.</p>
-                  <pre class="flow">Client contacts spreadsheet
-  └─&gt; Manual login in the browser controlled by the tool
-       └─&gt; Duplicate contacts grouped by tax ID
-            └─&gt; For each group: triggers native "Merge Contacts" via Selenium
-                 └─&gt; Execution log in Excel (colored by status)</pre>
+                <h4>How it works</h4>
+                <p>The process was designed to require minimal intervention from the consultant. There is no need to prepare intermediate environments, run scripts manually, or forward the request to the migration team.</p>
+                <ul>
+                  <li><strong>Environment access:</strong> the consultant starts the tool and logs in manually in the browser, using their own credentials.</li>
+                  <li><strong>Data input:</strong> loads the spreadsheet provided by the client with the contacts that need treatment.</li>
+                  <li><strong>Identification:</strong> the tool automatically groups duplicate contacts based on the tax ID (CPF/CNPJ).</li>
+                  <li><strong>Execution:</strong> for each identified group, it triggers Legal One's native contact-merge feature.</li>
+                  <li><strong>Checking:</strong> generates a detailed execution log, making it possible to follow the processing and verify the results afterwards.</li>
+                </ul>
+                <p><strong>Operational flow:</strong></p>
+                <pre class="flow">Spreadsheet provided by the client + environment access
+→ Duplicate identification and grouping
+→ Automated run of the native merge
+→ Log generated for checking</pre>
 
-                  <h4>Results</h4>
-                  <table class="impact-table">
-                    <tr><th>Metric</th><th>Value</th><th>Classification</th></tr>
-                    <tr><td>Traditional process steps</td><td>Eliminates extraction → staging → treatment → SLA → release</td><td>Confirmed by architecture</td></tr>
-                    <tr><td>Migration-team dependency</td><td>Eliminated for duplicate contacts</td><td>Confirmed by architecture</td></tr>
-                    <tr><td>Consultant autonomy</td><td>Direct action, no ticket needed</td><td>Confirmed by architecture</td></tr>
-                    <tr><td>Real use on client data</td><td>Logs and duplicate-contact spreadsheets</td><td>Confirmed</td></tr>
-                    <tr><td>Training material</td><td>~36 MB video</td><td>Confirmed</td></tr>
-                  </table>
+                <h4>Results and impact</h4>
+                <table class="impact-table impact-table--text">
+                  <tr><th>Aspect</th><th>Result</th></tr>
+                  <tr><td>Operational complexity</td><td>Replaces a flow of extraction, staging, treatment, validation, and production release with an automated run</td></tr>
+                  <tr><td>Migration-team dependency</td><td>Eliminated for the contact-merge requests covered by the tool</td></tr>
+                  <tr><td>Consultant autonomy</td><td>Direct execution in the client's environment, with no need to open a ticket with the migration team</td></tr>
+                  <tr><td>Ease of use</td><td>Intuitive graphical interface and an application distributed as an executable</td></tr>
+                  <tr><td>Traceability</td><td>Logs generated for follow-up and checking during and after execution</td></tr>
+                  <tr><td>Dissemination</td><td>Tool made available to other consultants, with its own training material</td></tr>
+                </table>
 
-                  <h4>Challenges and learnings</h4>
-                  <ul>
-                    <li><strong>Fragile first version:</strong> coordinate-based automation broke when the resolution changed; rewriting with Selenium fixed it at the root.</li>
-                    <li><strong>Usability:</strong> simple interface and a single executable, designed for non-technical users.</li>
-                    <li><strong>Pragmatism:</strong> not the most sophisticated architecture (interface automation, not an API), but the right solution for the real problem.</li>
-                    <li><strong>Limits and next steps:</strong> depends on Legal One's layout; merges by tax ID (could evolve to name similarity); API integration, if available; measuring usage frequency.</li>
-                  </ul>
-                </div>
-
+                <h4>Challenges and learnings</h4>
+                <ol>
+                  <li><strong>Automation scalability</strong><br>The first version used PyAutoGUI, based on screen coordinates and interactions. Besides scalability limits, execution depended on the visual interface and could not run properly in the background, tying the process to the availability of my own session. Moving to Selenium made it possible to interact directly with page elements and made the automation more flexible.</li>
+                  <li><strong>Authentication and different environments</strong><br>One challenge was building an authentication approach that worked for different clients, considering access particularities and the differences between production and staging environments. The solution had to respect individual credentials and permissions, without relying on a global login.</li>
+                  <li><strong>Choice of technical approach</strong><br>The solution uses interface automation instead of direct API integration. Although not the most sophisticated architecture, it was a pragmatic choice given the integration options available and the need to leverage Legal One's native merge feature.</li>
+                  <li><strong>Limits and possible evolutions</strong><br>The automation depends on the structure and elements of Legal One's interface and requires maintenance if relevant changes occur. Currently, identification uses CPF/CNPJ. Possible evolutions include:
+                    <ul>
+                      <li>Identifying potential duplicates by name similarity and other attributes.</li>
+                      <li>Intelligent data analysis to suggest potentially duplicate contacts, without interfering with use of the database.</li>
+                      <li>Generating recommendations for the consultant to review, letting the client assess which contacts may be merged before any change.</li>
+                      <li>API integration, if available and properly supported.</li>
+                      <li>Collecting usage metrics to measure the tool's operational impact.</li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
             </div>
           </div>
         </div>
