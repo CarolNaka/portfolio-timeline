@@ -240,7 +240,7 @@ const stack = [
   { pt: "Dados", en: "Data", items: ["SQL Server (T-SQL)", "Azure Data Factory"] },
   { pt: "Automação", en: "Automation", items: ["Python", "Selenium", "Tkinter", "VBA", "PowerShell"] },
   { pt: "Ferramentas", en: "Tools", items: ["Git", "GitHub", "Excel"] },
-  { pt: "Áreas de interesse", en: "Areas of interest", items: ["IA aplicada", "Automação com IA", "DevOps"], itemsEn: ["Applied AI", "AI automation", "DevOps"] }
+  { pt: "Áreas de interesse", en: "Areas of interest", items: ["Engenharia de Dados", "IA aplicada", "Automação com IA", "DevOps"], itemsEn: ["Data Engineering", "Applied AI", "AI automation", "DevOps"] }
 ];
 
 const skillApps = {
