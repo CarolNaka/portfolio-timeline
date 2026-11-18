@@ -291,10 +291,7 @@
           <div class="proj-info">
             <div data-lang-block="pt"><h3>Consultoria Recorrente em Banco de Dados</h3><p>Ajustes em produção com padrão de diagnóstico, aprovação, execução e rollback, aplicado a 27+ clientes.</p></div>
             <div data-lang-block="en"><h3>Recurring Database Consulting</h3><p>Production adjustments with a diagnose, approve, execute, rollback pattern, applied to 27+ clients.</p></div>
-            <div class="meta-row"><span class="meta-chip" data-lang-block="pt">Consultoria</span>
-      <span class="meta-chip" data-lang-block="en">Consulting</span>
-      <span class="meta-chip">SQL Server</span>
-      <span class="meta-chip">Legal One</span></div>
+            <div class="meta-row"><span class="meta-chip">SQL Server</span><span class="meta-chip">Legal One</span></div>
           </div>
           <button type="button" class="btn proj-toggle" aria-expanded="false" aria-controls="proj-consultoria-panel">
             <span class="when-closed" data-i18n="proj.expandir">Ver detalhes</span><span class="when-open" data-i18n="proj.recolher">Ocultar detalhes</span><svg class="proj-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6l5 5 5-5"/></svg>
@@ -303,94 +300,105 @@
         <div class="proj-panel" id="proj-consultoria-panel">
           <div class="proj-panel-inner">
             <div class="prose">
-                <div data-lang-block="pt">
-                  <h4>Visão geral</h4>
-                  <p>Suporte recorrente a clientes já migrados para o Legal One: correções e ajustes direto no banco de produção para o que a interface não resolve, como dados incorretos, regras específicas e baixa em massa de processos. Por ser uma operação de risco, todo caso segue o mesmo padrão: aprovação formal por e-mail e plano de reversão (rollback) pronto antes de executar.</p>
+<div data-lang-block="pt">
+<h4>Visão geral</h4>
+<p>Atendimento técnico recorrente a clientes que já utilizam o Legal One, realizando ajustes e intervenções diretamente em bancos de dados de produção quando a interface do sistema não oferece os recursos necessários ou quando a demanda exige um tratamento específico.</p>
+<p>As solicitações envolvem alterações em lote, correções de inconsistências, ajustes em dados e regras de negócio, mudanças solicitadas pelos clientes e tratamentos de problemas identificados após a migração.</p>
+<p>Por envolver dados em produção, cada intervenção segue um procedimento padronizado, com diagnóstico prévio, validação em homologação, aprovação formal e preparação de rollback antes da execução.</p>
+<p>As demandas surgem de diferentes necessidades dos clientes: operações que não estão disponíveis na interface do sistema, alterações que seriam inviáveis de realizar manualmente registro por registro, correções de dados e adequações solicitadas para atender a regras específicas de negócio.</p>
+<p>Meu trabalho consiste em analisar cada cenário, compreender o impacto da alteração e desenvolver scripts SQL específicos, seguindo práticas de segurança, integridade e rastreabilidade dos dados.</p>
+<p>Todas as intervenções são planejadas e testadas antes de chegar à produção. O processo inclui scripts de diagnóstico, execução e rollback, além de aprovação formal do cliente.</p>
+<h4>Minha atuação</h4>
+<ul>
+<li><strong>Análise e diagnóstico:</strong> interpreto as solicitações dos clientes, investigo a estrutura dos dados e identifico os registros envolvidos, as dependências e os possíveis impactos da alteração.</li>
+<li><strong>Desenvolvimento de scripts SQL:</strong> elaboro scripts personalizados e padronizados para cada demanda, utilizando práticas que priorizam a segurança, a consistência e a integridade dos dados.</li>
+<li><strong>Controle de impacto:</strong> desenvolvo scripts declarativos para identificar e apresentar previamente os registros que serão afetados, permitindo conferir o escopo antes de qualquer alteração.</li>
+<li><strong>Testes e validação:</strong> executo e valido os procedimentos em ambiente de homologação antes de preparar a intervenção em produção.</li>
+<li><strong>Segurança e reversibilidade:</strong> preparo scripts de rollback antes da execução, permitindo restaurar o estado anterior dos dados em caso de falhas, necessidade operacional ou solicitação posterior do cliente.</li>
+<li><strong>Acompanhamento e entrega:</strong> conduzo o processo desde a análise inicial até a execução e conferência dos resultados, mantendo o histórico de aprovações e procedimentos realizados.</li>
+</ul>
+<h4>Como funciona</h4>
+<p>Cada demanda segue um padrão de três scripts complementares:</p>
+<h5>1. Declarativo: diagnóstico e previsão de impacto</h5>
+<p>Consulta os registros que serão afetados, apresenta o cenário atual e permite conferir exatamente o escopo da alteração. Não realiza modificações no banco de dados e serve como base para validação e aprovação do cliente.</p>
+<h5>2. Execução: aplicação da alteração</h5>
+<p>Contém os comandos necessários para realizar a intervenção, seguindo o escopo previamente validado e aprovado. Antes de chegar à produção, o procedimento é testado em homologação.</p>
+<h5>3. Rollback: plano de reversão</h5>
+<p>Preparado antes da execução, permite retornar os dados ao estado anterior caso ocorra algum problema, seja necessária uma reversão operacional ou o próprio cliente solicite desfazer a alteração.</p>
+<p><strong>Fluxo de execução:</strong></p>
+<pre class="flow">Solicitação do cliente
+→ Análise técnica e diagnóstico
+→ Desenvolvimento dos scripts declarativo, execução e rollback
+→ Testes e validação em homologação
+→ Apresentação do impacto e aprovação formal por e-mail
+→ Execução controlada em produção
+→ Conferência dos resultados</pre>
+<p>Esse padrão transforma alterações diretamente em produção em procedimentos planejados, documentados e reversíveis.</p>
+<h4>Resultados</h4>
+<table class="impact-table impact-table--text">
+<tr><th>Métrica</th><th>Resultado</th></tr>
+<tr><td>Clientes atendidos</td><td>27+</td></tr>
+<tr><td>Cobertura do padrão declarativo → execução → rollback</td><td>100% dos casos revisados</td></tr>
+</table>
+<h4>Desafios e aprendizados</h4>
+<ol>
+<li><strong>Segurança em ambientes de produção</strong><br>Intervenções diretamente no banco exigem cuidado com o impacto sobre os dados e suas dependências. A padronização dos scripts e a validação prévia ajudam a reduzir riscos e evitar alterações fora do escopo aprovado.</li>
+<li><strong>Diversidade de regras e necessidades</strong><br>Cada cliente possui particularidades operacionais e regras de negócio próprias. É necessário compreender o contexto antes de transformar uma solicitação em comandos SQL, evitando soluções genéricas que possam comprometer outros registros.</li>
+<li><strong>Reversibilidade das alterações</strong><br>O rollback não é tratado apenas como uma contingência para falhas técnicas. Ele também oferece flexibilidade caso o cliente mude de decisão ou precise desfazer uma alteração já aplicada, mantendo uma alternativa de retorno ao estado anterior.</li>
+<li><strong>Padronização e rastreabilidade</strong><br>A utilização de scripts específicos para diagnóstico, execução e reversão, combinada com a aprovação formal por e-mail, estabelece um histórico verificável das intervenções e das decisões envolvidas.</li>
+</ol>
+<p>Possibilidades de evolução: consolidar os casos recorrentes em templates parametrizáveis, ampliar a documentação dos procedimentos e organizar um repositório centralizado de scripts e soluções reutilizáveis.</p>
+</div>
 
-                  <h4>Minha atuação</h4>
-                  <ul>
-                    <li>Interpreto a solicitação do cliente e a traduzo em escopo técnico.</li>
-                    <li>Escrevo scripts SQL sob medida: correção de dados, baixa de processos, centro de custo, tipo de ação e reorganização de objetos.</li>
-                    <li>Rodo o script de diagnóstico antes de qualquer alteração e só executo em produção após a aprovação formal.</li>
-                    <li>Preparo o script de rollback de cada ajuste antes de executá-lo.</li>
-                  </ul>
-
-                  <h4>Como funciona</h4>
-                  <p>Cada demanda segue um <strong>padrão de 3 scripts</strong>:</p>
-                  <ul>
-                    <li><strong>Declarativo:</strong> lista exatamente quais registros serão afetados, sem alterar nada, e serve de base para a aprovação.</li>
-                    <li><strong>Execução:</strong> aplica a alteração já validada em produção.</li>
-                    <li><strong>Rollback:</strong> reverte a alteração; é preparado antes da execução, não depois.</li>
-                  </ul>
-                  <p>Assim, uma operação arriscada vira um processo auditável e reversível.</p>
-                  <pre class="flow">Solicitação do cliente (e-mail)
-  └─&gt; Script declarativo (diagnóstico / escopo do impacto)
-       └─&gt; Aprovação formal por e-mail
-            └─&gt; Script de execução (update em produção)
-                 └─&gt; Script de rollback já preparado (plano de reversão)</pre>
-
-                  <h4>Resultados</h4>
-                  <table class="impact-table">
-                    <tr><th>Métrica</th><th>Valor</th><th>Classificação</th></tr>
-                    <tr><td>Clientes atendidos com este padrão</td><td>20 escritórios distintos</td><td>Comprovada</td></tr>
-                    <tr><td>Casos adicionais via parceria/canal indireto</td><td>3+</td><td>Comprovada</td></tr>
-                    <tr><td>Cobertura do padrão declarativo → execução → rollback</td><td>100% dos casos revisados</td><td>Comprovada</td></tr>
-                    <tr><td>Scripts de correção nos últimos 2 anos</td><td>~60 a 80 (estimativa)</td><td>Estimada</td></tr>
-                  </table>
-
-                  <h4>Desafios e aprendizados</h4>
-                  <ul>
-                    <li><strong>Risco em produção:</strong> o rollback preparado antes de executar mitiga o risco de forma sistemática.</li>
-                    <li><strong>Demandas diversas:</strong> cada cliente traz uma regra de negócio diferente, que exige leitura cuidadosa antes de virar SQL.</li>
-                    <li><strong>Rastreabilidade:</strong> a aprovação por e-mail mantém o histórico de quem autorizou o quê.</li>
-                    <li><strong>Próximos passos:</strong> transformar ajustes recorrentes em templates parametrizáveis e reunir os casos em um repositório único.</li>
-                  </ul>
-                </div>
-
-                <div data-lang-block="en">
-                  <h4>Overview</h4>
-                  <p>Recurring support for clients already migrated to Legal One: fixes and adjustments made directly in the production database for what the interface can't solve, such as incorrect data, specific rules, and bulk case closing. Because this is a risky operation, every case follows the same standard: formal email approval and a rollback plan ready before running.</p>
-
-                  <h4>What I did</h4>
-                  <ul>
-                    <li>I interpret the client's request and translate it into technical scope.</li>
-                    <li>I write tailored SQL scripts: data fixes, case closing, cost center, case type, and object reorganization.</li>
-                    <li>I run the diagnostic script before any change and only execute in production after formal approval.</li>
-                    <li>I prepare the rollback script for each adjustment before running it.</li>
-                  </ul>
-
-                  <h4>How it works</h4>
-                  <p>Each request follows a <strong>3-script standard</strong>:</p>
-                  <ul>
-                    <li><strong>Declarative:</strong> lists exactly which records will be affected, changing nothing, and serves as the basis for approval.</li>
-                    <li><strong>Execution:</strong> applies the validated change in production.</li>
-                    <li><strong>Rollback:</strong> reverts the change; prepared before execution, not after.</li>
-                  </ul>
-                  <p>This turns a risky operation into an auditable, reversible process.</p>
-                  <pre class="flow">Client request (email)
-  └─&gt; Declarative script (diagnosis / impact scope)
-       └─&gt; Formal approval by email
-            └─&gt; Execution script (production update)
-                 └─&gt; Rollback script already prepared (reversal plan)</pre>
-
-                  <h4>Results</h4>
-                  <table class="impact-table">
-                    <tr><th>Metric</th><th>Value</th><th>Classification</th></tr>
-                    <tr><td>Clients served with this standard</td><td>20 distinct firms</td><td>Confirmed</td></tr>
-                    <tr><td>Additional cases via partner/indirect channel</td><td>3+</td><td>Confirmed</td></tr>
-                    <tr><td>Declarative → execution → rollback coverage</td><td>100% of reviewed cases</td><td>Confirmed</td></tr>
-                    <tr><td>Fix scripts produced in the last 2 years</td><td>~60 to 80 (estimate)</td><td>Estimate</td></tr>
-                  </table>
-
-                  <h4>Challenges and learnings</h4>
-                  <ul>
-                    <li><strong>Production risk:</strong> preparing the rollback before running mitigates the risk systematically.</li>
-                    <li><strong>Varied demands:</strong> each client brings a different business rule, requiring careful reading before turning it into SQL.</li>
-                    <li><strong>Traceability:</strong> email approval keeps a record of who authorized what.</li>
-                    <li><strong>Next steps:</strong> turn recurring adjustments into parameterized templates and gather the cases in a single repository.</li>
-                  </ul>
-                </div>
-
+<div data-lang-block="en">
+<h4>Overview</h4>
+<p>Recurring technical support for clients who already use Legal One, making adjustments and interventions directly in production databases when the system interface does not offer the needed features or when the request calls for specific treatment.</p>
+<p>Requests involve batch changes, fixing inconsistencies, adjustments to data and business rules, changes requested by clients, and handling problems identified after the migration.</p>
+<p>Because it involves production data, each intervention follows a standardized procedure, with prior diagnosis, validation in staging, formal approval, and rollback preparation before execution.</p>
+<p>The requests come from different client needs: operations that are not available in the system interface, changes that would be impractical to make manually record by record, data fixes, and adjustments requested to meet specific business rules.</p>
+<p>My work consists of analyzing each scenario, understanding the impact of the change, and developing specific SQL scripts, following practices for data security, integrity, and traceability.</p>
+<p>All interventions are planned and tested before reaching production. The process includes diagnostic, execution, and rollback scripts, plus formal client approval.</p>
+<h4>What I do</h4>
+<ul>
+<li><strong>Analysis and diagnosis:</strong> I interpret client requests, investigate the data structure, and identify the records involved, the dependencies, and the possible impacts of the change.</li>
+<li><strong>SQL script development:</strong> I write customized, standardized scripts for each request, using practices that prioritize data security, consistency, and integrity.</li>
+<li><strong>Impact control:</strong> I develop declarative scripts to identify and show in advance the records that will be affected, making it possible to check the scope before any change.</li>
+<li><strong>Testing and validation:</strong> I run and validate the procedures in the staging environment before preparing the production intervention.</li>
+<li><strong>Safety and reversibility:</strong> I prepare rollback scripts before execution, making it possible to restore the previous state of the data in case of failures, operational need, or a later request from the client.</li>
+<li><strong>Follow-up and delivery:</strong> I carry the process from the initial analysis through execution and checking of results, keeping the history of approvals and procedures performed.</li>
+</ul>
+<h4>How it works</h4>
+<p>Each request follows a pattern of three complementary scripts:</p>
+<h5>1. Declarative: diagnosis and impact preview</h5>
+<p>Queries the records that will be affected, presents the current scenario, and makes it possible to check exactly the scope of the change. It makes no modifications to the database and serves as the basis for client validation and approval.</p>
+<h5>2. Execution: applying the change</h5>
+<p>Contains the commands needed to carry out the intervention, following the scope previously validated and approved. Before reaching production, the procedure is tested in staging.</p>
+<h5>3. Rollback: reversal plan</h5>
+<p>Prepared before execution, it makes it possible to return the data to its previous state if a problem occurs, an operational reversal is needed, or the client themselves asks to undo the change.</p>
+<p><strong>Execution flow:</strong></p>
+<pre class="flow">Client request
+→ Technical analysis and diagnosis
+→ Development of the declarative, execution, and rollback scripts
+→ Testing and validation in staging
+→ Impact presentation and formal approval by email
+→ Controlled execution in production
+→ Checking of results</pre>
+<p>This pattern turns changes made directly in production into planned, documented, and reversible procedures.</p>
+<h4>Results</h4>
+<table class="impact-table impact-table--text">
+<tr><th>Metric</th><th>Result</th></tr>
+<tr><td>Clients served</td><td>27+</td></tr>
+<tr><td>Coverage of the declarative → execution → rollback pattern</td><td>100% of the cases reviewed</td></tr>
+</table>
+<h4>Challenges and learnings</h4>
+<ol>
+<li><strong>Safety in production environments</strong><br>Interventions directly in the database call for care about the impact on data and its dependencies. Standardizing the scripts and validating beforehand help reduce risk and avoid changes outside the approved scope.</li>
+<li><strong>Diversity of rules and needs</strong><br>Each client has its own operational particularities and business rules. It is necessary to understand the context before turning a request into SQL commands, avoiding generic solutions that could compromise other records.</li>
+<li><strong>Reversibility of changes</strong><br>Rollback is not treated only as a contingency for technical failures. It also offers flexibility if the client changes their mind or needs to undo a change already applied, keeping a way back to the previous state.</li>
+<li><strong>Standardization and traceability</strong><br>Using specific scripts for diagnosis, execution, and reversal, combined with formal approval by email, establishes a verifiable history of the interventions and the decisions involved.</li>
+</ol>
+<p>Possible evolutions: consolidating recurring cases into parameterizable templates, expanding the procedure documentation, and organizing a central repository of reusable scripts and solutions.</p>
+</div>
             </div>
           </div>
         </div>
