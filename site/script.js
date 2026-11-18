@@ -334,12 +334,12 @@ const projects = [
     en: { title: "Contact Deduplication Tool", desc: "Original tool (Python + Selenium) for deduplication, distributed as an executable.", slug: "unificador" }
   },
   {
-    pt: { title: "Automações Python de Produtividade", desc: "8 scripts para importação, extração MySQL, comparação de volumetria e gestão de acessos.", slug: "python" },
-    en: { title: "Python Productivity Automations", desc: "8 scripts for import, MySQL extraction, volume comparison, and access management.", slug: "python" }
+    pt: { title: "Automações Python de Produtividade", desc: "12 scripts Python para automatizar tarefas operacionais de migração e suporte: importação de planilhas, integração MySQL e SQL Server, comparação de volumetria e relatórios.", slug: "python" },
+    en: { title: "Python Productivity Automations", desc: "12 Python scripts to automate operational migration and support tasks: spreadsheet import, MySQL and SQL Server integration, volume comparison, and reports.", slug: "python" }
   },
   {
-    pt: { title: "Automações SQL e VBA", desc: "Scripts de deduplicação e macros de validação estrutural de planilha de migração.", slug: "sqlvba" },
-    en: { title: "SQL & VBA Automations", desc: "Deduplication scripts and structural-validation macros for migration spreadsheets.", slug: "sqlvba" }
+    pt: { title: "Automações SQL e VBA", desc: "Scripts SQL e macros VBA para preparar materiais de migração, verificar planilhas e automatizar rotinas de administração de bancos de dados.", slug: "sqlvba" },
+    en: { title: "SQL & VBA Automations", desc: "SQL scripts and VBA macros to prepare migration materials, check spreadsheets, and automate database administration routines.", slug: "sqlvba" }
   }
 ];
 

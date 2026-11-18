@@ -546,14 +546,9 @@
         <header class="proj-head">
           <span class="proj-idx">04</span>
           <div class="proj-info">
-            <div data-lang-block="pt"><h3>Automações Python de Produtividade</h3><p>8 scripts para importação, extração MySQL, comparação de volumetria e gestão de acessos.</p></div>
-            <div data-lang-block="en"><h3>Python Productivity Automations</h3><p>8 scripts for import, MySQL extraction, volume comparison, and access management.</p></div>
-            <div class="meta-row"><span class="meta-chip">Python</span>
-      <span class="meta-chip">pandas</span>
-      <span class="meta-chip">openpyxl</span>
-      <span class="meta-chip">SQLAlchemy</span>
-      <span class="meta-chip">SQL Server</span>
-      <span class="meta-chip">MySQL</span></div>
+            <div data-lang-block="pt"><h3>Automações Python de Produtividade</h3><p>12 scripts Python para automatizar tarefas operacionais de migração e suporte: importação de planilhas, integração MySQL e SQL Server, comparação de volumetria e relatórios.</p></div>
+            <div data-lang-block="en"><h3>Python Productivity Automations</h3><p>12 Python scripts to automate operational migration and support tasks: spreadsheet import, MySQL and SQL Server integration, volume comparison, and reports.</p></div>
+            <div class="meta-row"><span class="meta-chip">Python</span><span class="meta-chip">pandas</span><span class="meta-chip">openpyxl</span><span class="meta-chip">SQLAlchemy</span><span class="meta-chip">pyodbc</span><span class="meta-chip">PyMySQL</span><span class="meta-chip">SQL Server</span><span class="meta-chip">MySQL</span></div>
           </div>
           <button type="button" class="btn proj-toggle" aria-expanded="false" aria-controls="proj-python-panel">
             <span class="when-closed" data-i18n="proj.expandir">Ver detalhes</span><span class="when-open" data-i18n="proj.recolher">Ocultar detalhes</span><svg class="proj-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6l5 5 5-5"/></svg>
@@ -562,76 +557,83 @@
         <div class="proj-panel" id="proj-python-panel">
           <div class="proj-panel-inner">
             <div class="prose">
-                <div data-lang-block="pt">
-                  <h4>Visão geral</h4>
-                  <p>Scripts Python criados para tirar tarefas manuais do dia a dia de migração e suporte: importar planilhas para o banco, comparar volumes entre bases, extrair dados de MySQL, consolidar erros e avisos e apoiar a gestão de acessos. Cada um resolve uma necessidade pontual da rotina.</p>
+<div data-lang-block="pt">
+<h4>Visão geral</h4>
+<p>12 scripts Python desenvolvidos para automatizar tarefas operacionais de migração e suporte, incluindo importação em massa de planilhas Excel, extração e transposição de dados entre MySQL e SQL Server, comparação de volumetria e geração de relatórios.</p>
+<p>Conjunto de scripts desenvolvidos para reduzir atividades manuais e agilizar processos recorrentes da rotina de migração e suporte.</p>
+<p>As soluções envolvem integração entre diferentes fontes de dados, importação de planilhas em lote, extração de módulos de bases MySQL para estruturas SQL Server, comparação de informações e consolidação de relatórios operacionais.</p>
+<p>Cada automação foi desenvolvida para atender a uma necessidade específica, priorizando reutilização, redução de trabalho manual e agilidade na execução das atividades.</p>
+<h4>Minha atuação</h4>
+<ul>
+<li><strong>Importador de Excel para banco de dados:</strong> desenvolvimento de uma ferramenta genérica para importar planilhas e múltiplas abas em lote. Permite selecionar todas as abas ou apenas uma específica, padroniza os nomes das colunas e insere os dados nas tabelas do banco de dados configurado na conexão (pool).</li>
+<li><strong>Extração e integração MySQL → SQL Server:</strong> desenvolvimento de scripts Python para extrair módulos específicos de bases MySQL e transpor os dados para estruturas SQL Server, apoiando processos de migração.</li>
+<li><strong>Comparação de volumetria:</strong> automação da comparação de quantidades de registros entre bases, com geração de relatórios em Excel para conferência.</li>
+<li><strong>Consolidação de erros e avisos:</strong> extração e organização de informações de totais, erros e avisos em relatórios estruturados para análise.</li>
+<li><strong>Apoio à gestão de acessos:</strong> automações para auxiliar atividades relacionadas ao gerenciamento de usuários e acessos no Legal One.</li>
+</ul>
+<h4>Como funciona</h4>
+<p>Cada script recebe dados de uma fonte, executa o processamento necessário e entrega informações estruturadas em um banco de destino ou relatório para análise.</p>
+<p><strong>Fluxo de processamento:</strong></p>
+<pre class="flow">Fonte de dados (Excel, MySQL ou SQL Server)
+→ Script Python específico
+→ Leitura, extração, transformação ou comparação
+→ Banco SQL Server atualizado ou relatório Excel consolidado</pre>
+<p><strong>Principais bibliotecas utilizadas:</strong> pandas e openpyxl para manipulação de planilhas; SQLAlchemy, pyodbc e PyMySQL para conexão e operações com bancos de dados.</p>
+<h4>Resultados</h4>
+<table class="impact-table impact-table--text">
+<tr><th>Métrica</th><th>Resultado</th></tr>
+<tr><td>Scripts Python desenvolvidos</td><td>12 scripts distintos</td></tr>
+<tr><td>Bancos de dados integrados</td><td>SQL Server e MySQL</td></tr>
+<tr><td>Formatos de entrada</td><td>Excel e bancos relacionais</td></tr>
+<tr><td>Aplicações</td><td>Importação, extração, integração, comparação e relatórios</td></tr>
+</table>
+<h4>Desafios e aprendizados</h4>
+<ol>
+<li><strong>Integração entre diferentes fontes de dados</strong><br>Desenvolvimento de rotinas para trabalhar com estruturas e tecnologias distintas, extraindo informações de MySQL e preparando os dados para utilização em SQL Server.</li>
+<li><strong>Reutilização e flexibilidade</strong><br>Criação de scripts genéricos, como o importador de Excel, capazes de atender diferentes planilhas e estruturas sem exigir uma implementação específica para cada arquivo.</li>
+<li><strong>Processamento em lote</strong><br>Automação de operações que envolvem múltiplas planilhas, abas e conjuntos de registros, reduzindo a necessidade de importações e tratamentos manuais.</li>
+<li><strong>Evolução e padronização</strong><br>Possibilidade de ampliar o tratamento de erros, implementar testes automatizados e documentar os procedimentos para facilitar a manutenção e reutilização das ferramentas.</li>
+</ol>
+</div>
 
-                  <h4>Minha atuação</h4>
-                  <ul>
-                    <li><strong>Importador genérico</strong> de Excel para banco: lê todas as abas (ou uma específica) e padroniza os nomes de coluna.</li>
-                    <li>Extração de andamentos e compromissos/tarefas de bases <strong>MySQL</strong> de origem.</li>
-                    <li>Comparação de volumetria entre bases, com relatório em Excel.</li>
-                    <li>Extração de erros e avisos (Totais, Erros, Avisos) em Excel formatado.</li>
-                    <li>Apoio à gestão de acesso de usuários do Legal One.</li>
-                  </ul>
-
-                  <h4>Como funciona</h4>
-                  <p>Cada script parte de uma fonte (Excel, MySQL ou SQL Server) e entrega o banco atualizado ou um relatório consolidado. Bibliotecas: pandas, openpyxl, pyodbc, SQLAlchemy e PyMySQL.</p>
-                  <pre class="flow">Fonte de dados (Excel, MySQL, SQL Server)
-  └─&gt; Script Python específico (importação, extração, comparação ou verificação)
-       └─&gt; Banco de destino atualizado OU relatório Excel consolidado</pre>
-
-                  <h4>Resultados</h4>
-                  <table class="impact-table">
-                    <tr><th>Métrica</th><th>Valor</th><th>Classificação</th></tr>
-                    <tr><td>Scripts Python de produtividade</td><td>8 scripts distintos</td><td>Comprovada</td></tr>
-                    <tr><td>Bancos de origem suportados</td><td>SQL Server e MySQL</td><td>Comprovada</td></tr>
-                    <tr><td>Dependência técnica para subir planilha</td><td>Reduzida (importador genérico)</td><td>Estimativa qualitativa</td></tr>
-                  </table>
-
-                  <h4>Desafios e aprendizados</h4>
-                  <ul>
-                    <li><strong>Scripts pontuais em vez de uma ferramenta única:</strong> priorizei agilidade para necessidades específicas.</li>
-                    <li><strong>Evolução:</strong> o protótipo anterior com <code>pyautogui</code> levou à abordagem com Selenium do Unificador de Contatos.</li>
-                    <li><strong>Próximos passos:</strong> padronizar o tratamento de erros, criar testes e documentar o uso de cada script.</li>
-                  </ul>
-                </div>
-
-                <div data-lang-block="en">
-                  <h4>Overview</h4>
-                  <p>Python scripts built to remove manual tasks from day-to-day migration and support: importing spreadsheets into databases, comparing volumes between databases, extracting MySQL data, consolidating errors and warnings, and supporting access management. Each one solves a specific need of the routine.</p>
-
-                  <h4>What I did</h4>
-                  <ul>
-                    <li><strong>Generic importer</strong> from Excel to a database: reads every sheet (or a specific one) and standardizes column names.</li>
-                    <li>Extraction of activity logs and appointments/tasks from <strong>MySQL</strong> source databases.</li>
-                    <li>Volume comparison between databases, with an Excel report.</li>
-                    <li>Errors-and-warnings extraction (Totals, Errors, Warnings) into a formatted Excel file.</li>
-                    <li>Support for Legal One user-access management.</li>
-                  </ul>
-
-                  <h4>How it works</h4>
-                  <p>Each script starts from a source (Excel, MySQL, or SQL Server) and delivers an updated database or a consolidated report. Libraries: pandas, openpyxl, pyodbc, SQLAlchemy, and PyMySQL.</p>
-                  <pre class="flow">Data source (Excel, MySQL, SQL Server)
-  └─&gt; Specific Python script (import, extraction, comparison, or verification)
-       └─&gt; Updated target database OR consolidated Excel report</pre>
-
-                  <h4>Results</h4>
-                  <table class="impact-table">
-                    <tr><th>Metric</th><th>Value</th><th>Classification</th></tr>
-                    <tr><td>Python productivity scripts</td><td>8 distinct scripts</td><td>Confirmed</td></tr>
-                    <tr><td>Source databases supported</td><td>SQL Server and MySQL</td><td>Confirmed</td></tr>
-                    <tr><td>Technical dependency to upload a spreadsheet</td><td>Reduced (generic importer)</td><td>Qualitative estimate</td></tr>
-                  </table>
-
-                  <h4>Challenges and learnings</h4>
-                  <ul>
-                    <li><strong>One-off scripts instead of a single tool:</strong> I prioritized delivery speed for specific needs.</li>
-                    <li><strong>Evolution:</strong> the earlier <code>pyautogui</code> prototype led to the Selenium approach used in the Contact Deduplication Tool.</li>
-                    <li><strong>Next steps:</strong> standardize error handling, add tests, and document the use of each script.</li>
-                  </ul>
-                </div>
-
+<div data-lang-block="en">
+<h4>Overview</h4>
+<p>12 Python scripts developed to automate operational migration and support tasks, including bulk import of Excel spreadsheets, data extraction and transposition between MySQL and SQL Server, volume comparison, and report generation.</p>
+<p>A set of scripts developed to reduce manual activities and speed up recurring processes in the migration and support routine.</p>
+<p>The solutions involve integration between different data sources, batch import of spreadsheets, extraction of modules from MySQL databases into SQL Server structures, comparison of information, and consolidation of operational reports.</p>
+<p>Each automation was built to meet a specific need, prioritizing reuse, less manual work, and speed in carrying out activities.</p>
+<h4>What I do</h4>
+<ul>
+<li><strong>Excel-to-database importer:</strong> building a generic tool to import spreadsheets and multiple sheets in batch. It lets you select all sheets or just one, standardizes column names, and inserts the data into the tables of the database configured in the connection (pool).</li>
+<li><strong>MySQL → SQL Server extraction and integration:</strong> developing Python scripts to extract specific modules from MySQL databases and transpose the data into SQL Server structures, supporting migration processes.</li>
+<li><strong>Volume comparison:</strong> automating the comparison of record counts between databases, generating Excel reports for checking.</li>
+<li><strong>Consolidation of errors and warnings:</strong> extracting and organizing totals, errors, and warnings into structured reports for analysis.</li>
+<li><strong>Access management support:</strong> automations to assist with user and access management activities in Legal One.</li>
+</ul>
+<h4>How it works</h4>
+<p>Each script receives data from a source, performs the necessary processing, and delivers structured information to a target database or a report for analysis.</p>
+<p><strong>Processing flow:</strong></p>
+<pre class="flow">Data source (Excel, MySQL, or SQL Server)
+→ Specific Python script
+→ Reading, extraction, transformation, or comparison
+→ Updated SQL Server database or consolidated Excel report</pre>
+<p><strong>Main libraries used:</strong> pandas and openpyxl for spreadsheet handling; SQLAlchemy, pyodbc, and PyMySQL for database connections and operations.</p>
+<h4>Results</h4>
+<table class="impact-table impact-table--text">
+<tr><th>Metric</th><th>Result</th></tr>
+<tr><td>Python scripts developed</td><td>12 distinct scripts</td></tr>
+<tr><td>Integrated databases</td><td>SQL Server and MySQL</td></tr>
+<tr><td>Input formats</td><td>Excel and relational databases</td></tr>
+<tr><td>Applications</td><td>Import, extraction, integration, comparison, and reporting</td></tr>
+</table>
+<h4>Challenges and learnings</h4>
+<ol>
+<li><strong>Integration between different data sources</strong><br>Building routines to work with distinct structures and technologies, extracting information from MySQL and preparing the data for use in SQL Server.</li>
+<li><strong>Reuse and flexibility</strong><br>Creating generic scripts, such as the Excel importer, able to handle different spreadsheets and structures without requiring a specific implementation for each file.</li>
+<li><strong>Batch processing</strong><br>Automating operations that involve multiple spreadsheets, sheets, and sets of records, reducing the need for manual imports and treatments.</li>
+<li><strong>Evolution and standardization</strong><br>Room to expand error handling, implement automated tests, and document the procedures to make the tools easier to maintain and reuse.</li>
+</ol>
+</div>
             </div>
           </div>
         </div>
@@ -640,11 +642,9 @@
         <header class="proj-head">
           <span class="proj-idx">05</span>
           <div class="proj-info">
-            <div data-lang-block="pt"><h3>Automações SQL e VBA</h3><p>Scripts de deduplicação e macros de validação estrutural de planilha de migração.</p></div>
-            <div data-lang-block="en"><h3>SQL & VBA Automations</h3><p>Deduplication scripts and structural-validation macros for migration spreadsheets.</p></div>
-            <div class="meta-row"><span class="meta-chip">SQL Server</span>
-      <span class="meta-chip">VBA</span>
-      <span class="meta-chip">Excel</span></div>
+            <div data-lang-block="pt"><h3>Automações SQL e VBA</h3><p>Scripts SQL e macros VBA para preparar materiais de migração, verificar planilhas e automatizar rotinas de administração de bancos de dados.</p></div>
+            <div data-lang-block="en"><h3>SQL & VBA Automations</h3><p>SQL scripts and VBA macros to prepare migration materials, check spreadsheets, and automate database administration routines.</p></div>
+            <div class="meta-row"><span class="meta-chip">SQL Server</span><span class="meta-chip">VBA</span><span class="meta-chip">Excel</span></div>
           </div>
           <button type="button" class="btn proj-toggle" aria-expanded="false" aria-controls="proj-sqlvba-panel">
             <span class="when-closed" data-i18n="proj.expandir">Ver detalhes</span><span class="when-open" data-i18n="proj.recolher">Ocultar detalhes</span><svg class="proj-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6l5 5 5-5"/></svg>
@@ -653,80 +653,89 @@
         <div class="proj-panel" id="proj-sqlvba-panel">
           <div class="proj-panel-inner">
             <div class="prose">
-                <div data-lang-block="pt">
-                  <h4>Visão geral</h4>
-                  <p>Scripts SQL e macros VBA criados ao longo de projetos de migração e consultoria para acelerar tarefas repetitivas: deduplicar contatos, extrair dados de forma direcionada e validar a estrutura das planilhas antes da carga. Fazer isso “na mão” consome tempo e abre espaço para erro humano.</p>
+<div data-lang-block="pt">
+<h4>Visão geral</h4>
+<p>Scripts SQL e macros VBA desenvolvidos para preparar materiais de migração, realizar verificações em planilhas e automatizar procedimentos recorrentes de administração e manutenção de bancos de dados.</p>
+<p>Conjunto de automações criadas para agilizar atividades técnicas recorrentes na rotina de migração e suporte.</p>
+<p>As macros VBA são utilizadas na preparação e conferência dos materiais de migração, realizando varreduras nas planilhas, verificando informações e identificando inconsistências antes da utilização dos arquivos.</p>
+<p>Já os scripts SQL atendem a procedimentos frequentes em bancos de dados, permitindo executar consultas, realizar ajustes e automatizar operações administrativas, como configuração de bases, redefinição de acessos e criação de novos bancos a partir de configurações predefinidas.</p>
+<h4>Minha atuação</h4>
+<ul>
+<li><strong>Preparação de planilhas com VBA:</strong> desenvolvimento de macros para percorrer abas, conferir informações, realizar varreduras e verificar se os materiais estão adequados para as próximas etapas da migração.</li>
+<li><strong>Verificação de dados:</strong> criação de rotinas para identificar inconsistências, divergências e informações que precisam de tratamento antes da carga.</li>
+<li><strong>Consultas SQL recorrentes:</strong> desenvolvimento de scripts para obter informações específicas dos bancos de dados, facilitando análises e atendimentos frequentes.</li>
+<li><strong>Automação administrativa:</strong> scripts para configuração e preparação de bases, redefinição de acessos e criação de novos bancos utilizando parâmetros e configurações predefinidas.</li>
+<li><strong>Padronização de procedimentos:</strong> organização de scripts reutilizáveis para reduzir a execução manual de tarefas recorrentes e manter consistência entre operações.</li>
+</ul>
+<h4>Como funciona</h4>
+<p>As automações são divididas em duas frentes complementares:</p>
+<h5>1. Preparação e conferência de materiais: VBA</h5>
+<pre class="flow">Planilhas de migração
+→ Macros percorrem abas e verificam informações
+→ Varreduras e identificação de inconsistências
+→ Materiais conferidos e preparados para as próximas etapas</pre>
+<h5>2. Consultas e operações em bancos: SQL</h5>
+<pre class="flow">Banco de dados / solicitação operacional
+→ Execução de script específico
+→ Consulta, configuração ou alteração necessária
+→ Resultado obtido ou procedimento executado</pre>
+<h4>Resultados</h4>
+<table class="impact-table impact-table--text">
+<tr><th>Métrica</th><th>Resultado</th></tr>
+<tr><td>Macros VBA desenvolvidas</td><td>7</td></tr>
+<tr><td>Scripts SQL desenvolvidos</td><td>18+</td></tr>
+<tr><td>Frentes de automação</td><td>Preparação de materiais e operações em bancos de dados</td></tr>
+</table>
+<h4>Desafios e aprendizados</h4>
+<ol>
+<li><strong>Preparação antecipada dos materiais</strong><br>Automatizar verificações nas planilhas permite identificar problemas antes que os arquivos avancem para as etapas seguintes da migração, reduzindo conferências manuais e retrabalho.</li>
+<li><strong>Reutilização de procedimentos</strong><br>Transformar operações recorrentes em scripts permite executar consultas e configurações de maneira mais consistente, sem precisar reconstruir manualmente cada procedimento.</li>
+<li><strong>Padronização operacional</strong><br>A utilização de parâmetros e configurações predefinidas facilita a criação e preparação de bases, reduzindo variações entre procedimentos semelhantes.</li>
+</ol>
+<p>Possibilidades de evolução: centralizar as automações em uma biblioteca organizada, ampliar a parametrização dos scripts e implementar verificações adicionais para tornar os procedimentos mais reutilizáveis e fáceis de manter.</p>
+</div>
 
-                  <h4>Minha atuação</h4>
-                  <ul>
-                    <li>Scripts SQL de deduplicação de contatos e de CPF em bases migradas.</li>
-                    <li>Scripts SQL de extração direcionada (por exemplo, a relação de responsáveis de uma base).</li>
-                    <li>Macros VBA que validam, aba a aba, se a planilha de migração segue a estrutura esperada pelo Legal One.</li>
-                  </ul>
-
-                  <h4>Como funciona</h4>
-                  <p>O validador percorre cada aba da planilha de migração, compara as colunas com o padrão esperado e sinaliza divergências antes do envio para carga, evitando que erros de estrutura só apareçam na importação.</p>
-                  <pre class="flow">Planilha de migração preenchida
-  └─&gt; Macro VBA percorre cada aba
-       └─&gt; Compara colunas encontradas x estrutura esperada
-            └─&gt; Sinaliza divergências antes do envio para carga
-  Base de origem (concorrente) ou já migrada
-  └─&gt; Script SQL de deduplicação / extração direcionada
-       └─&gt; Base tratada, pronta para a próxima etapa</pre>
-
-                  <h4>Resultados</h4>
-                  <table class="impact-table">
-                    <tr><th>Métrica</th><th>Valor</th><th>Classificação</th></tr>
-                    <tr><td>Macros VBA de validação de planilha</td><td>7 macros</td><td>Comprovada</td></tr>
-                    <tr><td>Scripts SQL de deduplicação/extração</td><td>3 scripts distintos</td><td>Comprovada</td></tr>
-                    <tr><td>Redução de retrabalho na carga</td><td>Esperada, não medida numericamente</td><td>Estimativa</td></tr>
-                  </table>
-
-                  <h4>Desafios e aprendizados</h4>
-                  <ul>
-                    <li><strong>Validação antecipada:</strong> o VBA pega erros de estrutura antes da carga, evitando retrabalho.</li>
-                    <li><strong>Velocidade x padronização:</strong> scripts simples e diretos priorizaram a entrega, sem um sistema central.</li>
-                    <li><strong>Próximos passos:</strong> reunir os scripts em uma biblioteca única e criar testes para os de SQL.</li>
-                  </ul>
-                </div>
-
-                <div data-lang-block="en">
-                  <h4>Overview</h4>
-                  <p>SQL scripts and VBA macros created across migration and consulting projects to speed up repetitive tasks: deduplicating contacts, running targeted extractions, and validating spreadsheet structure before loading. Doing this by hand takes time and leaves room for human error.</p>
-
-                  <h4>What I did</h4>
-                  <ul>
-                    <li>SQL scripts to deduplicate contacts and tax IDs in migrated databases.</li>
-                    <li>Targeted SQL extraction scripts (for example, the list of responsible parties in a database).</li>
-                    <li>VBA macros that validate, sheet by sheet, whether the migration spreadsheet follows the structure Legal One expects.</li>
-                  </ul>
-
-                  <h4>How it works</h4>
-                  <p>The validator walks through each sheet of the migration spreadsheet, compares the columns with the expected standard, and flags discrepancies before submission for loading, so structural errors don't surface only at import.</p>
-                  <pre class="flow">Filled-in migration spreadsheet
-  └─&gt; VBA macro walks through each sheet
-       └─&gt; Compares found columns x expected structure
-            └─&gt; Flags discrepancies before submission for loading
-  Source database (competitor) or already migrated
-  └─&gt; SQL deduplication / targeted extraction script
-       └─&gt; Treated database, ready for the next step</pre>
-
-                  <h4>Results</h4>
-                  <table class="impact-table">
-                    <tr><th>Metric</th><th>Value</th><th>Classification</th></tr>
-                    <tr><td>Spreadsheet-validation VBA macros</td><td>7 macros</td><td>Confirmed</td></tr>
-                    <tr><td>SQL deduplication/extraction scripts</td><td>3 distinct scripts</td><td>Confirmed</td></tr>
-                    <tr><td>Rework reduction at the load step</td><td>Expected, not numerically measured</td><td>Estimate</td></tr>
-                  </table>
-
-                  <h4>Challenges and learnings</h4>
-                  <ul>
-                    <li><strong>Early validation:</strong> the VBA catches structural errors before the load, avoiding rework.</li>
-                    <li><strong>Speed vs. standardization:</strong> simple, direct scripts prioritized delivery, without a central system.</li>
-                    <li><strong>Next steps:</strong> gather the scripts in a single library and add tests for the SQL ones.</li>
-                  </ul>
-                </div>
-
+<div data-lang-block="en">
+<h4>Overview</h4>
+<p>SQL scripts and VBA macros developed to prepare migration materials, run checks on spreadsheets, and automate recurring database administration and maintenance procedures.</p>
+<p>A set of automations created to speed up recurring technical activities in the migration and support routine.</p>
+<p>The VBA macros are used to prepare and check migration materials, scanning spreadsheets, verifying information, and identifying inconsistencies before the files are used.</p>
+<p>The SQL scripts, in turn, handle frequent database procedures, making it possible to run queries, make adjustments, and automate administrative operations, such as database configuration, access resets, and creating new databases from predefined settings.</p>
+<h4>What I do</h4>
+<ul>
+<li><strong>Spreadsheet preparation with VBA:</strong> developing macros to go through sheets, check information, run scans, and verify that the materials are ready for the next migration steps.</li>
+<li><strong>Data verification:</strong> building routines to identify inconsistencies, discrepancies, and information that needs treatment before loading.</li>
+<li><strong>Recurring SQL queries:</strong> developing scripts to obtain specific information from databases, making frequent analyses and support requests easier.</li>
+<li><strong>Administrative automation:</strong> scripts to configure and prepare databases, reset access, and create new databases using predefined parameters and settings.</li>
+<li><strong>Procedure standardization:</strong> organizing reusable scripts to reduce manual execution of recurring tasks and keep operations consistent.</li>
+</ul>
+<h4>How it works</h4>
+<p>The automations are split into two complementary fronts:</p>
+<h5>1. Material preparation and checking: VBA</h5>
+<pre class="flow">Migration spreadsheets
+→ Macros go through sheets and verify information
+→ Scans and identification of inconsistencies
+→ Materials checked and prepared for the next steps</pre>
+<h5>2. Database queries and operations: SQL</h5>
+<pre class="flow">Database / operational request
+→ Running a specific script
+→ Query, configuration, or change as needed
+→ Result obtained or procedure executed</pre>
+<h4>Results</h4>
+<table class="impact-table impact-table--text">
+<tr><th>Metric</th><th>Result</th></tr>
+<tr><td>VBA macros developed</td><td>7</td></tr>
+<tr><td>SQL scripts developed</td><td>18+</td></tr>
+<tr><td>Automation fronts</td><td>Material preparation and database operations</td></tr>
+</table>
+<h4>Challenges and learnings</h4>
+<ol>
+<li><strong>Early preparation of materials</strong><br>Automating spreadsheet checks makes it possible to identify problems before the files move on to the next migration steps, reducing manual checking and rework.</li>
+<li><strong>Reuse of procedures</strong><br>Turning recurring operations into scripts makes it possible to run queries and configurations more consistently, without rebuilding each procedure by hand.</li>
+<li><strong>Operational standardization</strong><br>Using predefined parameters and settings makes it easier to create and prepare databases, reducing variation between similar procedures.</li>
+</ol>
+<p>Possible evolutions: centralizing the automations in an organized library, expanding script parameterization, and implementing additional checks to make the procedures more reusable and easier to maintain.</p>
+</div>
             </div>
           </div>
         </div>
