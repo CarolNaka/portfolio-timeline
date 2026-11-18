@@ -107,7 +107,6 @@ const i18n = {
     "destaque.nota": "Ideia e autoria próprias. O código-fonte não é público; a arquitetura está descrita na página do projeto.",
     "destaque.ver": "Ver projeto completo",
     "metricas.titulo": "Métricas e impacto",
-    "metricas.nota": "Métricas classificadas como estimativa refletem o melhor conhecimento disponível, ainda sem confirmação numérica definitiva.",
     "footer.texto": "Documentação técnica completa disponível no GitHub.",
     "proj.eyebrow.migracao": "Projeto · Migração",
     "proj.eyebrow.consultoria": "Projeto · Consultoria",
@@ -218,7 +217,6 @@ const i18n = {
     "destaque.nota": "Original idea and authorship. The source code is not public; the architecture is described on the project page.",
     "destaque.ver": "View full project",
     "metricas.titulo": "Metrics and impact",
-    "metricas.nota": "Metrics classified as estimates reflect the best information available, without definitive numeric confirmation yet.",
     "footer.texto": "Full technical documentation available on GitHub.",
     "proj.eyebrow.migracao": "Project · Migration",
     "proj.eyebrow.consultoria": "Project · Consulting",
@@ -346,13 +344,12 @@ const projects = [
 ];
 
 const metrics = [
-  { value: "30+", pt: "Clientes atendidos, em todos os tipos de serviço", en: "Clients served, across all service types", tag: "confirmed" },
-  { value: "92", pt: "Commits pessoais em repositório de migração colaborativo (~5 meses)", en: "Personal commits in a collaborative migration repository (~5 months)", tag: "confirmed" },
-  { value: "18", pt: "Pessoas no time que mantém o pipeline de migração", en: "People maintaining the migration pipeline", tag: "confirmed" },
-  { value: "23+", pt: "Clientes em consultoria recorrente, com plano de rollback documentado", en: "Clients in recurring consulting, with a documented rollback plan", tag: "confirmed" },
-  { value: "25+", pt: "Migrações de plataformas concorrentes via parceiros de revenda (parte dos 30+)", en: "Migrations from competing platforms via reseller partners (part of the 30+)", tag: "confirmed" },
-  { value: "40+", pt: "Scripts SQL de extração, organizados por módulo", en: "SQL extraction scripts, organized by module", tag: "confirmed" },
-  { value: "8", pt: "Scripts Python próprios de produtividade e integração de dados", en: "Proprietary Python scripts for productivity and data integration", tag: "confirmed" }
+  { value: "45+", pt: "Clientes atendidos, em todos os tipos de serviço", en: "Clients served, across all service types" },
+  { value: "20+", pt: "Migrações realizadas", en: "Migrations completed" },
+  { value: "25+", pt: "Scripts desenvolvidos", en: "Scripts developed" },
+  { value: "23+", pt: "Clientes em consultoria recorrente, com plano de rollback documentado", en: "Clients in recurring consulting, with a documented rollback plan" },
+  { value: "92", pt: "Commits pessoais em repositório de migração colaborativo (~5 meses)", en: "Personal commits in a collaborative migration repository (~5 months)" },
+  { value: "18", pt: "Pessoas no time que mantém o pipeline de migração", en: "People maintaining the migration pipeline" }
 ];
 
 /* ---------------------------------------------------------
@@ -506,10 +503,7 @@ function renderMetrics(lang) {
   metrics.forEach(m => {
     const card = document.createElement("div");
     card.className = "card metric-card spot";
-    const tagLabel = m.tag === "confirmed"
-      ? (lang === "pt" ? "comprovada" : "confirmed")
-      : (lang === "pt" ? "estimativa" : "estimate");
-    card.innerHTML = `<div class="metric-value" data-count="${m.value}">${m.value}</div><p>${m[lang]}</p><span class="tag ${m.tag}">${tagLabel}</span>`;
+    card.innerHTML = `<div class="metric-value" data-count="${m.value}">${m.value}</div><p>${m[lang]}</p>`;
     grid.appendChild(card);
   });
 }

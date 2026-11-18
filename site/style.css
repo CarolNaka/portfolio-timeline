@@ -1949,6 +1949,13 @@ a.card:hover::before, .card--hover:hover::before { opacity: 1; width: 72px; }
   display: block;
 }
 
+.metrics-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 800px) { .metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .metrics-grid { grid-template-columns: 1fr; } }
+.exp-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-12); align-items: start; }
+.exp-split .atuacao-list { max-width: none; }
+@media (max-width: 900px) { .exp-split { grid-template-columns: 1fr; gap: var(--space-10); } }
+
 .exp-desc { max-width: 74ch; display: grid; gap: var(--space-4); margin-top: var(--space-5); }
 .exp-desc p { margin: 0; color: var(--text-muted); font-size: var(--fs-md); line-height: 1.7; }
 .exp-desc a { font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--mint-line); }
