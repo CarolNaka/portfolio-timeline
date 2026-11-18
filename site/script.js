@@ -38,7 +38,7 @@ const i18n = {
     "hero.fact3": "commits em ~5 meses",
     "hero.fact4": "scripts Python próprios",
     "sobre.titulo": "Sobre mim",
-    "sobre.aside": "Perfil · Stack · Como eu trabalho",
+    "sobre.aside": "Perfil · Tecnologias · Como eu trabalho",
     "sobre.p1": "Gosto de entender como as coisas funcionam, principalmente quando existe um problema para resolver. E, se no caminho encontro uma forma de fazer algo <em class=\"hl\">melhor, mais simples ou mais automático</em>, dificilmente deixo passar.",
     "sobre.p2": "Hoje trabalho na Thomson Reuters com <em class=\"hl\">dados, automação e soluções para migração de bases</em>, usando <em class=\"hl\">SQL, ETL e Azure Data Factory</em>. No dia a dia, isso significa investigar problemas, entender o que está acontecendo com os dados, pensar na melhor abordagem e colocar a solução em prática.",
     "sobre.p3": "Sou uma pessoa responsável com aquilo que assumo e gosto de ter autonomia para levar uma tarefa do problema até a entrega. Foi também dessa forma que comecei a transformar algumas tarefas repetitivas em <em class=\"hl\">automações e soluções que facilitam o trabalho</em>, porque, para mim, tecnologia faz mais sentido quando resolve um problema de verdade.",
@@ -52,7 +52,7 @@ const i18n = {
     "sobre.como3d": "Quando alguma coisa dá errado, minha primeira pergunta é: por quê? Prefiro investigar a causa e entender o que aconteceu antes de simplesmente aplicar uma correção.",
     "sobre.como4t": "Dados precisam fazer sentido",
     "sobre.como4d": "Não basta o processo terminar sem erro. Gosto de conferir os dados, validar o resultado e entender se aquilo que foi produzido realmente está correto.",
-    "sobre.stackTitulo": "Stack principal",
+    "sobre.stackTitulo": "Tecnologias",
     "experiencias.titulo": "Experiências",
     "experiencias.intro": "Atuação profissional em migração de dados, consultoria em produção e automação, com projetos e métricas documentados.",
     "experiencias.legalOne.org": "Técnica em Banco de Dados · Mar/2025 – Atual",
@@ -151,7 +151,7 @@ const i18n = {
     "hero.fact3": "commits in ~5 months",
     "hero.fact4": "Python scripts of my own",
     "sobre.titulo": "About me",
-    "sobre.aside": "Profile · Stack · How I work",
+    "sobre.aside": "Profile · Technologies · How I work",
     "sobre.p1": "I like understanding how things work, especially when there is a problem to solve. And if along the way I find a way to do something <em class=\"hl\">better, simpler, or more automated</em>, I rarely let it pass.",
     "sobre.p2": "Today I work at Thomson Reuters on <em class=\"hl\">data, automation, and database migration solutions</em>, using <em class=\"hl\">SQL, ETL, and Azure Data Factory</em>. Day to day, that means investigating problems, understanding what is happening with the data, working out the best approach, and putting the solution into practice.",
     "sobre.p3": "I take responsibility for what I commit to, and I like having the autonomy to carry a task from the problem all the way to delivery. That is also how I started turning some repetitive tasks into <em class=\"hl\">automations and solutions that make work easier</em>, because, to me, technology makes the most sense when it solves a real problem.",
@@ -165,7 +165,7 @@ const i18n = {
     "sobre.como3d": "When something goes wrong, my first question is: why? I prefer to investigate the cause and understand what happened before simply applying a fix.",
     "sobre.como4t": "Data has to make sense",
     "sobre.como4d": "It is not enough for the process to finish without errors. I like to check the data, validate the result, and understand whether what was produced is actually correct.",
-    "sobre.stackTitulo": "Core stack",
+    "sobre.stackTitulo": "Technologies",
     "experiencias.titulo": "Experience",
     "experiencias.intro": "Professional work in data migration, production consulting, and automation, with documented projects and metrics.",
     "experiencias.legalOne.org": "Database Analyst · Mar 2025 – Present",
@@ -237,10 +237,10 @@ const i18n = {
 
 // Stack principal (home, seção Sobre). Tecnologias já documentadas no README e nos projetos.
 const stack = [
-  { pt: "Dados", en: "Data", items: ["SQL Server (T-SQL)", "Azure Data Factory"] },
-  { pt: "Automação", en: "Automation", items: ["Python", "Selenium", "Tkinter", "VBA", "PowerShell"] },
+  { pt: "Dados & ETL", en: "Data & ETL", items: ["SQL Server (T-SQL)", "Azure Data Factory"] },
+  { pt: "Automação & Desenvolvimento", en: "Automation & Development", items: ["Python", "Selenium", "Tkinter", "VBA", "PowerShell"] },
   { pt: "Ferramentas", en: "Tools", items: ["Git", "GitHub", "Excel"] },
-  { pt: "Áreas de interesse", en: "Areas of interest", items: ["Engenharia de Dados", "IA aplicada", "Automação com IA", "DevOps"], itemsEn: ["Data Engineering", "Applied AI", "AI automation", "DevOps"] }
+  { pt: "Interesses profissionais", en: "Professional interests", items: ["IA aplicada", "Automação com IA", "Engenharia de Dados", "DevOps"], itemsEn: ["Applied AI", "AI automation", "Data Engineering", "DevOps"] }
 ];
 
 const skillApps = {
