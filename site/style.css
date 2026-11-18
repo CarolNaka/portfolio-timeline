@@ -897,6 +897,7 @@ code {
 .float-tag--2 { top: 73%; right: -80px; animation: floatY 9s ease-in-out 1.2s infinite; }
 .float-tag--3 { top: 80%; left: -58px; animation: floatY 8s ease-in-out 0.6s infinite; }
 .float-tag--4 { top: 92%; right: -20px; animation: floatY 10s ease-in-out 2s infinite; }
+.float-tag--5 { top: 40%; left: -64px; animation: floatY 11s ease-in-out 0.9s infinite; }
 .float-tag--2::before, .float-tag--4::before { background: var(--mint); box-shadow: 0 0 8px var(--mint); }
 
 /* Fatos rápidos abaixo do hero */
@@ -2387,7 +2388,7 @@ a.card:hover::before, .card--hover:hover::before { opacity: 1; width: 72px; }
 
 @media (max-width: 1100px) {
   .float-tag--1 { right: -12px; }
-  .float-tag--2 { right: -24px; }
+  .float-tag--2 { right: -4px; }
   .float-tag--4 { right: -12px; }
   .prose-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .toc { display: none; }
@@ -2431,7 +2432,7 @@ a.card:hover::before, .card--hover:hover::before { opacity: 1; width: 72px; }
   .portrait-frame { transform: translate(14px, 14px); }
   .hero-portrait:hover .portrait-frame { transform: translate(18px, 18px); }
   .portrait-cube { width: 72px; height: 72px; top: -22px; left: -22px; }
-  .portrait-lines, .portrait-link, .float-tag--2, .float-tag--4, .hero-shape--1, .hero-shape--2 { display: none; }
+  .portrait-lines, .portrait-link, .float-tag--2, .float-tag--4, .float-tag--5, .hero-shape--1, .hero-shape--2 { display: none; }
   .float-tag--1 { right: -12px; top: -12px; }
   .float-tag--3 { left: -8px; top: auto; bottom: -14px; }
   .hero-word { display: none; }
