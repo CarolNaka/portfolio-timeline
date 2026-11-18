@@ -348,7 +348,7 @@ const metrics = [
   { value: "20+", pt: "Migrações realizadas", en: "Migrations completed" },
   { value: "7+", pt: "Mapeamentos feitos", en: "Mappings completed" },
   { value: "27+", pt: "Clientes em consultoria recorrente, com plano de rollback documentado", en: "Clients in recurring consulting, with a documented rollback plan" },
-  { value: "92", pt: "Commits pessoais em repositório de migração colaborativo", en: "Personal commits in a collaborative migration repository" },
+  { value: "92+", pt: "Commits pessoais em repositório de migração colaborativo", en: "Personal commits in a collaborative migration repository" },
   { value: "7", pt: "Pessoas no time que mantém o pipeline de migração", en: "People maintaining the migration pipeline" }
 ];
 
