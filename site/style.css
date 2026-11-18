@@ -2595,3 +2595,6 @@ a.card:hover::before, .card--hover:hover::before { opacity: 1; width: 72px; }
 }
 
 .impact-table--text td:nth-child(2) { font-family: inherit; font-weight: 400; font-size: var(--fs-sm); color: var(--text-muted); line-height: 1.55; }
+
+.proj-panel .prose h5 { margin: var(--space-6) 0 var(--space-3); font-family: var(--font-mono); font-size: var(--fs-sm); letter-spacing: 0.04em; text-transform: uppercase; color: var(--mint); }
+.proj-panel .prose ol { color: var(--text-muted); }

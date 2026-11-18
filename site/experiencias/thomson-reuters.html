@@ -136,8 +136,8 @@
         <header class="proj-head">
           <span class="proj-idx">01</span>
           <div class="proj-info">
-            <div data-lang-block="pt"><h3>Migração de Banco a Banco (Concorrentes)</h3><p>Pipeline de extração/transformação/carga entre plataformas concorrentes e o Legal One, por módulos (Contatos/Processos/Serviços).</p></div>
-            <div data-lang-block="en"><h3>Database-to-Database Migration (Competitors)</h3><p>Extraction/transformation/load pipeline between competing platforms and Legal One, by module (Contacts/Cases/Services).</p></div>
+            <div data-lang-block="pt"><h3>Migração de Dados para o Legal One</h3><p>Migração por planilha padrão e banco a banco, de sistemas jurídicos concorrentes para o Legal One, em diferentes módulos.</p></div>
+            <div data-lang-block="en"><h3>Data Migration to Legal One</h3><p>Standard-spreadsheet and database-to-database migration from competing legal systems into Legal One, across multiple modules.</p></div>
             <div class="meta-row"><span class="meta-chip" data-lang-block="pt">Migração</span>
       <span class="meta-chip" data-lang-block="en">Migration</span>
       <span class="meta-chip">SQL Server</span>
@@ -152,90 +152,135 @@
         <div class="proj-panel" id="proj-migracao-panel">
           <div class="proj-panel-inner">
             <div class="prose">
-                <div data-lang-block="pt">
-                  <h4>Visão geral</h4>
-                  <p>Migração de dados entre plataformas jurídicas concorrentes (Astrea, Projuris, CPJ e CP-PRO) e o Legal One, da extração direta no banco até a carga final. Cada origem organiza contatos, processos e serviços de um jeito, então o trabalho segue um pipeline padronizado, versionado em repositório Git compartilhado com o time. Quando a extração direta não é possível, uso o modelo de planilha padrão (X-One).</p>
+<div data-lang-block="pt">
+<h4>Visão geral</h4>
+<p>Atuação em duas modalidades de migração: por planilha padrão, com dados fornecidos pelo cliente em estrutura previamente mapeada, e banco a banco, com extração e mapeamento técnico de bases completas de sistemas jurídicos concorrentes.</p>
+<p>Na migração banco a banco, cada sistema de origem possui estruturas, relacionamentos e regras próprias. Meu trabalho envolve investigar essas estruturas, desenvolver scripts específicos de extração e transformação e adaptar os dados ao modelo do Legal One, seguindo um pipeline de migração compartilhado com o time.</p>
+<p>As migrações contemplam diferentes módulos: Contatos, Processos, Serviços, Contratos de Clientes e Honorários.</p>
+<h4>Minha atuação</h4>
+<h5>Migração banco a banco</h5>
+<ul>
+<li><strong>Preparação da base:</strong> recebimento, restauração e extração de backups completos de clientes, independentemente do formato do arquivo ou do SGBD de origem.</li>
+<li><strong>Análise dos dados:</strong> investigação da estrutura do banco, tabelas, relacionamentos, campos e particularidades do sistema de origem.</li>
+<li><strong>Mapeamento e extração:</strong> desenvolvimento de scripts SQL específicos para cada sistema e cliente, adaptando os dados ao modelo esperado pelo Legal One.</li>
+<li><strong>Tratamento e transformação:</strong> criação de rotinas para corrigir inconsistências, normalizar informações e adequar relacionamentos e campos antes da carga.</li>
+<li><strong>Validação e integridade:</strong> verificações durante e após a migração, identificação de divergências e aplicação de correções necessárias.</li>
+<li><strong>Go-live:</strong> acompanhamento da validação com o cliente, preparação da base de corte final e execução dos procedimentos necessários para a entrada em produção.</li>
+</ul>
+<p>Os scripts e projetos de migração são versionados no GitHub compartilhado com o time, permitindo colaboração, manutenção e reutilização das soluções.</p>
+<h5>Migração por planilha padrão</h5>
+<ul>
+<li>Orientação ao cliente sobre o preenchimento e a estrutura das planilhas.</li>
+<li>Análise dos dados recebidos e identificação de ajustes necessários.</li>
+<li>Apoio na correção e adequação das informações ao formato esperado.</li>
+<li>Execução da migração diretamente a partir das planilhas padronizadas.</li>
+</ul>
+<p>Nessa modalidade, o mapeamento estrutural já está definido pelo modelo de importação, permitindo um processo mais direto, sem necessidade de desenvolver uma extração específica do banco de origem.</p>
+<h4>Como funciona</h4>
+<h5>1. Migração banco a banco</h5>
+<p>O processo começa com o recebimento do backup completo do sistema concorrente. A partir dele, conduzo a análise técnica e desenvolvo os scripts necessários para transformar os dados e integrá-los ao pipeline de migração do Legal One.</p>
+<p><strong>Fluxo de execução:</strong></p>
+<ol>
+<li><strong>Recebimento e restauração:</strong> obtenção do backup, identificação do formato e restauração da base de origem.</li>
+<li><strong>Análise exploratória:</strong> levantamento das estruturas, relacionamentos, volume e particularidades dos dados.</li>
+<li><strong>Mapeamento e extração:</strong> desenvolvimento de scripts específicos para extrair e relacionar as informações de cada módulo.</li>
+<li><strong>Tratamento e preparação:</strong> adequação dos dados, correção de inconsistências e aplicação das regras necessárias para a migração.</li>
+<li><strong>Execução e validação:</strong> processamento pelo pipeline de migração, conferência dos resultados, verificações de integridade e correções.</li>
+<li><strong>Validação com o cliente:</strong> disponibilização da base migrada para conferência e aprovação.</li>
+<li><strong>Go-live:</strong> preparação e extração da base de corte final, atualização dos dados e execução dos procedimentos de entrada em produção.</li>
+</ol>
+<h5>2. Migração por planilha padrão</h5>
+<p>O cliente recebe o modelo de planilha correspondente, preenche os dados e os disponibiliza para análise. A partir disso, realizo as orientações e os ajustes necessários para adequar as informações ao padrão de importação e executo a migração.</p>
+<p><strong>Fluxo de execução:</strong></p>
+<ol>
+<li>Disponibilização e orientação sobre o modelo de planilha.</li>
+<li>Recebimento e análise dos dados preenchidos.</li>
+<li>Identificação de inconsistências e solicitação de ajustes, quando necessário.</li>
+<li>Adequação dos dados e execução da migração.</li>
+<li>Conferência dos resultados.</li>
+</ol>
+<h4>Resultados e dimensão técnica</h4>
+<table class="impact-table impact-table--text">
+<tr><th>Métrica</th><th>Resultado</th></tr>
+<tr><td>Scripts SQL de extração</td><td>40+</td></tr>
+<tr><td>Scripts de pré e pós-tratamento</td><td>21</td></tr>
+<tr><td>Contribuições no repositório compartilhado</td><td>92 commits em aproximadamente 5 meses</td></tr>
+<tr><td>Migrações realizadas</td><td>20+ clientes</td></tr>
+</table>
+<h4>Desafios e aprendizados</h4>
+<ol>
+<li><strong>Modelos de dados distintos</strong><br>Cada sistema concorrente possui sua própria estrutura e organização das informações. Foi necessário investigar diferentes modelos relacionais e desenvolver mapeamentos específicos para converter os dados ao padrão do Legal One.</li>
+<li><strong>Integridade e relacionamentos</strong><br>Nem todas as informações estão armazenadas de forma direta. Alguns campos e classificações precisam ser derivados a partir de consultas e cruzamentos entre tabelas, preservando os relacionamentos e a consistência dos dados.</li>
+<li><strong>Volume e processamento</strong><br>O volume de dados exige cuidados com a execução e o processamento dos arquivos. Em um dos casos, um script de carga ultrapassou 170 MB, sendo necessário utilizar PowerShell para fracionar o arquivo e viabilizar sua execução.</li>
+<li><strong>Padronização e particularidades por cliente</strong><br>O desafio é manter um pipeline reutilizável sem ignorar as diferenças entre sistemas e clientes. Os scripts são organizados e versionados em um repositório compartilhado, permitindo evoluir as soluções sem perder o histórico das adaptações.</li>
+</ol>
+<p>Possibilidades de evolução: ampliar a parametrização dos tratamentos específicos, documentar os procedimentos para facilitar a integração de novos integrantes ao time e consolidar indicadores de volume e desempenho por migração.</p>
+</div>
 
-                  <h4>Minha atuação</h4>
-                  <ul>
-                    <li>Scripts SQL de extração organizados por módulo: Contatos, Processos e Serviços.</li>
-                    <li>Rotinas de pré-tratamento no banco de origem e no destino (CPF e e-mail duplicados, endereço, posições).</li>
-                    <li>Verificações de integridade e correções pós-carga.</li>
-                    <li>Versionamento de scripts e de planilhas “De/Para” por cliente, em colaboração contínua com o time.</li>
-                  </ul>
-
-                  <h4>Como funciona</h4>
-                  <p>O pipeline tem quatro fases: <strong>pré-extração</strong> (funções e tabelas temporárias no banco de origem), <strong>extração por módulo</strong>, <strong>pré-migração</strong> no destino e <strong>pós-migração</strong> (integridade, etiquetas, vínculos e correções).</p>
-                  <pre class="flow">Banco de origem (concorrente)
-  └─&gt; Pré-extração: funções auxiliares + tabelas temporárias
-       └─&gt; Extração por módulo (Contatos / Processos / Serviços) via SQL
-            └─&gt; Planilha "De/Para" (tratamento específico por cliente)
-                 └─&gt; Pré-migração no destino: CPF, endereço, e-mail, posições
-                      └─&gt; Carga no Legal One
-                           └─&gt; Pós-migração: integridade, etiquetas, vínculos, correções</pre>
-
-                  <h4>Resultados</h4>
-                  <table class="impact-table">
-                    <tr><th>Métrica</th><th>Valor</th><th>Classificação</th></tr>
-                    <tr><td>Scripts SQL de extração</td><td>40+, em 3 módulos de dados</td><td>Comprovada</td></tr>
-                    <tr><td>Scripts de pré/pós-tratamento</td><td>14 scripts dedicados</td><td>Comprovada</td></tr>
-                    <tr><td>Contribuição pessoal no repositório compartilhado</td><td>92 commits em ~5 meses</td><td>Comprovada</td></tr>
-                    <tr><td>Time que mantém o repositório</td><td>18 colaboradores</td><td>Comprovada</td></tr>
-                    <tr><td>Migrações banco a banco, via parceiros de revenda</td><td>25+ clientes</td><td>Comprovada</td></tr>
-                    <tr><td>Maior volume em um único projeto</td><td>~170 MB, fracionado em 44 arquivos</td><td>Comprovada</td></tr>
-                  </table>
-
-                  <h4>Desafios e aprendizados</h4>
-                  <ul>
-                    <li><strong>Modelos de dados incompatíveis:</strong> mapeamento campo a campo e relação a relação entre cada origem e o Legal One.</li>
-                    <li><strong>Integridade referencial:</strong> campos derivados (ex.: se o contato é cliente ou parte) calculados por consultas antes da extração.</li>
-                    <li><strong>Volume:</strong> um script de carga passou de 170 MB e foi fracionado via PowerShell.</li>
-                    <li><strong>Padrão x caso a caso:</strong> o pipeline é reutilizável, com ajustes pontuais por cliente. Próximos passos: parametrizar esses tratamentos, documentar o pipeline para novos integrantes e registrar o volume migrado por projeto.</li>
-                  </ul>
-                </div>
-
-                <div data-lang-block="en">
-                  <h4>Overview</h4>
-                  <p>Data migration from competing legal platforms (Astrea, Projuris, CPJ, and CP-PRO) into Legal One, from direct database extraction to final load. Each source organizes contacts, cases, and services differently, so the work follows a standardized pipeline, versioned in a Git repository shared with the team. When direct extraction isn't possible, I use the standard spreadsheet template (X-One).</p>
-
-                  <h4>What I did</h4>
-                  <ul>
-                    <li>SQL extraction scripts organized by module: Contacts, Cases, and Services.</li>
-                    <li>Pre-treatment routines on both the source and the target database (duplicate tax IDs and emails, addresses, roles).</li>
-                    <li>Integrity checks and post-load fixes.</li>
-                    <li>Versioning of scripts and per-client “De/Para” mapping spreadsheets, in ongoing collaboration with the team.</li>
-                  </ul>
-
-                  <h4>How it works</h4>
-                  <p>The pipeline has four phases: <strong>pre-extraction</strong> (helper functions and temporary tables on the source database), <strong>per-module extraction</strong>, <strong>pre-migration</strong> on the target, and <strong>post-migration</strong> (integrity, labels, links, and fixes).</p>
-                  <pre class="flow">Source database (competitor)
-  └─&gt; Pre-extraction: helper functions + temporary tables
-       └─&gt; Per-module extraction (Contacts / Cases / Services) via SQL
-            └─&gt; "De/Para" spreadsheet (client-specific treatment)
-                 └─&gt; Pre-migration on target: tax ID, address, email, roles
-                      └─&gt; Load into Legal One
-                           └─&gt; Post-migration: integrity, labels, links, fixes</pre>
-
-                  <h4>Results</h4>
-                  <table class="impact-table">
-                    <tr><th>Metric</th><th>Value</th><th>Classification</th></tr>
-                    <tr><td>SQL extraction scripts</td><td>40+, across 3 data modules</td><td>Confirmed</td></tr>
-                    <tr><td>Pre/post-treatment scripts</td><td>14 dedicated scripts</td><td>Confirmed</td></tr>
-                    <tr><td>Personal contribution to the shared repository</td><td>92 commits over ~5 months</td><td>Confirmed</td></tr>
-                    <tr><td>Team maintaining the repository</td><td>18 contributors</td><td>Confirmed</td></tr>
-                    <tr><td>Database-to-database migrations via reseller partners</td><td>25+ clients</td><td>Confirmed</td></tr>
-                    <tr><td>Largest volume in a single project</td><td>~170 MB, split into 44 files</td><td>Confirmed</td></tr>
-                  </table>
-
-                  <h4>Challenges and learnings</h4>
-                  <ul>
-                    <li><strong>Incompatible data models:</strong> field-by-field and relationship-by-relationship mapping between each source and Legal One.</li>
-                    <li><strong>Referential integrity:</strong> derived fields (e.g., whether a contact is a client or a party) computed by queries before extraction.</li>
-                    <li><strong>Volume:</strong> one load script exceeded 170 MB and was split using PowerShell.</li>
-                    <li><strong>Standard vs. case by case:</strong> the pipeline is reusable, with specific adjustments per client. Next steps: parameterize those treatments, document the pipeline for new team members, and record migrated volume per project.</li>
-                  </ul>
-                </div>
-
+<div data-lang-block="en">
+<h4>Overview</h4>
+<p>Work across two migration modes: standard spreadsheet, with data provided by the client in a previously mapped structure, and database-to-database, with technical extraction and mapping of complete databases from competing legal systems.</p>
+<p>In database-to-database migration, each source system has its own structures, relationships, and rules. My work involves investigating those structures, developing system-specific extraction and transformation scripts, and adapting the data to the Legal One model, following a migration pipeline shared with the team.</p>
+<p>The migrations cover different modules: Contacts, Cases, Services, Client Contracts, and Fees.</p>
+<h4>What I do</h4>
+<h5>Database-to-database migration</h5>
+<ul>
+<li><strong>Database preparation:</strong> receiving, restoring, and extracting full client backups, regardless of the file format or source DBMS.</li>
+<li><strong>Data analysis:</strong> investigating the database structure, tables, relationships, fields, and particularities of the source system.</li>
+<li><strong>Mapping and extraction:</strong> developing SQL scripts specific to each system and client, adapting the data to the model Legal One expects.</li>
+<li><strong>Treatment and transformation:</strong> building routines to fix inconsistencies, normalize information, and adjust relationships and fields before loading.</li>
+<li><strong>Validation and integrity:</strong> checks during and after the migration, identifying discrepancies and applying the necessary fixes.</li>
+<li><strong>Go-live:</strong> following the validation with the client, preparing the final cutover database, and carrying out the procedures needed to go into production.</li>
+</ul>
+<p>Migration scripts and projects are versioned in the GitHub repository shared with the team, enabling collaboration, maintenance, and reuse of the solutions.</p>
+<h5>Standard-spreadsheet migration</h5>
+<ul>
+<li>Guiding the client on how to fill in and structure the spreadsheets.</li>
+<li>Analyzing the data received and identifying the necessary adjustments.</li>
+<li>Helping correct and adapt the information to the expected format.</li>
+<li>Running the migration directly from the standardized spreadsheets.</li>
+</ul>
+<p>In this mode, the structural mapping is already defined by the import template, allowing a more direct process, with no need to develop a specific extraction from the source database.</p>
+<h4>How it works</h4>
+<h5>1. Database-to-database migration</h5>
+<p>The process starts with receiving the full backup of the competing system. From it, I carry out the technical analysis and develop the scripts needed to transform the data and integrate it into Legal One's migration pipeline.</p>
+<p><strong>Execution flow:</strong></p>
+<ol>
+<li><strong>Receipt and restoration:</strong> obtaining the backup, identifying the format, and restoring the source database.</li>
+<li><strong>Exploratory analysis:</strong> surveying the structures, relationships, volume, and particularities of the data.</li>
+<li><strong>Mapping and extraction:</strong> developing specific scripts to extract and relate the information for each module.</li>
+<li><strong>Treatment and preparation:</strong> adapting the data, fixing inconsistencies, and applying the rules needed for the migration.</li>
+<li><strong>Execution and validation:</strong> processing through the migration pipeline, checking results, running integrity checks, and applying fixes.</li>
+<li><strong>Validation with the client:</strong> making the migrated database available for review and approval.</li>
+<li><strong>Go-live:</strong> preparing and extracting the final cutover database, updating the data, and running the production go-live procedures.</li>
+</ol>
+<h5>2. Standard-spreadsheet migration</h5>
+<p>The client receives the corresponding spreadsheet template, fills in the data, and makes it available for analysis. From there, I provide guidance and the adjustments needed to bring the information into the import standard, and I run the migration.</p>
+<p><strong>Execution flow:</strong></p>
+<ol>
+<li>Making the template available and guiding the client on it.</li>
+<li>Receiving and analyzing the filled-in data.</li>
+<li>Identifying inconsistencies and requesting adjustments when necessary.</li>
+<li>Adapting the data and running the migration.</li>
+<li>Checking the results.</li>
+</ol>
+<h4>Results and technical scale</h4>
+<table class="impact-table impact-table--text">
+<tr><th>Metric</th><th>Result</th></tr>
+<tr><td>SQL extraction scripts</td><td>40+</td></tr>
+<tr><td>Pre- and post-treatment scripts</td><td>21</td></tr>
+<tr><td>Contributions to the shared repository</td><td>92 commits in approximately 5 months</td></tr>
+<tr><td>Migrations completed</td><td>20+ clients</td></tr>
+</table>
+<h4>Challenges and learnings</h4>
+<ol>
+<li><strong>Distinct data models</strong><br>Each competing system has its own structure and way of organizing information. I had to investigate different relational models and develop specific mappings to convert the data to the Legal One standard.</li>
+<li><strong>Integrity and relationships</strong><br>Not all information is stored directly. Some fields and classifications have to be derived from queries and joins across tables, preserving the relationships and consistency of the data.</li>
+<li><strong>Volume and processing</strong><br>The data volume calls for care in running and processing the files. In one case, a load script exceeded 170 MB, and PowerShell was needed to split the file and make it executable.</li>
+<li><strong>Standardization and client-specific particularities</strong><br>The challenge is keeping a reusable pipeline without ignoring the differences between systems and clients. The scripts are organized and versioned in a shared repository, allowing the solutions to evolve without losing the history of the adaptations.</li>
+</ol>
+<p>Possible evolutions: expanding the parameterization of specific treatments, documenting procedures to make onboarding new team members easier, and consolidating volume and performance indicators per migration.</p>
+</div>
             </div>
           </div>
         </div>

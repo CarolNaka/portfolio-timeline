@@ -238,7 +238,7 @@ const stack = [
 ];
 
 const skillApps = {
-  migracao: { pt: "Migração de Banco a Banco", en: "Database-to-Database Migration", href: "experiencias/thomson-reuters.html#proj-migracao" },
+  migracao: { pt: "Migração de Dados para o Legal One", en: "Data Migration to Legal One", href: "experiencias/thomson-reuters.html#proj-migracao" },
   consultoria: { pt: "Consultoria Recorrente", en: "Recurring Consulting", href: "experiencias/thomson-reuters.html#proj-consultoria" },
   unificador: { pt: "Unificador de Contatos", en: "Contact Deduplication Tool", href: "experiencias/thomson-reuters.html#proj-unificador" },
   python: { pt: "Automações Python", en: "Python Automations", href: "experiencias/thomson-reuters.html#proj-python" },
@@ -322,8 +322,8 @@ const githubProjects = [
 
 const projects = [
   {
-    pt: { title: "Migração de Banco a Banco (Concorrentes)", desc: "Pipeline de extração/transformação/carga entre plataformas concorrentes e o Legal One, por módulos (Contatos/Processos/Serviços).", slug: "migracao" },
-    en: { title: "Database-to-Database Migration (Competitors)", desc: "Extraction/transformation/load pipeline between competing platforms and Legal One, by module (Contacts/Cases/Services).", slug: "migracao" }
+    pt: { title: "Migração de Dados para o Legal One", desc: "Migração por planilha padrão e banco a banco, de sistemas jurídicos concorrentes para o Legal One, em diferentes módulos.", slug: "migracao" },
+    en: { title: "Data Migration to Legal One", desc: "Standard-spreadsheet and database-to-database migration from competing legal systems into Legal One, across multiple modules.", slug: "migracao" }
   },
   {
     pt: { title: "Consultoria Recorrente em Banco de Dados", desc: "Ajustes em produção com padrão de diagnóstico, aprovação, execução e rollback, aplicado a 27+ clientes.", slug: "consultoria" },
