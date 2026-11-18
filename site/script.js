@@ -265,7 +265,7 @@ const skillsSoft = [
   { pt: "Resolução de problemas", en: "Problem solving", descPt: "Investigação de falhas e escolha da abordagem mais efetiva durante a execução dos projetos.", descEn: "Investigating failures and choosing the most effective approach during project execution.", daily: true, apps: ["unificador", "thomson"] },
   { pt: "Entendimento de processos de negócio", en: "Business-process understanding", descPt: "Tradução de regras de negócio jurídicas, como tipo de ação e centro de custo, em lógica de dados.", descEn: "Translating legal business rules, such as case type and cost center, into data logic.", daily: false, apps: ["consultoria"] },
   { pt: "Análise de requisitos", en: "Requirements analysis", descPt: "Interpretação de demandas e definição do escopo técnico antes de construir a solução.", descEn: "Interpreting demands and defining the technical scope before building the solution.", daily: false, apps: ["consultoria", "unificador"] },
-  { pt: "Colaboração em equipe", en: "Team collaboration", descPt: "Trabalho em repositório e processos compartilhados com um time de 18 pessoas, seguindo os padrões do grupo.", descEn: "Working in a shared repository and processes with a team of 18, following the group's standards.", daily: false, apps: ["migracao"] },
+  { pt: "Colaboração em equipe", en: "Team collaboration", descPt: "Trabalho em repositório e processos compartilhados com um time de 7 pessoas, seguindo os padrões do grupo.", descEn: "Working in a shared repository and processes with a team of 7, following the group's standards.", daily: false, apps: ["migracao"] },
   { pt: "Produtividade e melhoria contínua", en: "Productivity & continuous improvement", descPt: "Identificação de tarefas manuais repetitivas e criação de scripts e ferramentas que as reduzem.", descEn: "Identifying repetitive manual tasks and building scripts and tools that reduce them.", daily: false, apps: ["python", "sqlvba", "unificador"] },
   { pt: "Comunicação técnica", en: "Technical communication", descPt: "Aprovação formal por e-mail antes de cada execução em produção e vídeo de treinamento para outros consultores.", descEn: "Formal email approval before every production execution, and a training video for other consultants.", daily: false, apps: ["consultoria", "unificador"] },
   { pt: "Responsabilidade com dados sensíveis", en: "Responsibility with sensitive data", descPt: "Rollback e aprovação formal em cada alteração de produção, protegendo a integridade e a confidencialidade dos dados.", descEn: "Rollback and formal approval on every production change, protecting data integrity and confidentiality.", daily: false, apps: ["consultoria"] }
@@ -291,7 +291,7 @@ const timeline = [
       { pt: ["Primeira migração totalmente independente", "Conduzi um processo de migração de ponta a ponta, sem apoio direto."], en: ["First fully independent migration", "I carried a migration process end to end, without direct support."] },
       { pt: ["Unificador de Contatos", "Ferramenta que idealizei e desenvolvi em Python, hoje usada por outros consultores em campo."], en: ["Contact Deduplication Tool", "A Python tool I conceived and built, now used by other consultants in the field."] },
       { pt: ["Produção com rede de segurança", "Consultoria recorrente em 23+ clientes, sempre com script de rollback e aprovação formal."], en: ["Production with a safety net", "Recurring consulting for 23+ clients, always with a rollback script and formal approval."] },
-      { pt: ["92 commits em ~5 meses", "Contribuição ao repositório de migração mantido por um time de 18 pessoas."], en: ["92 commits in ~5 months", "Contribution to the migration repository maintained by a team of 18."] }
+      { pt: ["92 commits em ~5 meses", "Contribuição ao repositório de migração mantido por um time de 7 pessoas."], en: ["92 commits in ~5 months", "Contribution to the migration repository maintained by a team of 7."] }
     ]
   },
   { date: "Jan 2023", type: "edu", pt: "Ingresso na FATEC — Análise e Desenvolvimento de Sistemas", en: "Started FATEC — Systems Analysis and Development" },
@@ -347,8 +347,8 @@ const metrics = [
   { value: "45+", pt: "Clientes atendidos, em todos os tipos de serviço", en: "Clients served, across all service types" },
   { value: "20+", pt: "Migrações realizadas", en: "Migrations completed" },
   { value: "23+", pt: "Clientes em consultoria recorrente, com plano de rollback documentado", en: "Clients in recurring consulting, with a documented rollback plan" },
-  { value: "92", pt: "Commits pessoais em repositório de migração colaborativo (~5 meses)", en: "Personal commits in a collaborative migration repository (~5 months)" },
-  { value: "18", pt: "Pessoas no time que mantém o pipeline de migração", en: "People maintaining the migration pipeline" }
+  { value: "92", pt: "Commits pessoais em repositório de migração colaborativo", en: "Personal commits in a collaborative migration repository" },
+  { value: "7", pt: "Pessoas no time que mantém o pipeline de migração", en: "People maintaining the migration pipeline" }
 ];
 
 /* ---------------------------------------------------------
